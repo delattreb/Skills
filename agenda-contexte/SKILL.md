@@ -20,9 +20,11 @@ Pour chaque rendez-vous de la période demandée, retrouver dans les anciens e-m
    Une requête par participant clé et une par thème suffisent. Inutile de multiplier les variantes proches.
    **Chercher aussi dans Teams** avec la recherche de messages Microsoft 365 :
    - messages des conversations privées et de groupe où figure au moins un participant clé ;
-   - messages des canaux dont le nom ou le sujet recoupe le titre ou la description du rendez-vous (lister les canaux d'abord, puis ne lire que ceux qui correspondent).
+   - messages des canaux dont le nom ou le sujet recoupe le titre ou la description du rendez-vous (lister les canaux d'abord, puis ne lire que ceux qui correspondent) ;
+   - **comptes rendus de réunions passées** : messages ou récapitulatifs de réunion Teams dont le titre reprend celui du rendez-vous, ou qui datent d'une réunion avec les mêmes participants (mots-clés : « compte rendu », « CR », « relevé de décisions », « récap », « notes de réunion »).
    Si Teams est indisponible ou ne renvoie rien, le signaler dans la réponse finale et continuer avec les seuls e-mails.
 4. **Lire les fils pertinents.** Prendre 5 à 10 fils au maximum par rendez-vous (e-mails et conversations Teams confondus), les plus récents d'abord, et ne retenir que ce qui éclaire la réunion : décisions, questions ouvertes, engagements, dates, chiffres, désaccords.
+   **Les comptes rendus passent en premier.** Un compte rendu ou relevé de décisions d'une réunion précédente fait foi pour les décisions prises. Pour chaque action qu'il attribue (responsable, échéance), vérifier dans les mails et messages plus récents si elle est close : seules les actions encore ouvertes sont reprises. Si plusieurs comptes rendus se contredisent, garder le plus récent et le signaler.
 5. **Rédiger le bloc de chaque rendez-vous** (format ci-dessous).
 6. **Écrire la note « contexte agenda »** (règle d'écriture ci-dessous).
 
@@ -31,9 +33,10 @@ Pour chaque rendez-vous de la période demandée, retrouver dans les anciens e-m
 Chaque rendez-vous a un sous-titre (date, heure, intervenant principal) suivi de :
 
 - **Synthèse** : 3 à 5 phrases en prose, en français, qui expliquent le fil des échanges précédents et ce qu'ils impliquent pour cette réunion.
-- **Points en suspens** : liste courte, uniquement ce qui est réellement ouvert dans les mails.
+- **Points en suspens** : liste courte, uniquement ce qui est réellement ouvert dans les mails et les comptes rendus. Pour les actions reprises d'un compte rendu, indiquer le responsable et l'échéance quand ils sont donnés.
+- **Dernière réunion** (si un compte rendu existe) : date de la réunion précédente, titre, et décisions retenues en une ou deux phrases.
 - **Dernier échange** : date, expéditeur, objet du mail ou nom de la conversation ou du canal Teams.
-- **Sources** : objets des mails et dates, ainsi que conversations ou canaux Teams et dates, sans copie de leur contenu.
+- **Sources** : objets des mails et dates, conversations ou canaux Teams et dates, et comptes rendus cités par leur titre et leur date, sans copie de leur contenu.
 
 Si aucun échange pertinent n'est trouvé, le bloc se réduit à : « Synthèse : aucun échange pertinent trouvé dans les e-mails et Teams des 12 derniers mois. »
 
@@ -47,11 +50,12 @@ Si aucun échange pertinent n'est trouvé, le bloc se réduit à : « Synthèse 
 ## Règles générales
 
 - Ne rien inventer. Si rien de pertinent n'existe, écrire le message prévu plutôt que de combler par des suppositions.
-- Résumer, ne jamais recopier un mail ni reproduire de longs extraits.
+- Résumer, ne jamais recopier un mail, un message Teams ni un compte rendu, et ne jamais reproduire de longs extraits.
+- Un enregistrement ou une transcription de réunion n'est pas lu en entier : seules les décisions et actions qui s'y trouvent sont reprises, et seulement si elles sont déjà écrites dans le compte rendu ou le récapitulatif.
 - Aucun e-mail ni message Teams n'est envoyé, déplacé ni supprimé. Aucun rendez-vous Outlook n'est modifié.
 - Un mail qui n'a qu'un lien apparent avec la réunion (même mot, autre sujet) est écarté plutôt que forcé dans le contexte.
 - Une recherche en échec ou un agenda vide est signalé clairement dans la réponse finale.
 
 ## Réponse finale
 
-Une courte liste : nombre de rendez-vous traités, nombre avec contexte trouvé, nombre sans échange pertinent, part des sources Teams dans les contextes trouvés, et le lien vers la note « contexte agenda ». Pas de copie de la note dans le chat, sauf demande explicite.
+Une courte liste : nombre de rendez-vous traités, nombre avec contexte trouvé, nombre sans échange pertinent, part des sources Teams dans les contextes trouvés, nombre de rendez-vous avec un compte rendu de réunion précédente, et le lien vers la note « contexte agenda ». Pas de copie de la note dans le chat, sauf demande explicite.
