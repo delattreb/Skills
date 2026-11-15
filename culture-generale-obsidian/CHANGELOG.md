@@ -4,6 +4,12 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [Sem
 Chaque version publiée est marquée par un tag Git `culture-generale-obsidian-vX.Y.Z`.
 
 ## [Non publié]
+### Rationalisation
+- Réécriture du SKILL.md en un seul fonctionnement : production hebdomadaire, structure de fiche conservée, programme annuel conservé dans 90_Regie.
+- Suppression de l'annexe « copie de secours des consignes » du 14 novembre et de l'ancien texte quotidien : ils sont dans l'historique Git.
+- Suppression des liens Drive vers le programme et la réserve privés : le dépôt est public. Seuls les IDs de dossiers et de notes restent.
+- Un seul endroit par règle : programme, production, sources, données et révisions, vérification.
+
 ### Ajouté
 - Section « Production hebdomadaire par lots » : tâche cloud unique, jusqu'à sept fiches chaque dimanche à 7 h (Europe/Paris) à partir du 15 novembre 2026 ; classement par lot du dimanche au samedi dans `Culture G/01_Fiches/` ; manifeste de lot et reprise sans doublon après interruption ; propriétés `lot` et `date_lecture_conseillee` ; note `00_Lire_cette_semaine.md` par lot ; page Aujourd'hui en vue hebdomadaire ; arrêt à 365 fiches.
 - Les liens vers le programme et la réserve privés ne figurent pas dans la section ajoutée : le dépôt est public.
