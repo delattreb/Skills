@@ -1,6 +1,6 @@
 ---
 name: "culture-generale-obsidian"
-description: "Créer et gérer les fiches illustrées de culture générale du parcours CGI dans Obsidian MonVault (Google Drive), vérifier les publications, les index et les révisions."
+description: "Créer et gérer, en lot hebdomadaire, les fiches illustrées de culture générale du parcours CGI dans Obsidian MonVault (Google Drive), vérifier les publications, les index et les révisions."
 ---
 
 # Culture générale Obsidian
@@ -17,16 +17,27 @@ Lire en premier les consignes actives sur Drive : https://drive.google.com/file/
 Le regroupement de la régie dans le coffre remplace l'ancienne consigne de stockage hors coffre. Ne pas afficher les futurs sujets dans l'accueil, l'index ou les comptes rendus. Ne pas supprimer les archives.
 
 ## Publication
-Suivre le parcours parcours-illustre-2026, calendrier à partir du 9 novembre 2026, Europe/Paris. Avant une création, lire fiches et journaux : identifier par YAML id et parcours, même si le fichier a été renommé. Au maximum une publication par date civile, aucune si une publication a déjà eu lieu ou est en cours. Réparer le suivi après interruption avant de produire davantage. Ne pas confondre les anciens CG et les nouveaux CGI.
+Suivre le parcours parcours-illustre-2026, calendrier à partir du 9 novembre 2026, Europe/Paris. Avant une création, lire fiches et journaux : identifier par YAML id et parcours, même si le fichier a été renommé. Ne publier aucun doublon et ne publier pendant aucune autre exécution; le rythme de dépôt est défini dans « Automatisation hebdomadaire ». Réparer le suivi après interruption avant de produire davantage. Ne pas confondre les anciens CG et les nouveaux CGI.
 
 Lire la ligne correspondante du programme; les pistes ne sont pas des sources vérifiées. Ouvrir au moins deux sources pertinentes, de préférence primaires et d'organismes différents. Expliquer mécanisme, preuves, limites et termes. Inclure une illustration explicative précise : Mermaid, tableau avec unités ou SVG joint avec légende et texte alternatif. Signaler les données fictives et schémas conceptuels. Un exercice à réponse repliée si pertinent et zéro à trois liens valides vers des fiches antérieures. Aucun PowerPoint. Ne pas publier si les sources ou l'accès sont insuffisants.
 
 Écrire un Markdown UTF-8 CGI-NNNN.md sans écrasement, avec id, parcours, jour, date_publication réelle, date_decouverte vide, apprentissage non-lu et tags culture-generale. Ne jamais inventer une lecture, cocher une révision ou modifier les dates utilisateur. Préserver le type Date de date_decouverte.
 
-Relire le fichier publié dans Drive, vérifier contenu, YAML, sources, liens et pièces jointes. Actualiser les sections AUTO de l'index et de la page du jour par leurs IDs stables, préserver le texte hors marqueurs. Journaliser uniquement le résultat réellement vérifié. L'index ne liste que les CGI disponibles. Calculer les rappels J+1, J+7, J+30 depuis les dates de découverte renseignées et tenir compte des révisions déjà faites. À 365 CGI vérifiées, suspendre la tâche existante avec l'outil approprié; aucune année 2 sans demande.
+Relire le fichier publié dans Drive, vérifier contenu, YAML, sources, liens et pièces jointes. Actualiser les sections AUTO de l'index et de la page du jour par leurs IDs stables, préserver le texte hors marqueurs. Journaliser uniquement le résultat réellement vérifié. L'index ne liste que les CGI disponibles. Recalculer les rappels J+1, J+7, J+30 pendant le passage hebdomadaire, depuis les dates de découverte renseignées, en tenant compte des révisions déjà faites. À 365 CGI vérifiées, suspendre la tâche existante avec l'outil approprié; aucune année 2 sans demande.
 
 ## Automatisation et limites
 Le plugin contient une méthode réutilisable, il n'est pas un ordonnanceur. Réutiliser l'unique tâche cloud existante à 07:00 Europe/Paris. Ne pas créer une deuxième tâche, ne pas prétendre qu'une tâche existe ou fonctionne sans lecture de son état. Un déplacement Drive conservant les IDs ne nécessite pas de remplacer les liens. Si un connecteur manque, signaler précisément l'opération non effectuée; ne jamais annoncer une écriture locale comme une écriture cloud.
+
+## Automatisation hebdomadaire
+Cette section prime sur l'annexe quotidienne ci-dessous.
+
+Configuration choisie le 14 novembre 2026 : l'unique tâche cloud « Culture générale — lot hebdomadaire » prépare jusqu'à sept fiches chaque dimanche à 7 h, Europe/Paris, à partir du 15 novembre 2026.
+
+Classement : `Culture G/01_Fiches/AAAA-MM-JJ_au_AAAA-MM-JJ/`, du dimanche au samedi. Chaque fiche garde son ID CGI et son fichier Markdown individuel. Une note de semaine propose une lecture par jour. Les sept fiches sont disponibles dès le dépôt du lot ; les consulter dans Obsidian ne déclenche pas l'IA.
+
+La tâche suit les consignes actives. Elle reprend les IDs effectivement publiés, évite les doublons, vérifie sources et illustrations et s'arrête à 365 fiches. Après interruption, elle complète le même lot plutôt que d'en créer un nouveau.
+
+Le programme et les archives restent en 90_Regie. Les dates de découverte et les annotations sont conservées. Les rappels sont recalculés pendant le passage hebdomadaire, sans mise à jour quotidienne promise. Première exécution hebdomadaire encore à observer.
 
 ## Contrôle de maintenance
 Pour ranger des fichiers : inventorier, lire les parents actuels, déplacer sans copier avec addParents/removeParents, conserver les IDs et vérifier les parents après écriture. En cas de doublon d'ID YAML ou conflit utilisateur, préserver les deux fichiers et signaler le conflit.
