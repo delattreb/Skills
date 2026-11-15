@@ -4,6 +4,7 @@ Mes skills personnels pour Claude.
 
 | Skill | Rôle |
 |---|---|
+| [agenda-contexte](agenda-contexte/SKILL.md) | Ajouter à mes rendez-vous Outlook le contexte tiré de mes anciens e-mails. |
 | [critique-dessin](critique-dessin/SKILL.md) | Critiquer mes dessins, les intégrer dans mes fiches Obsidian et suivre ma progression. |
 | [culture-generale-obsidian](culture-generale-obsidian/SKILL.md) | Créer et gérer les fiches illustrées de culture générale du parcours CGI dans Obsidian. |
 | [meteo-astro-hebdo](meteo-astro-hebdo/SKILL.md) | Fiche météo astro des 7 prochaines nuits pour mon C8, avec graphisme des phases de Lune. |
