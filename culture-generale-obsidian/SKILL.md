@@ -48,6 +48,29 @@ Rédiger en français une fiche Markdown UTF-8. Expliquer le mécanisme, disting
 
 Utiliser le nom CGI-NNNN.md et les propriétés id, parcours, jour, date_publication, date_decouverte vide, apprentissage non-lu et tags culture-generale. Ajouter lot: AAAA-MM-JJ et date_lecture_conseillee (une date distincte pour chaque jour du dimanche au samedi). date_publication reste la date réelle du dépôt, identique pour les sept fiches si elles sont déposées ensemble ; ne pas inventer de dates de publication futures. Garder la propriété Obsidian date_decouverte au type Date. N'écrire aucune lecture ou révision à la place de l'utilisateur.
 
+### Structure de la fiche
+Chaque fiche publiée suit ce plan, dans cet ordre :
+
+```markdown
+# [Titre de la fiche parue]
+
+## Le mécanisme
+
+## Ce qui permet de le vérifier
+
+## Lire le visuel
+[Légende, unités et question de lecture.]
+
+## Vérification
+[Question, puis réponse.]
+
+## Connexions
+[Liens vers les fiches pertinentes déjà parues.]
+
+## Sources
+[Références ouvertes et passages utiles.]
+```
+
 ### Import, index et clôture
 Importer le Markdown puis relire le fichier dans Drive. Vérifier l'identifiant, le contenu, les sources et les cibles des liens. Actualiser les sections AUTO de l'index et de la page du jour en place, via leurs IDs stables 1r2D0zteCG-S3FpDQu79eCZM24bbS1wA6 et 13rFkxgDowuwypHurBKBvvQU6zKpN3bGF, sans toucher au contenu hors marqueurs. L'index contient uniquement les fiches parues et les regroupe par lot, avec des chemins Obsidian corrects. La page Aujourd'hui devient une vue de la semaine avec les sept liens datés et une invitation à choisir celui du jour, sans exécution quotidienne. Créer dans chaque lot une note `00_Lire_cette_semaine.md` avec les liens datés aux seules fiches réellement publiées.
 
