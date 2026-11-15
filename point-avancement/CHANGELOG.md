@@ -1,0 +1,11 @@
+# Changelog — point-avancement
+
+Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
+Chaque version publiée est marquée par un tag Git `point-avancement-vX.Y.Z`.
+
+## [0.1.0] — 2026-11-15
+### Ajouté
+- Première version : point d'avancement hebdomadaire en français (7 derniers jours) à partir des e-mails envoyés et reçus, du calendrier Outlook et de Teams via le connecteur Microsoft 365.
+- Format : réalisations par projet, décisions, en suspens / à suivre, à venir (7 jours suivants).
+- Lecture seule stricte ; signalement en une ligne si le connecteur est indisponible.
+- Référence `references/tri-et-classement.md` pour filtrer le bruit et classer les éléments.
