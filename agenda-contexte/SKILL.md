@@ -12,7 +12,7 @@ Pour chaque rendez-vous de la période demandée, retrouver dans les anciens e-m
 ## Déroulé
 
 1. **Fixer la période.** Par défaut, les 7 prochains jours, fuseau Europe/Paris.
-2. **Lister les rendez-vous** avec la recherche d'agenda Microsoft 365 (titre, date, heure, organisateur, participants, description). Écarter les rendez-vous annulés et les blocs personnels sans invité. Annoncer le nombre trouvé avant de lancer les recherches de mails.
+2. **Lister les rendez-vous** avec la recherche d'agenda Microsoft 365 (titre, date, heure, organisateur, participants, description). Écarter les rendez-vous annulés et les blocs personnels sans invité. Repérer ceux que l'utilisateur organise lui-même : ils ne sont jamais modifiés (voir la règle d'écriture). Annoncer le nombre trouvé avant de lancer les recherches de mails.
 3. **Chercher les échanges passés** pour chaque rendez-vous avec la recherche d'e-mails Microsoft 365 :
    - par adresse de chaque participant clé (expéditeur ou destinataire) ;
    - par mots-clés distinctifs tirés du titre et de la description (ignorer les mots vides) ;
@@ -37,7 +37,8 @@ Si aucun échange pertinent n'est trouvé, le bloc se réduit à : « Contexte �
 
 - **Conserver la description existante.** Le bloc « Contexte » est ajouté à la fin, après une ligne de séparation. Ne jamais supprimer ni réécrire ce qui était déjà là.
 - **Ne jamais dupliquer.** Si un titre « Contexte » existe déjà dans la description, remplacer uniquement ce bloc par la nouvelle version, sans toucher au reste.
-- **Modifier uniquement la description.** Ne pas changer le titre, l'horaire, le lieu ni les participants.
+- **Ne jamais écrire dans les rendez-vous organisés par l'utilisateur.** Sa description est visible par tous les invités, et le contexte tiré de ses mails privés ne doit pas leur être exposé. Ces rendez-vous sont traités comme les autres pour la recherche, mais le bloc rédigé est seulement présenté dans la réponse finale, sous une section dédiée, pour que l'utilisateur le colle lui-même s'il le souhaite.
+- **Modifier uniquement la description.** Ne pas changer le titre, l'horaire, le lieu ni les participants. Lors de la réécriture de la description, reprendre à l'identique tout le contenu existant (y compris les blocs de connexion aux réunions Teams).
 - **Ignorer les événements non modifiables.** Si l'outil de mise à jour refuse (événement d'un autre organisateur, par exemple), ne pas insister : le signaler dans la réponse finale avec le contexte rédigé, pour que l'utilisateur puisse le coller lui-même.
 
 ## Règles générales
@@ -50,4 +51,4 @@ Si aucun échange pertinent n'est trouvé, le bloc se réduit à : « Contexte �
 
 ## Réponse finale
 
-Une courte liste : nombre de rendez-vous traités, nombre avec contexte trouvé, nombre sans échange pertinent, et les éventuels rendez-vous qui n'ont pas pu être modifiés (avec le texte à coller). Pas de copie des fiches dans le chat, sauf demande explicite.
+Une courte liste : nombre de rendez-vous traités, nombre avec contexte trouvé, nombre sans échange pertinent, nombre de rendez-vous écrits. Ensuite, une section « Réunions organisées (non modifiées) » avec le bloc « Contexte » rédigé pour chacune, et les éventuels rendez-vous qui n'ont pas pu être modifiés (avec le texte à coller). Pas de copie des fiches dans le chat, sauf demande explicite.
