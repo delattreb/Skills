@@ -1,6 +1,6 @@
 ---
 name: "recherche-emploi-informatique"
-description: "Recherche autonome d'offres de responsable informatique (SI, transformation, pôle build) à Rouen ou en télétravail partiel, classées selon l'adéquation avec le profil de Bruno Delattre, à utiliser dès qu'on parle de chercher, trier ou évaluer des offres d'emploi, y compris pour la recherche hebdomadaire planifiée."
+description: "Recherche autonome d'offres de responsable informatique (SI, transformation, pôle build) à Rouen et alentours (30 km), classées selon l'adéquation avec le profil de Bruno Delattre, à utiliser dès qu'on parle de chercher, trier ou évaluer des offres d'emploi, y compris pour la recherche hebdomadaire planifiée."
 ---
 
 # Recherche d'emploi : responsable informatique
@@ -19,7 +19,7 @@ Source : CV de Bruno Delattre (version « New CV »). Utilise-le tel quel pour l
 - **Niveaux déclarés** : management expert, agilité expert, développement expert, architecture avancé, ERP avancé (Sage X3, Aurion), anglais technique lu et écrit.
 - **Méthodes** : Scrum, ITIL (incidents, problèmes, changements), PRINCE2 Fondations (2026), ITIL4 Fondations (2025).
 - **Diplôme** : Master 2 Manager en systèmes d'information (CESI, VAE, 2022).
-- **Zone** : Rouen. Télétravail partiel accepté, télétravail complet et mobilité lointaine non.
+- **Zone** : Rouen et alentours, dans un rayon de 30 km. Les offres au-delà sont hors zone.
 
 Les coordonnées personnelles ne figurent pas dans ce skill et ne doivent jamais être recopiées dans une réponse ou une requête.
 
@@ -29,10 +29,10 @@ Utilise ces critères par défaut et annonce-les en tête de réponse.
 
 - **Fraîcheur** : seules les offres publiées depuis 14 jours au maximum comptent. Une offre dont la date de publication n'est pas vérifiable sur la page elle-même n'est pas listée dans le classement ; elle va dans une section « Date à vérifier ».
 - **Intitulés** : responsable SI, responsable de pôle SI, head of IT, DSI ou DSI adjoint, responsable build ou delivery, responsable transformation.
-- **Zone** : Rouen et environs, télétravail partiel accepté.
+- **Zone** : Rouen et alentours, rayon de 30 km. Une offre dont le lieu est au-delà de 30 km de Rouen est écartée. Le télétravail n'est pas un critère : il ne qualifie ni n'exclut une offre.
 - **Rémunération** : minimum 52 000 € brut annuel. Une offre sans salaire est classée mais signalée « salaire non indiqué ». Une offre dont le salaire maximum est sous 52 000 € est écartée.
 - **ERP** : l'ERP n'est pas le critère de recherche. Une offre dont le cœur est un poste ERP (responsable Sage X3, responsable ERP) sans pilotage de transformation ni d'équipe est classée au plus à 3 et signalée dans les points de vigilance. Elle n'est pas exclue pour autant si le poste comporte de la transformation SI ou de la gouvernance.
-- **À exclure** : postes de technicien ou de chef de projet junior, postes sans responsabilité d'équipe, offres trop éloignées du profil, télétravail complet, offres dont la date limite de candidature est dépassée.
+- **À exclure** : postes de technicien ou de chef de projet junior, postes sans responsabilité d'équipe, offres trop éloignées du profil, offres hors de la zone de 30 km, offres dont la date limite de candidature est dépassée.
 
 Ces filtres existent parce que la personne cherche un rôle de responsabilité, et chaque offre hors critères lui coûte du temps de lecture.
 
@@ -45,9 +45,9 @@ Ces filtres existent parce que la personne cherche un rôle de responsabilité, 
 
 ## Recherche
 
-Lance les recherches en parallèle, une par source : **APEC (apec.fr)**, LinkedIn, Indeed, France Travail, Hellowork, sites carrières des entreprises et collectivités de la région (Rouen, Normandie), Choisir le service public pour les postes territoriaux et d'État. L'APEC est prioritaire pour les postes cadres : fais-y une recherche dans la zone Rouen / Seine-Maritime, puis sur les intitulés clés. Si une source n'est pas accessible, dis-le dans la réponse plutôt que de la remplacer sans le signaler. Varie les intitulés et les mots-clés (« responsable SI Rouen », « responsable transformation SI Normandie », « head of IT Rouen », « DSI Rouen », « responsable transformation numérique Normandie »). Ne répète pas des requêtes presque identiques. Privilégie les pages d'offre aux agrégateurs.
+Lance les recherches en parallèle, une par source : **APEC (apec.fr)**, LinkedIn, Indeed, France Travail, Hellowork, sites carrières des entreprises et collectivités de la zone (Rouen et alentours, 30 km), Choisir le service public pour les postes territoriaux et d'État. L'APEC est prioritaire pour les postes cadres : fais-y une recherche dans la zone Rouen et 30 km autour, puis sur les intitulés clés. Si une source n'est pas accessible, dis-le dans la réponse plutôt que de la remplacer sans le signaler. Varie les intitulés et les mots-clés (« responsable SI Rouen », « responsable transformation SI Normandie », « head of IT Rouen », « DSI Rouen », « responsable transformation numérique Normandie »). Ne répète pas des requêtes presque identiques. Privilégie les pages d'offre aux agrégateurs.
 
-LinkedIn et Indeed : interroge leurs pages de recherche d'offres avec les mêmes intitulés et la zone Rouen / Seine-Maritime, en plus de la recherche générale. Si ces pages ne renvoient aucune offre (liste vide, CVthèque, pages de salaires), écris « aucune offre renvoyée » dans Sources consultées au lieu de les compter comme consultées. Ne cite jamais une offre LinkedIn ou Indeed que tu n'as pas lue sur sa page.
+LinkedIn et Indeed : interroge leurs pages de recherche d'offres avec les mêmes intitulés et la zone Rouen et 30 km autour, en plus de la recherche générale. Si ces pages ne renvoient aucune offre (liste vide, CVthèque, pages de salaires), écris « aucune offre renvoyée » dans Sources consultées au lieu de les compter comme consultées. Ne cite jamais une offre LinkedIn ou Indeed que tu n'as pas lue sur sa page.
 
 ## Boîte Gmail, libellé « Emploi »
 
@@ -67,7 +67,7 @@ Si le connecteur Gmail ou le libellé « Emploi » est inaccessible, écris-le e
 Note chaque offre retenue sur 5, selon trois axes par ordre d'importance :
 1. **Niveau de responsabilité** comparé à celui du profil de référence.
 2. **Recouvrement des compétences** : agilité, transformation, pilotage budgétaire, ITIL. L'ERP compte comme compétence secondaire, sans poids particulier.
-3. **Conditions** : zone, télétravail, salaire.
+3. **Conditions** : zone, salaire.
 
 Une note de 5 correspond à un poste qui serait une suite naturelle du parcours. Une note de 3 demande une compétence absente ou un niveau un peu supérieur. Les offres sous 3 ne sont pas montrées, sauf demande explicite.
 
@@ -78,7 +78,7 @@ Réponds en français, avec cette structure :
 1. **Critères appliqués** : une ligne rappelant la fenêtre de 14 jours, la zone et le seuil de salaire.
 2. **Tableau classé** par note décroissante :
 
-| Note | Poste | Entreprise | Lieu / télétravail | Salaire | Date de publication | Source | Pourquoi ça colle | Points de vigilance | Lien |
+| Note | Poste | Entreprise | Lieu | Salaire | Date de publication | Source | Pourquoi ça colle | Points de vigilance | Lien |
 
 3. **Date à vérifier** : offres pertinentes sans date absolue, avec le lien pour que la personne vérifie.
 4. **Écartées** : une ligne par offre écartée et la raison (date, salaire, zone, niveau).

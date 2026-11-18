@@ -3,6 +3,11 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 Chaque version publiée est marquée par un tag Git `recherche-emploi-informatique-vX.Y.Z`.
 
+## [0.3.0] — 2026-11-18
+### Modifié
+- Critère télétravail supprimé : il ne qualifie ni n'exclut une offre, et la colonne « Lieu / télétravail » devient « Lieu ».
+- Zone de recherche : Rouen et alentours dans un rayon de 30 km (au lieu de Rouen, environs et télétravail partiel). Les offres au-delà sont écartées.
+
 ## [0.2.0] — 2026-11-18
 ### Ajouté
 - Tri de la boîte Gmail, libellé « Emploi » : parcours de tous les messages, détection des offres en doublon, corbeille des doublons (jamais de suppression définitive), passage en lu des alertes exploitées.
