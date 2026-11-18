@@ -10,4 +10,5 @@ Mes skills personnels pour Claude.
 | [meteo-astro-hebdo](meteo-astro-hebdo/SKILL.md) | Fiche météo astro des 7 prochaines nuits pour mon C8, avec graphisme des phases de Lune. |
 | [point-avancement](point-avancement/SKILL.md) | Rédiger mon point d'avancement hebdomadaire à partir d'Outlook et Teams (lecture seule). |
 | [ppt-neoma](ppt-neoma/SKILL.md) | Créer un PowerPoint modifiable au format NEOMA. |
+| [recherche-emploi-informatique](recherche-emploi-informatique/SKILL.md) | Rechercher et classer des offres de responsable informatique à Rouen, et trier ma boîte Gmail « Emploi ». |
 | [recettes-obsidian](recettes-obsidian/SKILL.md) | Créer, illustrer et modifier des recettes Markdown dans Obsidian. |
