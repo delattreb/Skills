@@ -21,7 +21,7 @@ Le nom de la personne (prénom et nom). Si absent, le demander. Période par dé
 5. Le chat Teams 1:1 avec le manager est informel : ne pas en citer le contenu. Les canaux de projet et réunions peuvent alimenter les projets.
 6. Les résultats sont paginés : indiquer ce qui a été couvert et ce qui ne l'a pas été.
 
-## Contenu de la fiche (réponse conversationnelle, pas de fichier sauf demande)
+## Contenu de la fiche (écrite dans Obsidian, pas affichée dans la réponse)
 - Sujet sensible prioritaire, si l'un existe (rémunération, évolution, conflit, charge) : état des lieux chronologique, engagements pris par le manager avec leur échéance, ce que la personne attend précisément.
 - Projets en cours : un court paragraphe par projet avec l'état, les retards, les décisions récentes, les points où elle attend quelque chose.
 - Agenda à venir avec elle (heures en fuseau Europe/Paris) et mention s'il n'existe aucun 1to1 dédié.
@@ -42,6 +42,6 @@ Après la réponse, écrire la fiche en Markdown dans le coffre Obsidian NeomaVa
 - créer le répertoire de la semaine s'il n'existe pas ;
 - si le fichier de la personne existe déjà cette semaine, le remplacer par la version à jour ;
 - en tête de fichier, un bloc YAML : personne, date de préparation, semaine, période analysée ;
-- le contenu est la fiche telle que présentée dans la réponse, sans ajout ;
+- le contenu est la fiche complète, écrite directement dans Obsidian sans être recopiée dans la réponse ;
 - retrouver l'emplacement du coffre via les dossiers connectés de l'ordinateur (device_list_dir sur le dossier connecté, ou Google Drive si le coffre y est synchronisé) ; si le coffre est introuvable, le dire et proposer d'ajouter le dossier, sans écrire ailleurs ;
-- indiquer à la fin le chemin exact du fichier créé.
+- la réponse au manager se limite au chemin exact du fichier créé et à 1 à 3 points d'alerte (échéances proches ou dépassées, demandes en attente). Ne pas reproduire la fiche dans la réponse.
