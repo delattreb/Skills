@@ -12,3 +12,4 @@ Mes skills personnels pour Claude.
 | [ppt-neoma](ppt-neoma/SKILL.md) | Créer un PowerPoint modifiable au format NEOMA. |
 | [recherche-emploi-informatique](recherche-emploi-informatique/SKILL.md) | Rechercher et classer des offres de responsable informatique à Rouen, et trier ma boîte Gmail « Emploi ». |
 | [recettes-obsidian](recettes-obsidian/SKILL.md) | Créer, illustrer et modifier des recettes Markdown dans Obsidian. |
+${ROW}
