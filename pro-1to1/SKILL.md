@@ -1,5 +1,5 @@
 ---
-name: "1to1"
+name: "pro-1to1"
 description: "Prépare un entretien individuel (1to1) avec un membre de l'équipe à partir des mails, Teams et agenda Outlook (Microsoft 365, lecture seule). À utiliser pour « 1to1 », « prépare mon 1to1 avec X »."
 ---
 

@@ -1,7 +1,11 @@
-# Changelog — recherche-emploi-informatique
+# Changelog — pro-recherche-emploi-informatique
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
-Chaque version publiée est marquée par un tag Git `recherche-emploi-informatique-vX.Y.Z`.
+Chaque version publiée est marquée par un tag Git `pro-recherche-emploi-informatique-vX.Y.Z`.
+
+## [Non publié]
+### Renommé
+- Skill renommé : `recherche-emploi-informatique` devient `pro-recherche-emploi-informatique` (dossier, champ `name`, commande `/pro-recherche-emploi-informatique`, tags Git `pro-recherche-emploi-informatique-vX.Y.Z`).
 
 ## [0.3.0] — 2026-11-18
 ### Modifié

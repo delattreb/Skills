@@ -1,7 +1,12 @@
-# Changelog — 1to1
+# Changelog — pro-1to1
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
-Chaque version publiée est marquée par un tag Git `1to1-vX.Y.Z`.
+Chaque version publiée est marquée par un tag Git `pro-1to1-vX.Y.Z`.
+
+## [Non publié]
+### Renommé
+- Skill renommé : `1to1` devient `pro-1to1` (dossier, champ `name`, commande `/pro-1to1`, tags Git `pro-1to1-vX.Y.Z`).
+
 ## [0.2.0] — 2026-11-19
 ### Modifié
 - La fiche est écrite directement dans Obsidian NeomaVault et n'est plus recopiée dans la réponse.

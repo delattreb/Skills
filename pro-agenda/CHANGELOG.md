@@ -1,7 +1,11 @@
-# Changelog — agenda
+# Changelog — pro-agenda
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
-Chaque version publiée est marquée par un tag Git `agenda-vX.Y.Z`.
+Chaque version publiée est marquée par un tag Git `pro-agenda-vX.Y.Z`.
+
+## [Non publié]
+### Renommé
+- Skill renommé : `agenda` devient `pro-agenda` (dossier, champ `name`, commande `/pro-agenda`, tags Git `pro-agenda-vX.Y.Z`).
 
 ## [0.1.0] — 2026-11-16
 ### Ajouté

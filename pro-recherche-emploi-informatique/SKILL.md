@@ -1,5 +1,5 @@
 ---
-name: "recherche-emploi-informatique"
+name: "pro-recherche-emploi-informatique"
 description: "Recherche autonome d'offres de responsable informatique (SI, transformation, pôle build) à Rouen et alentours (30 km), classées selon l'adéquation avec le profil de Bruno Delattre, à utiliser dès qu'on parle de chercher, trier ou évaluer des offres d'emploi, y compris pour la recherche hebdomadaire planifiée."
 ---
 

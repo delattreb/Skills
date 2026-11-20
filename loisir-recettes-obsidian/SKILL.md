@@ -1,5 +1,5 @@
 ---
-name: recettes-obsidian
+name: "loisir-recettes-obsidian"
 description: Créer, illustrer et modifier des recettes Markdown dans Obsidian à partir de textes, liens, photos ou documents, avec YAML, sources, adaptation des portions et contrôle des doublons.
 ---
 

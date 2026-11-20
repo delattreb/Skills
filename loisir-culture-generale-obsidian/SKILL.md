@@ -1,5 +1,5 @@
 ---
-name: "culture-generale-obsidian"
+name: "loisir-culture-generale-obsidian"
 description: "Créer et gérer, en lot hebdomadaire, les fiches illustrées de culture générale du parcours CGI dans Obsidian MonVault (Google Drive) : publication, index, révisions et vérifications."
 ---
 
