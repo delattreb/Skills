@@ -1,6 +1,6 @@
 ---
-name: meteo-astro-hebdo
-description: Rédige en français une fiche d'aide à la décision « astronomie » pour les 7 prochaines nuits au lieu d'observation de l'utilisateur (Clères / La Rue-Saint-Pierre, 76690) avec son Celestron C8 : nuages, Lune (avec graphisme des phases et frises horaires), crépuscules, seeing, transparence, buée, note et verdict par nuit, cibles conseillées. Publie une page artifact en thème rouge et noir. À utiliser quand l'utilisateur demande « fiche météo astro », « météo astro de la semaine », « /meteo-astro-hebdo », « est-ce que je sors le télescope cette semaine », « quelles nuits pour observer » ou « prévisions astro ».
+name: "loisir-meteo-astro-hebdo"
+description: Rédige en français une fiche d'aide à la décision « astronomie » pour les 7 prochaines nuits au lieu d'observation de l'utilisateur (Clères / La Rue-Saint-Pierre, 76690) avec son Celestron C8 : nuages, Lune (avec graphisme des phases et frises horaires), crépuscules, seeing, transparence, buée, note et verdict par nuit, cibles conseillées. Publie une page artifact en thème rouge et noir. À utiliser quand l'utilisateur demande « fiche météo astro », « météo astro de la semaine », « /loisir-meteo-astro-hebdo », « est-ce que je sors le télescope cette semaine », « quelles nuits pour observer » ou « prévisions astro ».
 metadata:
   version: "0.1.0"
 ---

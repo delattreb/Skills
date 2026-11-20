@@ -1,6 +1,6 @@
 ---
-name: agenda
-description: Parcourt l'agenda professionnel Outlook (connecteur Microsoft 365) sur les 7 prochains jours et, pour chaque rendez-vous, reconstitue le contexte à partir des e-mails (12 mois), des conversations Teams (3 mois) et de tous les comptes rendus de réunions liés, afin de préparer chaque réunion et de ne pas être surpris. Écrit le résultat dans Obsidian, coffre NeomaVault, fichier Agenda/agenda.md (remplacé à chaque lancement). À utiliser quand l'utilisateur demande « /agenda », « prépare ma semaine », « prépare mes réunions », « qu'est-ce que j'ai cette semaine », « contexte de mes rendez-vous », « brief de réunion », ou parle de préparer ses rendez-vous à venir, même sans citer Outlook ni le skill.
+name: "pro-agenda"
+description: Parcourt l'agenda professionnel Outlook (connecteur Microsoft 365) sur les 7 prochains jours et, pour chaque rendez-vous, reconstitue le contexte à partir des e-mails (12 mois), des conversations Teams (3 mois) et de tous les comptes rendus de réunions liés, afin de préparer chaque réunion et de ne pas être surpris. Écrit le résultat dans Obsidian, coffre NeomaVault, fichier Agenda/agenda.md (remplacé à chaque lancement). À utiliser quand l'utilisateur demande « /pro-agenda », « prépare ma semaine », « prépare mes réunions », « qu'est-ce que j'ai cette semaine », « contexte de mes rendez-vous », « brief de réunion », ou parle de préparer ses rendez-vous à venir, même sans citer Outlook ni le skill.
 metadata:
   version: "0.1.0"
 ---

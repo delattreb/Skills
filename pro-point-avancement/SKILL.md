@@ -1,6 +1,6 @@
 ---
-name: point-avancement
-description: Rédige en français un court point d'avancement hebdomadaire couvrant les 7 derniers jours, à partir des e-mails envoyés et reçus, du calendrier Outlook et des messages Teams (connecteur Microsoft 365, lecture seule), et l'enregistre dans Obsidian (coffre Neoma Vault, Agenda/point avancement.md). À utiliser quand l'utilisateur demande « point d'avancement », « point hebdo », « /point-avancement », « résumé de ma semaine », « sur quoi j'ai travaillé cette semaine », « weekly status » ou « rapport hebdomadaire ».
+name: "pro-point-avancement"
+description: Rédige en français un court point d'avancement hebdomadaire couvrant les 7 derniers jours, à partir des e-mails envoyés et reçus, du calendrier Outlook et des messages Teams (connecteur Microsoft 365, lecture seule), et l'enregistre dans Obsidian (coffre Neoma Vault, Agenda/point avancement.md). À utiliser quand l'utilisateur demande « point d'avancement », « point hebdo », « /pro-point-avancement », « résumé de ma semaine », « sur quoi j'ai travaillé cette semaine », « weekly status » ou « rapport hebdomadaire ».
 metadata:
   version: "0.2.0"
 ---

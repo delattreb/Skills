@@ -1,7 +1,11 @@
-# Changelog — meteo-astro-hebdo
+# Changelog — loisir-meteo-astro-hebdo
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
-Chaque version publiée est marquée par un tag Git `meteo-astro-hebdo-vX.Y.Z`.
+Chaque version publiée est marquée par un tag Git `loisir-meteo-astro-hebdo-vX.Y.Z`.
+
+## [Non publié]
+### Renommé
+- Skill renommé : `meteo-astro-hebdo` devient `loisir-meteo-astro-hebdo` (dossier, champ `name`, commande `/loisir-meteo-astro-hebdo`, tags Git `loisir-meteo-astro-hebdo-vX.Y.Z`).
 
 ## [0.1.0] — 2026-11-15
 ### Ajouté

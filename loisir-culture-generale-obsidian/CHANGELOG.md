@@ -1,9 +1,12 @@
-# Changelog — culture-generale-obsidian
+# Changelog — loisir-culture-generale-obsidian
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
-Chaque version publiée est marquée par un tag Git `culture-generale-obsidian-vX.Y.Z`.
+Chaque version publiée est marquée par un tag Git `loisir-culture-generale-obsidian-vX.Y.Z`.
 
 ## [Non publié]
+### Renommé
+- Skill renommé : `culture-generale-obsidian` devient `loisir-culture-generale-obsidian` (dossier, champ `name`, commande `/loisir-culture-generale-obsidian`, tags Git `loisir-culture-generale-obsidian-vX.Y.Z`).
+
 ### Rationalisation
 - Réécriture du SKILL.md en un seul fonctionnement : production hebdomadaire, structure de fiche conservée, programme annuel conservé dans 90_Regie.
 - Suppression de l'annexe « copie de secours des consignes » du 14 novembre et de l'ancien texte quotidien : ils sont dans l'historique Git.

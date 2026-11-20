@@ -1,5 +1,5 @@
 ---
-name: ppt-neoma
+name: "pro-ppt-neoma"
 description: Crée un PowerPoint modifiable au format NEOMA à partir de données dans le message ou en pièce jointe.
 ---
 
