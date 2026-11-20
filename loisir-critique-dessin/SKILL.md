@@ -2,7 +2,7 @@
 name: "loisir-critique-dessin"
 metadata:
   version: "0.4.0"
-description: Critiquer franchement les dessins de l'utilisateur et intégrer les critiques dans ses fiches Obsidian et suivre sa progression artistique, avec copies annotée et corrigée, explications et exercices ciblés. À utiliser pour les critiques d'œuvres et les bilans de progression en dessin.
+description: "Critiquer franchement les dessins de l'utilisateur et intégrer les critiques dans ses fiches Obsidian et suivre sa progression artistique, avec copies annotée et corrigée, explications et exercices ciblés. À utiliser pour les critiques d'œuvres et les bilans de progression en dessin."
 ---
 
 # Critique dessin — Atelier de progression
