@@ -13,3 +13,10 @@ Mes skills personnels pour Claude.
 | [loisir-culture-generale-obsidian](loisir/loisir-culture-generale-obsidian/SKILL.md) | Créer et gérer les fiches illustrées de culture générale du parcours CGI dans Obsidian. |
 | [loisir-meteo-astro-hebdo](loisir/loisir-meteo-astro-hebdo/SKILL.md) | Fiche météo astro des 7 prochaines nuits pour mon C8, avec graphisme des phases de Lune. |
 | [loisir-recettes-obsidian](loisir/loisir-recettes-obsidian/SKILL.md) | Créer, illustrer et modifier des recettes Markdown dans Obsidian. |
+
+## Installation
+
+Le dépôt est un plugin Claude (`.claude-plugin/plugin.json`) qui regroupe tous les skills de `pro/` et `loisir/`.
+
+- **Tout d'un coup** : importer dans Claude (Paramètres → Capacités) une archive .zip du dépôt dont la racine contient `.claude-plugin/`.
+- **Un seul skill** : importer une archive .zip qui ne contient que le dossier de ce skill (par exemple `pro-agenda/` avec son `SKILL.md`).
