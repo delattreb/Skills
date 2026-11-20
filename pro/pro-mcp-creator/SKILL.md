@@ -1,6 +1,6 @@
 ---
 name: "pro-mcp-creator"
-description: "Crée un squelette de serveur MCP (Python FastMCP ou TypeScript) avec outils, ressources, tests et configuration client. À utiliser pour « crée un serveur MCP », « MCP creator », « nouveau connecteur MCP »."
+description: "Crée un squelette de serveur MCP (Python MCPServer ou TypeScript) avec outils, ressources, tests et configuration client. À utiliser pour « crée un serveur MCP », « MCP creator », « nouveau connecteur MCP »."
 ---
 
 # MCP creator : création d'un serveur MCP
@@ -11,13 +11,13 @@ Objectif : produire un serveur MCP minimal, fonctionnel et testable, prêt à ê
 Demander seulement ce qui manque parmi :
 - le nom du serveur et ce qu'il doit faire (un ou plusieurs outils, avec leurs paramètres et leur retour attendu) ;
 - les ressources ou prompts éventuels ;
-- le langage : Python par défaut (FastMCP), TypeScript si demandé ;
+- le langage : Python par défaut (SDK `mcp` 2.x, classe `MCPServer`), TypeScript si demandé ;
 - le transport : `stdio` par défaut (serveur lancé localement par le client), `streamable-http` si le serveur doit tourner à distance.
 
 Si l'utilisateur ne précise pas le langage ni le transport, prendre les valeurs par défaut et le dire en une phrase au début de la réponse.
 
 ## Méthode
-1. Vérifier la documentation officielle avant d'écrire le code : les SDK évoluent vite. Pour Python, consulter https://py.sdk.modelcontextprotocol.io/ et confirmer le nom de la classe et l'import (`FastMCP` dans `mcp.server.fastmcp`, à valider). Pour TypeScript, consulter le dépôt `modelcontextprotocol/typescript-sdk`. Ne jamais affirmer une API, un import ou une version sans l'avoir vérifié.
+1. Vérifier la documentation officielle avant d'écrire le code : les SDK évoluent vite. Pour Python, consulter https://py.sdk.modelcontextprotocol.io/ et vérifier la version installée (`pip show mcp`). Avec `mcp` 2.x, la classe est `MCPServer`, importée depuis `mcp.server.mcpserver` ; `FastMCP` de `mcp.server.fastmcp` n'existe plus dans cette version. Pour un code en `mcp` 1.x, épingler `mcp<2` et utiliser `FastMCP`. Pour TypeScript, consulter le dépôt `modelcontextprotocol/typescript-sdk`. Ne jamais affirmer une API, un import ou une version sans l'avoir vérifié dans la version installée.
 2. Créer l'arborescence :
    ```
    mon-mcp-server/
