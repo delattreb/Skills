@@ -7,6 +7,7 @@ Mes skills personnels pour Claude.
 | [pro-1to1](pro/pro-1to1/SKILL.md) | Préparer un entretien 1to1 avec un membre de mon équipe à partir de mes mails, Teams et agenda (Microsoft 365, lecture seule), archivé dans Obsidian (NeomaVault). |
 | [pro-agenda](pro/pro-agenda/SKILL.md) | Préparer mes réunions des 7 prochains jours avec le contexte tiré de mes mails, de Teams et des comptes rendus, dans Obsidian (NeomaVault). |
 | [pro-point-avancement](pro/pro-point-avancement/SKILL.md) | Rédiger mon point d'avancement hebdomadaire à partir d'Outlook et Teams (lecture seule). |
+| [pro-mcp-creator](pro/pro-mcp-creator/SKILL.md) | Créer un squelette de serveur MCP (Python FastMCP ou TypeScript) avec outils, tests et configuration client. |
 | [pro-ppt-neoma](pro/pro-ppt-neoma/SKILL.md) | Créer un PowerPoint modifiable au format NEOMA. |
 | [pro-recherche-emploi-informatique](pro/pro-recherche-emploi-informatique/SKILL.md) | Rechercher et classer des offres de responsable informatique à Rouen, et trier ma boîte Gmail « Emploi ». |
 | [loisir-critique-dessin](loisir/loisir-critique-dessin/SKILL.md) | Critiquer mes dessins, les intégrer dans mes fiches Obsidian et suivre ma progression. |
