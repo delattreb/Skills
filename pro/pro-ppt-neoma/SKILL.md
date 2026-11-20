@@ -1,6 +1,6 @@
 ---
 name: "pro-ppt-neoma"
-description: Crée un PowerPoint modifiable au format NEOMA à partir de données dans le message ou en pièce jointe.
+description: "Crée un PowerPoint modifiable au format NEOMA à partir de données dans le message ou en pièce jointe."
 ---
 
 1. Lis les données et les pièces jointes. Déduis l’objectif et le public quand le contenu le permet. Si aucune donnée de présentation n’est fournie, demande-la.
