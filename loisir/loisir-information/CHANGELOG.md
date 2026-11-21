@@ -2,6 +2,13 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 
+## [0.4.0] — 2026-11-21
+### Ajouté
+- Rubrique « En cours » : sujets suivis sur plusieurs jours, avec le dernier fait confirmé.
+- Rubrique « Agenda officiel » remplace « À surveiller » : échéances officielles uniquement.
+- Phrase de climat en tête si aucun fait n'est confirmé, à partir des seuls faits confirmés.
+- Étape 2 : requêtes d'agenda officiel et de sujets ouverts.
+
 ## [0.3.0] — 2026-11-21
 ### Ajouté
 - Sources : Euronews, Le Temps, Public Sénat, The National (médias actifs) ; Ministère de l'Intérieur, CIJ, Refworld (officielles actives). Anadolu et Democracy Now présents mais inactifs (`actif: false`).

@@ -2,7 +2,7 @@
 name: "loisir-information"
 description: "Rédige en français un point d'information quotidien (dernières 48 h, 72 h le lundi) sur deux volets : l'actualité internationale importante et l'actualité française importante. S'appuie uniquement sur des recherches web, ne retient que des informations confirmées par au moins deux médias reconnus ou par une source officielle, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier information, un fichier horodaté par jour). À utiliser quand l'utilisateur demande « actualités », « infos du jour », « qu'est-ce qui s'est passé », « point info », « /loisir-information », « actu internationale », « actu France », « résumé de l'actu » ou lance le point d'information planifié."
 metadata:
-  version: "0.2.1"
+  version: "0.4.0"
 ---
 
 ## Approach
@@ -46,6 +46,7 @@ Lancer plusieurs requêtes par volet, en français et en anglais, avec le mois e
 
 1. **International** : événements politiques et diplomatiques majeurs, conflits, économie et marchés, décisions des grandes institutions (ONU, UE, G7, G20, banques centrales), catastrophes naturelles, sciences et santé publique à portée mondiale.
 2. **France** : décisions du gouvernement et du Parlement (textes publiés au Journal officiel), actualité politique et sociale majeure, économie et emploi, justice, grands événements, sécurité et santé publique, décisions de la Banque de France et des grandes autorités de régulation.
+3. **Agenda et suivi** : échéances officielles des semaines à venir (Journal officiel, préfectures, gouvernement, sommets annoncés, calendrier électoral), et sujets ouverts du point précédent (rubrique « En cours »), à reprendre seulement s'il y a un fait nouveau.
 
 Ouvrir les articles les plus importants pour vérifier la date, le fond et la confirmation. Pour chaque fait retenu, vérifier la règle de double confirmation (`confirmation.min_medias_independants`), de dépêche d'agence ou de source officielle ; sinon l'écarter. Un média dont le `volet` est `both` peut servir aux deux volets.
 
@@ -76,11 +77,16 @@ Sources : [Nom du média, JJ/MM/AAAA](URL), [Nom du média, JJ/MM/AAAA](URL)
 [2 à 3 phrases : ce qui s'est passé, qui est concerné, date, statut si incertain.]
 Sources : [Nom du média, JJ/MM/AAAA](URL), [Nom du média, JJ/MM/AAAA](URL)
 
-## À surveiller
-- [JJ/MM/AAAA] : [échéance officielle] ([source](URL))
+## En cours
+### [Sujet suivi sur plusieurs jours]
+[1 à 2 phrases : où en est le sujet, avec la date du dernier fait confirmé. Si rien de nouveau dans la fenêtre : « Pas de fait nouveau dans la fenêtre. », suivi de la date du dernier fait.]
+Sources : [Nom du média, JJ/MM/AAAA](URL)
+
+## Agenda officiel
+- [JJ/MM/AAAA] : [échéance officielle, par exemple arrêté préfectoral, Conseil des ministres, publication au Journal officiel, sommet, calendrier électoral] ([source officielle](URL))
 ```
 
-Pour une information officielle seule, écrire « Source officielle : [Nom, JJ/MM/AAAA](URL) » à la place de la double source. Une rubrique sans fait confirmé affiche « Rien de notable dans la fenêtre. ». La rubrique « À surveiller » est omise si aucune échéance officielle n'a été trouvée.
+Pour une information officielle seule, écrire « Source officielle : [Nom, JJ/MM/AAAA](URL) » à la place de la double source. Une rubrique sans fait confirmé affiche « Rien de notable dans la fenêtre. ». La rubrique « En cours » est omise s'il n'y a aucun sujet suivi d'un jour à l'autre. La rubrique « Agenda officiel » est omise si aucune échéance officielle n'a été trouvée. En tête du point, si aucun fait n'est confirmé, une phrase résume le climat général à partir des seuls faits confirmés de la période, sans adjectif évaluatif.
 
 Style : concis, factuel, sans remplissage ni formule d'introduction, sans adjectif évaluatif.
 
