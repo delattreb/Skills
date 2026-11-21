@@ -1,11 +1,15 @@
 {
-  "version": "0.2.0",
-  "commentaire": "Sources du point d'information. Ajouter, retirer ou désactiver une source ici, sans modifier SKILL.md. Les domaines sont des repères : chaque URL retenue doit avoir été renvoyée par la recherche ou ouverte. Une source désactivée (actif: false) n'est pas utilisée.",
+  "version": "0.2.2",
+  "commentaire": "Sources du point d'information. Ajouter, retirer ou désactiver une source ici, sans modifier SKILL.md. Les domaines sont des repères : chaque URL retenue doit avoir été renvoyée par la recherche ou ouverte. Une source désactivée (actif: false) n'est pas utilisée. Les domaines refusés par l'outil de recherche (allowed_domains) ont été retirés en 0.2.2 ; les reprises nommées de leurs dépêches restent acceptées (confirmation.agences_reprises).",
   "confirmation": {
     "min_medias_independants": 2,
     "source_officielle_suffisante": true,
     "agences_reprises": {
-      "agences": ["AFP", "Reuters", "Associated Press"],
+      "agences": [
+        "AFP",
+        "Reuters",
+        "Associated Press"
+      ],
       "reprise_nommee_requise": true
     }
   },
@@ -14,50 +18,218 @@
     "lundi_heures": 72
   },
   "medias": [
-    { "nom": "Reuters", "domaine": "reuters.com", "volet": "international", "actif": true },
-    { "nom": "AFP", "domaine": "afp.com", "volet": "both", "actif": true },
-    { "nom": "Associated Press", "domaine": "apnews.com", "volet": "international", "actif": true },
-    { "nom": "BBC News", "domaine": "bbc.com", "volet": "international", "actif": true },
-    { "nom": "The Guardian", "domaine": "theguardian.com", "volet": "international", "actif": true },
-    { "nom": "Financial Times", "domaine": "ft.com", "volet": "international", "actif": true },
-    { "nom": "The New York Times", "domaine": "nytimes.com", "volet": "international", "actif": true },
-    { "nom": "Al Jazeera", "domaine": "aljazeera.com", "volet": "international", "actif": true },
-    { "nom": "France 24", "domaine": "france24.com", "volet": "both", "actif": true },
-    { "nom": "RFI", "domaine": "rfi.fr", "volet": "both", "actif": true },
-    { "nom": "Politico Europe", "domaine": "politico.eu", "volet": "france", "actif": true },
-    { "nom": "Le Monde", "domaine": "lemonde.fr", "volet": "both", "actif": true },
-    { "nom": "Le Figaro", "domaine": "lefigaro.fr", "volet": "france", "actif": true },
-    { "nom": "Les Échos", "domaine": "lesechos.fr", "volet": "france", "actif": true },
-    { "nom": "franceinfo", "domaine": "franceinfo.fr", "volet": "france", "actif": true },
-    { "nom": "Libération", "domaine": "liberation.fr", "volet": "france", "actif": true },
-    { "nom": "Le Parisien", "domaine": "leparisien.fr", "volet": "france", "actif": true },
-    { "nom": "La Croix", "domaine": "la-croix.com", "volet": "france", "actif": true },
-    { "nom": "Ouest-France", "domaine": "ouest-france.fr", "volet": "france", "actif": true },
-    { "nom": "Le Point", "domaine": "lepoint.fr", "volet": "france", "actif": true },
-    { "nom": "L'Obs", "domaine": "nouvelobs.com", "volet": "france", "actif": true },
-    { "nom": "Mediapart", "domaine": "mediapart.fr", "volet": "france", "actif": true }
+    {
+      "nom": "Financial Times",
+      "domaine": "ft.com",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "The New York Times",
+      "domaine": "nytimes.com",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Al Jazeera",
+      "domaine": "aljazeera.com",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "France 24",
+      "domaine": "france24.com",
+      "volet": "both",
+      "actif": true
+    },
+    {
+      "nom": "Politico Europe",
+      "domaine": "politico.eu",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Le Figaro",
+      "domaine": "lefigaro.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Les Échos",
+      "domaine": "lesechos.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "franceinfo",
+      "domaine": "franceinfo.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Libération",
+      "domaine": "liberation.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Le Parisien",
+      "domaine": "leparisien.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "La Croix",
+      "domaine": "la-croix.com",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Ouest-France",
+      "domaine": "ouest-france.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Le Point",
+      "domaine": "lepoint.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "L'Obs",
+      "domaine": "nouvelobs.com",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Mediapart",
+      "domaine": "mediapart.fr",
+      "volet": "france",
+      "actif": true
+    }
   ],
   "officielles": [
-    { "nom": "Journal officiel", "domaine": "journal-officiel.gouv.fr", "volet": "france", "actif": true },
-    { "nom": "Légifrance", "domaine": "legifrance.gouv.fr", "volet": "france", "actif": true },
-    { "nom": "Gouvernement", "domaine": "gouvernement.fr", "volet": "france", "actif": true },
-    { "nom": "Élysée", "domaine": "elysee.fr", "volet": "france", "actif": true },
-    { "nom": "Assemblée nationale", "domaine": "assemblee-nationale.fr", "volet": "france", "actif": true },
-    { "nom": "Sénat", "domaine": "senat.fr", "volet": "france", "actif": true },
-    { "nom": "Service public", "domaine": "service-public.fr", "volet": "france", "actif": true },
-    { "nom": "Banque de France", "domaine": "banque-france.fr", "volet": "france", "actif": true },
-    { "nom": "Insee", "domaine": "insee.fr", "volet": "france", "actif": true },
-    { "nom": "Conseil constitutionnel", "domaine": "conseil-constitutionnel.fr", "volet": "france", "actif": true },
-    { "nom": "Conseil d'État", "domaine": "conseil-etat.fr", "volet": "france", "actif": true },
-    { "nom": "Santé publique France", "domaine": "santepubliquefrance.fr", "volet": "france", "actif": true },
-    { "nom": "Météo-France", "domaine": "meteofrance.com", "volet": "france", "actif": true },
-    { "nom": "Organisation des Nations unies", "domaine": "un.org", "volet": "international", "actif": true },
-    { "nom": "Union européenne", "domaine": "europa.eu", "volet": "international", "actif": true },
-    { "nom": "Banque centrale européenne", "domaine": "ecb.europa.eu", "volet": "international", "actif": true },
-    { "nom": "Fonds monétaire international", "domaine": "imf.org", "volet": "international", "actif": true },
-    { "nom": "Banque mondiale", "domaine": "worldbank.org", "volet": "international", "actif": true },
-    { "nom": "Organisation mondiale de la santé", "domaine": "who.int", "volet": "international", "actif": true },
-    { "nom": "USGS (séismes)", "domaine": "usgs.gov", "volet": "international", "actif": true }
+    {
+      "nom": "Journal officiel",
+      "domaine": "journal-officiel.gouv.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Légifrance",
+      "domaine": "legifrance.gouv.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Gouvernement",
+      "domaine": "gouvernement.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Élysée",
+      "domaine": "elysee.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Assemblée nationale",
+      "domaine": "assemblee-nationale.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Sénat",
+      "domaine": "senat.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Service public",
+      "domaine": "service-public.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Banque de France",
+      "domaine": "banque-france.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Insee",
+      "domaine": "insee.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Conseil constitutionnel",
+      "domaine": "conseil-constitutionnel.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Conseil d'État",
+      "domaine": "conseil-etat.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Santé publique France",
+      "domaine": "santepubliquefrance.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Météo-France",
+      "domaine": "meteofrance.com",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Organisation des Nations unies",
+      "domaine": "un.org",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Union européenne",
+      "domaine": "europa.eu",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Banque centrale européenne",
+      "domaine": "ecb.europa.eu",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Fonds monétaire international",
+      "domaine": "imf.org",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Banque mondiale",
+      "domaine": "worldbank.org",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Organisation mondiale de la santé",
+      "domaine": "who.int",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "USGS (séismes)",
+      "domaine": "usgs.gov",
+      "volet": "international",
+      "actif": true
+    }
   ],
   "exclues": [
     "agrégateurs de nouvelles",

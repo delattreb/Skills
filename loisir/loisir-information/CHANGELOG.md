@@ -2,6 +2,10 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 
+## [0.2.2] — 2026-11-21
+### Modifié
+- Sources retirées de `config/sources.json` : domaines refusés par l'outil de recherche (Reuters, AP, BBC, The Guardian, Le Monde, AFP, RFI). Leurs dépêches reprises nommément restent acceptées.
+
 ## [0.2.1] — 2026-11-21
 ### Modifié
 - Dossier de destination renommé `Information` (majuscule initiale), selon le nom réel dans le coffre.
