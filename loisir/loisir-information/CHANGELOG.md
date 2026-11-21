@@ -4,6 +4,7 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [Sem
 
 ## [0.1.0] — 2026-11-21
 ### Ajouté
+- Fichier de configuration `config/sources.json` : médias et sources officielles activables, volet de chaque source, seuil de confirmation.
 - Première version : point d'information quotidien en français sur deux volets, international et France, avec une rubrique « À surveiller » pour les échéances officielles.
 - Fenêtre de 24 h (72 h le lundi, depuis le dernier point pour un lancement manuel), 5 éléments au plus par volet, un fichier daté par jour.
 - Règle de confirmation : deux médias reconnus indépendants, ou une source officielle. Ni agrégateur, ni réseau social comme preuve.
