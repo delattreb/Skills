@@ -2,7 +2,7 @@
 name: "pro-veille-informatique"
 description: "Rédige en français une veille informatique quotidienne (dernières 24 h, 72 h le lundi) sur huit catégories : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud, cybersécurité, réglementation et données, infrastructure réseau et poste de travail, marché et éditeurs, geekerie (digital painting, Raspberry Pi, Arduino, Blender, impression 3D, électronique DIY). S'appuie uniquement sur des recherches web, ne retient que des informations confirmées, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier veille, un fichier horodaté par jour : AAAA-MM-JJ veille informatique.md). À utiliser quand l'utilisateur demande « veille informatique », « veille du jour », « fais ma veille », « veille IT », « veille techno », « /pro-veille-informatique », « quoi de neuf en IT », « actus IA / cyber / Microsoft 365 / enseignement supérieur / Raspberry / Blender » ou lance la veille quotidienne planifiée."
 metadata:
-  version: "0.1.0"
+  version: "0.3.0"
 ---
 
 ## Approach
@@ -111,12 +111,14 @@ Style : concis, professionnel, sans remplissage ni formule d'introduction. Une c
 
 Cible : **`Mon Drive/ObsidianVault/MonVault/veille/AAAA-MM-JJ veille informatique.md`**, où `AAAA-MM-JJ` est la date du jour de lancement (exemple : `2026-11-21 veille informatique.md` ; chemin local : `G:\Mon Drive\ObsidianVault\MonVault\veille\2026-11-21 veille informatique.md`). Le dossier `veille` est à la racine du coffre MonVault et s'écrit en minuscules. Ne jamais écrire dans le coffre de `pro-agenda`, `pro-1to1` ou `pro-point-avancement`.
 
-1. Si les outils du dossier connecté de l'ordinateur sont disponibles et que `G:\Mon Drive\ObsidianVault\MonVault` y est accessible, écrire le fichier directement dans `MonVault\veille` (créer ce dossier s'il n'existe pas). Sinon, passer par Google Drive.
+1. Si les outils du dossier connecté de l'ordinateur sont disponibles et que `G:\Mon Drive\ObsidianVault\MonVault` y est accessible, écrire le fichier directement dans `MonVault\veille` (créer ce dossier s'il n'existe pas), avec de vrais retours à la ligne, puis relire le fichier pour vérifier qu'il comporte plusieurs lignes. Sinon, passer par Google Drive.
 2. Via Google Drive : retrouver le dossier `MonVault` et **vérifier la chaîne complète des parents** : `MonVault → ObsidianVault → Mon Drive`. Ne jamais écrire dans un autre coffre ni dans une copie homonyme. Si la chaîne est introuvable ou ambiguë, s'arrêter et demander le lien du dossier.
 3. Dans ce `MonVault` vérifié, chercher le sous-dossier `veille` directement à la racine du coffre. S'il n'existe pas, le créer (`create_file`, type `application/vnd.google-apps.folder`) avec `MonVault` comme parent explicite. Ne jamais créer un second dossier `veille` ou `Veille`.
 4. Créer le fichier du jour (`create_file`) avec `veille` comme parent explicite. Si un fichier portant **la même date** existe déjà (veille relancée le même jour), mettre l'ancien à la corbeille (`trash_file`) avant de créer le nouveau, et le signaler dans la réponse finale. Ne jamais créer de doublon (`… (1).md`) et ne jamais toucher aux fichiers d'autres dates.
-5. Enregistrer un vrai fichier texte UTF-8 `.md` (`contentMimeType` `text/markdown`, `disableConversionToGoogleType` à vrai), **sans conversion en Google Doc**, pour qu'il reste lisible dans Obsidian. Le contenu est exactement la veille de l'étape 4.
-6. Relire les métadonnées du fichier enregistré : nom, parent, type. Ne pas affirmer que la synchronisation locale Obsidian est terminée.
+5. Enregistrer un vrai fichier texte UTF-8 `.md` (`contentMimeType` `text/markdown`, `disableConversionToGoogleType` à vrai), **sans conversion en Google Doc**, pour qu'il reste lisible dans Obsidian. Le contenu est exactement la veille de l'étape 4, **sur plusieurs lignes** : un vrai saut de ligne après chaque titre, paragraphe, ligne « Pour NEOMA » ou « Pourquoi c'est intéressant », ligne « Source » et élément de liste, et une ligne vide entre les blocs. Un fichier dont tout le texte tient sur une seule ligne est un échec.
+   - Méthode à privilégier : écrire d'abord la veille dans un fichier local temporaire (outil Write, avec de vrais retours à la ligne), puis l'envoyer avec `base64Content` sous forme de référence de fichier `sha256:<empreinte>:<chemin absolu>` (empreinte calculée avec `sha256sum`), ce qui transmet les octets tels quels.
+   - À défaut, passer le texte dans `textContent` avec de vrais retours à la ligne dans la valeur. Ne jamais y mettre les deux caractères littéraux `\n`, ni `<br>`, ni concaténer les lignes avec des espaces.
+6. Relire le fichier enregistré : métadonnées (nom, parent, type) **et contenu** (`download_file_content` ou `read_file_content`). Vérifier que le contenu comporte bien plusieurs lignes (titre `#` seul sur la première ligne, sections `##` en début de ligne) et ne contient pas de `\n` littéral. Sinon, mettre le fichier à la corbeille et le recréer avec la méthode par référence de fichier ; si le défaut persiste, le signaler dans le bilan. Ne pas affirmer que la synchronisation locale Obsidian est terminée.
 
 Si l'écriture est impossible, livrer la veille complète dans le chat et expliquer ce qui a bloqué.
 

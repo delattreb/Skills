@@ -3,6 +3,13 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 Chaque version publiée est marquée par un tag Git `pro-veille-informatique-vX.Y.Z`.
 
+## [0.3.0] — 2026-11-21
+### Corrigé
+- Le fichier Obsidian ne doit plus contenir toute la veille sur une seule ligne : contenu multiligne exigé (vrais sauts de ligne, ligne vide entre les blocs, aucun `\n` littéral).
+- Écriture via Google Drive : la veille est d'abord écrite dans un fichier local puis envoyée par référence de fichier (`base64Content` `sha256:<empreinte>:<chemin>`) ; `textContent` seulement à défaut, avec de vrais retours à la ligne.
+- Relecture du contenu enregistré (et plus seulement des métadonnées) ; si le fichier tient sur une ligne, il est remplacé, et le défaut persistant est signalé dans le bilan.
+- Version des métadonnées du skill alignée sur le changelog.
+
 ## [0.2.0] — 2026-11-21
 ### Modifié
 - Veille quotidienne au lieu d'hebdomadaire : fenêtre des dernières 24 h (72 h le lundi, depuis la dernière veille pour un lancement manuel), 3 éléments au plus par catégorie, un fichier daté par jour.
