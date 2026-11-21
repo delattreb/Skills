@@ -1,127 +1,129 @@
 ---
 name: "pro-veille-informatique"
-description: "Veille informatique quotidienne : scanne la presse IT francophone et anglophone, les sources officielles (CERT-FR, ANSSI, CNIL) et les blogs IA et éditeurs, puis rédige en français un résumé « Management SI / DSI » et « IA et IA générative » pour un responsable SI, enregistré dans Obsidian (coffre NeomaVault, Veille/AAAA-MM-JJ.md). À utiliser pour « /pro-veille-informatique », « veille du jour », « fais ma veille », « quoi de neuf dans l'IT », « actus DSI », « résumé de l'actualité informatique », « revue de presse tech », y compris pour l'exécution planifiée du matin, même si l'utilisateur ne cite ni Obsidian ni le skill."
+description: "Rédige en français une veille informatique quotidienne (dernières 24 h, 72 h le lundi) sur huit catégories : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud, cybersécurité, réglementation et données, infrastructure réseau et poste de travail, marché et éditeurs, geekerie (digital painting, Raspberry Pi, Arduino, Blender, impression 3D, électronique DIY). S'appuie uniquement sur des recherches web, ne retient que des informations confirmées, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier veille, un fichier horodaté par jour : AAAA-MM-JJ veille informatique.md). À utiliser quand l'utilisateur demande « veille informatique », « veille du jour », « fais ma veille », « veille IT », « veille techno », « /pro-veille-informatique », « quoi de neuf en IT », « actus IA / cyber / Microsoft 365 / enseignement supérieur / Raspberry / Blender » ou lance la veille quotidienne planifiée."
 metadata:
   version: "0.1.0"
 ---
 
+## Approach
+
+- Read existing files before writing. Don't re-read unless changed.
+- Thorough in reasoning, concise in output.
+- Skip files over 100KB unless required.
+- No sycophantic openers or closing fluff.
+- No emojis or em-dashes.
+- Do not guess APIs, versions, flags, commit SHAs, or package names. Verify by reading code or docs before asserting.
+
 # Veille informatique quotidienne
 
-Chaque jour ouvré, lire l'actualité publiée depuis la dernière veille, ne garder que ce qui compte pour un responsable SI (management SI, IA), et la résumer dans une note Obsidian lisible en 5 minutes. La valeur de la veille tient à son tri : mieux vaut 8 articles qui comptent que 30 titres qu'il faut relire soi-même.
+Produire chaque jour une veille factuelle, en français, sur l'actualité publiée depuis la veille précédente (fenêtre de l'étape 1), utile à un responsable informatique d'une école de commerce (NEOMA) : ce qui a changé, ce que cela implique, ce qu'il faut surveiller. La catégorie « Geekerie » couvre en plus ses centres d'intérêt personnels (création numérique, makers).
 
-## Lecteur
+## Règles impératives
 
-Responsable SI / Head of IT dans l'enseignement supérieur (NEOMA), environ 20 ans d'expérience : transformation SI, pilotage d'équipes et de budget, marchés, ERP (Sage X3, Aurion), ITIL, agilité. Il lit la veille pour décider, anticiper et nourrir ses échanges avec la direction, pas pour suivre la technique au jour le jour. Chaque article retenu doit répondre à la question : « qu'est-ce que ça change pour un DSI ? »
+- **Sources web uniquement.** Ne consulter ni la messagerie, ni l'agenda, ni Teams. Utiliser l'outil de recherche web disponible (WebSearch ou équivalent) et, si besoin, la lecture de page pour vérifier un article.
+- **Une seule écriture par lancement : le fichier horodaté** `AAAA-MM-JJ veille informatique.md` (date du jour de lancement) dans `MonVault/veille` (voir l'étape 5). Les veilles des jours précédents ne sont jamais modifiées.
+- **Informations confirmées uniquement.** Un élément n'entre dans la veille que s'il est confirmé par une **source primaire** (éditeur, organisme officiel, établissement concerné) ou par un **média reconnu** (voir `references/sources-et-requetes.md`). Un élément connu seulement par des agrégateurs, des blogs anonymes, des pages générées automatiquement ou des réseaux sociaux est **exclu**, même s'il paraît important. Il n'y a pas de rubrique « à confirmer ».
+- **Ne rien inventer.** Chaque élément a au moins un lien et une date de publication. Pas de lien reconstruit de mémoire : uniquement des URL renvoyées par la recherche ou ouvertes.
+- **Période stricte.** Ne retenir que des informations publiées entre début et fin de période (étape 1). Une annonce plus ancienne n'entre que si un fait nouveau est publié dans la période (déploiement effectif, date de fin de support qui approche), et ce fait nouveau est alors daté.
+- **Statut explicite.** Indiquer « (annonce) », « (préversion) » ou « (déployé) » quand le statut n'est pas évident.
+- **Une seule catégorie par élément.** Un même fait n'apparaît qu'une fois, dans la catégorie la plus utile ; les autres angles peuvent être mentionnés dans la ligne « Pour NEOMA ».
+- **Recherche web indisponible.** Si aucun outil de recherche web n'est disponible ou qu'il échoue, s'arrêter et l'indiquer en une ligne. Ne pas produire de veille de mémoire.
 
-## Règles
+## Étape 1 : Préparer
 
-- **Ne rien inventer.** Chaque article cité a été ouvert et lu (au moins son chapeau et ses premiers paragraphes). Pas de résumé à partir du seul titre ni d'un résultat de recherche. Une date de publication invérifiable exclut l'article.
-- **Résumer, ne pas recopier.** Pas de paragraphe copié d'un article ; une citation courte entre guillemets seulement si la formulation exacte compte (chiffre, déclaration).
-- **Une seule écriture : la note du jour** dans `Veille/`. Rien d'autre n'est créé, modifié ni envoyé.
-- **Sources inaccessibles** : les lister dans la note (« Sources non consultées ») plutôt que les remplacer en silence.
+1. Charger l'outil de recherche web via ToolSearch si nécessaire (par exemple `select:WebSearch`).
+2. Calculer la fenêtre (fuseau Europe/Paris), **fin = moment du lancement** :
+   - mardi à vendredi : les 24 dernières heures ;
+   - lundi : depuis vendredi matin (72 h), pour couvrir le week-end ;
+   - lancement manuel : depuis la date de la dernière veille présente dans `MonVault/veille` (7 jours au maximum) ; sans veille précédente, 24 h.
+   Noter la date du jour au format `AAAA-MM-JJ` pour le nom du fichier.
+3. Lire la veille précédente (le fichier `AAAA-MM-JJ veille informatique.md` le plus récent de `MonVault/veille`, s'il existe) pour ne pas reprendre un sujet déjà traité, sauf fait nouveau, signalé alors par « (suite) ».
+4. Lire `references/sources-et-requetes.md` : sources fiables, requêtes de départ par catégorie et indices de pertinence.
 
-## Étape 1 — Fenêtre de veille
+## Étape 2 : Collecter (lancer les recherches indépendantes en parallèle)
 
-Fuseau Europe/Paris.
-- Mardi à vendredi : les 24 dernières heures.
-- Lundi : depuis vendredi matin (72 h), pour couvrir le week-end.
-- Lancement manuel : depuis la dernière note présente dans `Veille/` (voir étape 5), 7 jours au maximum ; sans note précédente, 24 h.
+Pour chaque catégorie, lancer plusieurs requêtes (françaises et anglaises) en y ajoutant le mois et l'année en cours :
 
-Lire la note de veille précédente (s'il y en a une) pour ne pas reprendre un sujet déjà traité, sauf fait nouveau, qu'on signale alors comme « suite ».
+1. **IA et outils IA** : nouveaux modèles et fonctionnalités des principaux éditeurs, Copilot et assistants, agents, usages en entreprise et dans l'enseignement.
+2. **SI de l'enseignement supérieur** : écoles de commerce et universités, éditeurs du secteur (scolarité, LMS, ENT, admissions, examens), RENATER, ministère, projets marquants dans le secteur.
+3. **Microsoft 365 et cloud** : nouvelles fonctionnalités et changements Microsoft 365 (Teams, Outlook, SharePoint, OneDrive, Copilot, Entra), Azure, Google Workspace, retraits de fonctionnalités.
+4. **Cybersécurité** : vulnérabilités critiques activement exploitées, alertes CERT-FR et ANSSI, attaques touchant l'enseignement supérieur, campagnes d'hameçonnage notables.
+5. **Réglementation et données** : RGPD et décisions CNIL, AI Act, NIS2, accessibilité numérique (RGAA), obligations nouvelles pour les établissements.
+6. **Infra, réseau et poste de travail** : Windows et Windows Server, Intune, réseau et Wi-Fi, matériel, pannes de services majeures, fins de support.
+7. **Marché et éditeurs** : rachats, changements de prix et de licences, évolutions de contrats, éditeurs utilisés par NEOMA.
+8. **Geekerie** : digital painting (Krita, Procreate, Clip Studio Paint, Photoshop, Rebelle, tablettes graphiques), Raspberry Pi, Arduino et microcontrôleurs (ESP32, RP2040), Blender et 3D, impression 3D, électronique DIY : nouvelles versions, nouveau matériel, fonctionnalités marquantes, projets remarquables.
 
-## Étape 2 — Collecter
+Ouvrir les articles les plus prometteurs pour vérifier la date, le fond et le statut. Remonter à la source primaire quand une information vient d'une reprise ; si aucune source primaire ni média reconnu ne la confirme, l'écarter.
 
-Les sources sont listées dans `references/sources.md`. Lancer en parallèle une collecte par source :
+## Étape 3 : Trier
 
-1. Ouvrir le flux RSS du site s'il en a un (souvent `/feed/`, `/rss`, lien « RSS » en pied de page), sinon la page d'actualités. Le flux donne les dates fiables et évite de charger la page d'accueil.
-2. Si la page refuse l'accès automatisé, faire une recherche web limitée au domaine (`allowed_domains`) avec les mots des thèmes et l'année en cours, et ne garder que des articles datés dans la fenêtre.
-3. Hacker News : ne garder que les sujets du top du jour en rapport avec les thèmes.
+- Écarter les éléments non confirmés (voir les règles impératives), les doublons (garder une entrée, source primaire en premier), le contenu promotionnel, les tribunes sans fait nouveau, les tutoriels et les articles hors période.
+- Pour chaque élément retenu, évaluer la **pertinence pour NEOMA** : impact sur les utilisateurs, les licences, la sécurité, la conformité, les projets SI, la pédagogie. Pour la Geekerie, évaluer plutôt l'intérêt pratique : nouvelle version ou nouveau matériel utilisable, fonctionnalité qui change la façon de travailler, prix. Garder au plus 3 éléments par catégorie, classés du plus au moins important. Un jour calme donne une veille courte : ne pas combler avec des éléments faibles.
+- Repérer les **échéances** (fins de support, changements de prix, entrées en application de textes, dates de déploiement) dans les semaines ou mois à venir.
 
-Ne pas multiplier les requêtes presque identiques. Noter, pour chaque source, si elle a été lue, vide sur la fenêtre, ou inaccessible.
+## Étape 4 : Rédiger
 
-## Étape 3 — Trier
+Respecter exactement ce format :
 
-Thèmes suivis, dans cet ordre :
-
-1. **Management SI / DSI** : stratégie et gouvernance SI, budgets et coûts IT, organisation et métiers de la DSI, transformation numérique, ERP et grands éditeurs de gestion (Sage, SAP, Oracle, Workday), achats et marchés publics IT, licences et tarifs, souveraineté, SI de l'enseignement supérieur et du secteur public, réglementation qui touche la DSI (NIS2, DORA, RGPD).
-2. **IA et IA générative** : annonces des grands acteurs (Anthropic, OpenAI, Google, Microsoft, Mistral, Meta), usages en entreprise et retours d'expérience, outils pour les équipes (Copilot, Claude, ChatGPT, Mistral Le Chat), coûts, gouvernance et AI Act, impacts sur les métiers.
-
-Hors thèmes, une seule exception : la rubrique **« À ne pas rater »** reprend, en une ligne chacune et 5 au maximum :
-- les alertes CERT-FR (rubrique « Alertes », pas les simples avis) ;
-- les décisions ou recommandations CNIL et les étapes de l'AI Act ;
-- les fins de support et changements majeurs d'éditeurs (Microsoft 365, Windows, Sage...) ;
-- une cyberattaque d'ampleur contre un établissement d'enseignement supérieur ou une collectivité en France.
-Le reste de la cybersécurité, du cloud et du matériel est ignoré : l'utilisateur ne suit pas ces thèmes.
-
-Pour chaque article candidat :
-- **Fusionner les doublons** : un même fait couvert par plusieurs sites devient une seule entrée, avec la source la plus complète en lien principal et les autres en liens secondaires. Préférer la source primaire (annonce de l'éditeur, communiqué officiel) quand elle existe.
-- **Écarter** : contenus sponsorisés et publi-rédactionnels, tests de produits grand public, rumeurs non sourcées, articles hors fenêtre, tribunes sans fait nouveau.
-- **Classer** par importance pour le lecteur : impact sur ses décisions (budget, contrat, conformité, organisation) > tendance de fond > annonce produit.
-
-Garder 5 à 8 articles par thème au maximum. Un jour calme donne une note courte : ne pas combler avec des articles faibles.
-
-## Étape 4 — Rédiger
-
-Structure de la note :
-
-```markdown
----
-date: AAAA-MM-JJ
-type: veille
-fenetre: "du JJ/MM HH:MM au JJ/MM HH:MM"
-tags: [veille, management-si, ia]
----
-
+```
 # Veille informatique du [jour JJ mois AAAA]
 
-## L'essentiel du jour
-3 à 5 phrases : les 2 ou 3 faits qui comptent le plus et pourquoi.
+## À retenir
+- [3 points maximum, une ligne chacun : le plus important du jour, catégories professionnelles uniquement (hors Geekerie)]
 
-## À ne pas rater
-- **[Type : alerte CERT-FR / CNIL / fin de support...]** fait en une ligne. [Source](lien)
-(rubrique omise si rien)
+## IA et outils IA
+### [Titre court et factuel]
+[2 à 3 phrases : ce qui s'est passé, statut, date.]
+**Pour NEOMA :** [impact concret ou action possible, une phrase.]
+Source : [Nom du site, JJ/MM/AAAA](URL)
 
-## Management SI / DSI
+## SI de l'enseignement supérieur
+…
 
-### [Titre reformulé, informatif]
-*Source · JJ/MM* — [Lire l'article](lien)
+## Microsoft 365 et cloud
+…
 
-Résumé en 2 ou 3 phrases : le fait, les chiffres, qui est concerné.
+## Cybersécurité
+…
 
-**Pour un DSI :** une phrase sur l'impact concret ou la question à se poser.
+## Réglementation et données
+…
 
-(autres sources : [Site B](lien), [Site C](lien))
+## Infra, réseau et poste de travail
+…
 
-## IA et IA générative
-(même format)
+## Marché et éditeurs
+…
 
-## Sources
-- Lues : Site A (N articles retenus), Site B (0, rien dans la fenêtre)...
-- Non consultées : Site C (accès refusé)...
+## Geekerie
+### [Titre court et factuel]
+[2 à 3 phrases : ce qui est sorti ou annoncé, statut, date, prix si connu.]
+**Pourquoi c'est intéressant :** [ce que ça change ou permet, une phrase.]
+Source : [Nom du site, JJ/MM/AAAA](URL)
+
+## Échéances à surveiller
+- [JJ/MM/AAAA] : [échéance] ([source](URL))
 ```
 
-Rédaction : français, phrases courtes, sans formule d'introduction ni conclusion. Titres reformulés en français même pour un article anglais. Dates au format JJ/MM. « Pour un DSI » est concret (« vérifier si nos licences E3 sont concernées avant le renouvellement »), jamais générique (« à suivre de près »). Une rubrique de thème vide affiche « Rien de notable dans la fenêtre. »
+Style : concis, professionnel, sans remplissage ni formule d'introduction. Une catégorie sans actualité confirmée affiche « Rien de notable dans la fenêtre. » plutôt que d'être complétée avec des éléments faibles, non confirmés ou hors période. La rubrique « Échéances à surveiller » est omise si aucune échéance n'a été trouvée.
 
-## Étape 5 — Enregistrer dans Obsidian
+## Étape 5 : Enregistrer dans Obsidian
 
-Cible : **`Mon Drive/ObsidianVault/NeomaVault/Veille/AAAA-MM-JJ.md`** sur Google Drive (coffre `NeomaVault`, sans espace).
+Cible : **`Mon Drive/ObsidianVault/MonVault/veille/AAAA-MM-JJ veille informatique.md`**, où `AAAA-MM-JJ` est la date du jour de lancement (exemple : `2026-11-21 veille informatique.md` ; chemin local : `G:\Mon Drive\ObsidianVault\MonVault\veille\2026-11-21 veille informatique.md`). Le dossier `veille` est à la racine du coffre MonVault et s'écrit en minuscules. Ne jamais écrire dans le coffre de `pro-agenda`, `pro-1to1` ou `pro-point-avancement`.
 
-1. Charger les outils Google Drive via ToolSearch si nécessaire (`search_files`, `get_file_metadata`, `create_file`, `update_file`, `read_file_content`).
-2. Retrouver le dossier `Veille` et **vérifier la chaîne des parents** : `Veille → NeomaVault → ObsidianVault → Mon Drive`. Un dossier homonyme ailleurs (autre coffre, copie) ne convient pas. Si `Veille` n'existe pas mais que `NeomaVault` est trouvé avec la bonne chaîne, créer `Veille` dedans (dossier Drive). Si `NeomaVault` est introuvable ou ambigu, s'arrêter et demander le lien du dossier (en mode planifié : livrer la note dans la réponse et signaler le blocage).
-3. Pour l'étape 1, la note précédente est le fichier `AAAA-MM-JJ.md` le plus récent de `Veille/`.
-4. Si la note du jour existe déjà (second lancement), **remplacer son contenu** (`update_file`) ; sinon la créer (`create_file`) avec `Veille` comme parent explicite, `contentMimeType` `text/markdown` et `disableConversionToGoogleType: true`, pour obtenir un vrai fichier `.md` lisible dans Obsidian et non un Google Doc. Ne jamais créer de doublon (`2026-11-21 (1).md`).
-5. Relire le fichier enregistré : nom, dossier parent, début du contenu. Ne pas affirmer que la synchronisation Obsidian locale est faite.
+1. Si les outils du dossier connecté de l'ordinateur sont disponibles et que `G:\Mon Drive\ObsidianVault\MonVault` y est accessible, écrire le fichier directement dans `MonVault\veille` (créer ce dossier s'il n'existe pas). Sinon, passer par Google Drive.
+2. Via Google Drive : retrouver le dossier `MonVault` et **vérifier la chaîne complète des parents** : `MonVault → ObsidianVault → Mon Drive`. Ne jamais écrire dans un autre coffre ni dans une copie homonyme. Si la chaîne est introuvable ou ambiguë, s'arrêter et demander le lien du dossier.
+3. Dans ce `MonVault` vérifié, chercher le sous-dossier `veille` directement à la racine du coffre. S'il n'existe pas, le créer (`create_file`, type `application/vnd.google-apps.folder`) avec `MonVault` comme parent explicite. Ne jamais créer un second dossier `veille` ou `Veille`.
+4. Créer le fichier du jour (`create_file`) avec `veille` comme parent explicite. Si un fichier portant **la même date** existe déjà (veille relancée le même jour), mettre l'ancien à la corbeille (`trash_file`) avant de créer le nouveau, et le signaler dans la réponse finale. Ne jamais créer de doublon (`… (1).md`) et ne jamais toucher aux fichiers d'autres dates.
+5. Enregistrer un vrai fichier texte UTF-8 `.md` (`contentMimeType` `text/markdown`, `disableConversionToGoogleType` à vrai), **sans conversion en Google Doc**, pour qu'il reste lisible dans Obsidian. Le contenu est exactement la veille de l'étape 4.
+6. Relire les métadonnées du fichier enregistré : nom, parent, type. Ne pas affirmer que la synchronisation locale Obsidian est terminée.
 
-Si l'écriture échoue, livrer la note complète dans la réponse et expliquer ce qui a bloqué.
+Si l'écriture est impossible, livrer la veille complète dans le chat et expliquer ce qui a bloqué.
 
-## Étape 6 — Réponse finale
+## Étape 6 : Réponse finale
 
-Un bilan court, sans recopier la note : la fenêtre couverte, le nombre d'articles retenus par thème, « l'essentiel du jour » en 3 lignes, les sources non consultées, et le lien vers la note. Si l'outil SendUserMessage est disponible (exécution planifiée), y envoyer ce même bilan.
+Livrer dans le chat un court bilan : le nom et l'emplacement du fichier (lien Drive si disponible) et les points de la rubrique « À retenir », une ligne chacun. Ne pas recopier toute la veille sauf si l'écriture a échoué. Si l'outil SendUserMessage est disponible (notamment en exécution planifiée sans personne présente), y envoyer ce même bilan. Ne pas l'envoyer par e-mail ni sur Teams.
 
 ## Exécution planifiée
 
-La veille tourne du lundi au vendredi vers 7 h 30 (heure de Paris) via une tâche planifiée. Personne ne répond aux questions dans ce mode : ne rien demander, appliquer les règles, et signaler dans la note et le bilan tout ce qui a bloqué.
-
-## Faire évoluer les sources
-
-Si l'utilisateur demande d'ajouter ou de retirer une source ou un thème, modifier `references/sources.md` ou la liste de l'étape 3, et le noter dans `CHANGELOG.md`. Si une source est inaccessible plusieurs jours de suite, le signaler dans le bilan et proposer une source de remplacement plutôt que de la changer d'office.
+La veille est lancée chaque jour par une tâche planifiée. Personne ne répond aux questions dans ce mode : ne rien demander, appliquer les règles, et signaler dans le bilan tout ce qui a bloqué (source inaccessible, dossier introuvable, écriture impossible).

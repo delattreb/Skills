@@ -6,6 +6,8 @@ Chaque version publiée est marquée par un tag Git `pro-point-avancement-vX.Y.Z
 ## [Non publié]
 ### Renommé
 - Skill renommé : `point-avancement` devient `pro-point-avancement` (dossier, champ `name`, commande `/pro-point-avancement`, tags Git `pro-point-avancement-vX.Y.Z`).
+### Corrigé
+- Coffre Obsidian cible corrigé : `Neoma Vault` (avec espace) devient `NeomaVault` (sans espace), comme dans `pro-agenda` (description, chemins Drive et local, chaîne de parents). Suppression de la mise en garde contre la confusion avec `NeomaVault`. Le nom du fichier `point avancement.md` est inchangé.
 
 ## [0.2.0] — 2026-11-18
 ### Modifié
