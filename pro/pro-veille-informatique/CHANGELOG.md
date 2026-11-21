@@ -3,6 +3,12 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 Chaque version publiée est marquée par un tag Git `pro-veille-informatique-vX.Y.Z`.
 
+## [Non publié]
+### Modifié
+- Format de la note : tableau « Vue d'ensemble » des huit catégories, ordre fixe, callouts Obsidian colorés selon la pertinence, catégories sans élément absentes du corps.
+- Frontmatter du skill : champ `tags` ajouté.
+- Frontmatter YAML de la veille : le champ `tags` porte `veille`, `informatique` et un tag par catégorie qui a au moins un élément retenu (`ia`, `enseignement-superieur`, `microsoft-365`, `cybersecurite`, `reglementation`, `infrastructure`, `marche-editeurs`, `geekerie`), au lieu de la liste fixe `[veille, informatique]`.
+
 ## [0.6.0] — 2026-11-21
 ### Ajouté
 - Sources testées avec le moteur de recherche (`allowed_domains`) et renvoyant des résultats datés : `cafepedagogique.net`, `cybermalveillance.gouv.fr`, `enisa.europa.eu`, `zataz.com`, `eur-lex.europa.eu`, `huggingface.co`, `forum.obsidian.md`, `blog.adafruit.com`, `skyandtelescope.org`. Ajoutées aux listes de domaines de leur catégorie ; `zataz.com`, `cafepedagogique.net` et `skyandtelescope.org` ajoutés aux médias reconnus.
