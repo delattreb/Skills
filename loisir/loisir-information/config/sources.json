@@ -1,5 +1,5 @@
 {
-  "version": "0.2.2",
+  "version": "0.3.0",
   "commentaire": "Sources du point d'information. Ajouter, retirer ou désactiver une source ici, sans modifier SKILL.md. Les domaines sont des repères : chaque URL retenue doit avoir été renvoyée par la recherche ou ouverte. Une source désactivée (actif: false) n'est pas utilisée. Les domaines refusés par l'outil de recherche (allowed_domains) ont été retirés en 0.2.2 ; les reprises nommées de leurs dépêches restent acceptées (confirmation.agences_reprises).",
   "confirmation": {
     "min_medias_independants": 2,
@@ -107,6 +107,42 @@
       "domaine": "mediapart.fr",
       "volet": "france",
       "actif": true
+    },
+    {
+      "nom": "Euronews",
+      "domaine": "euronews.com",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Le Temps",
+      "domaine": "letemps.ch",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Public Sénat",
+      "domaine": "publicsenat.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "The National",
+      "domaine": "thenationalnews.com",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Anadolu",
+      "domaine": "aa.com.tr",
+      "volet": "international",
+      "actif": false
+    },
+    {
+      "nom": "Democracy Now",
+      "domaine": "democracynow.org",
+      "volet": "international",
+      "actif": false
     }
   ],
   "officielles": [
@@ -227,6 +263,24 @@
     {
       "nom": "USGS (séismes)",
       "domaine": "usgs.gov",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Ministère de l'Intérieur",
+      "domaine": "interieur.gouv.fr",
+      "volet": "france",
+      "actif": true
+    },
+    {
+      "nom": "Cour internationale de justice",
+      "domaine": "icj-cij.org",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Refworld (copies de documents officiels)",
+      "domaine": "refworld.org",
       "volet": "international",
       "actif": true
     }

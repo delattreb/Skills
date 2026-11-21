@@ -2,6 +2,10 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 
+## [0.3.0] — 2026-11-21
+### Ajouté
+- Sources : Euronews, Le Temps, Public Sénat, The National (médias actifs) ; Ministère de l'Intérieur, CIJ, Refworld (officielles actives). Anadolu et Democracy Now présents mais inactifs (`actif: false`).
+
 ## [0.2.2] — 2026-11-21
 ### Modifié
 - Sources retirées de `config/sources.json` : domaines refusés par l'outil de recherche (Reuters, AP, BBC, The Guardian, Le Monde, AFP, RFI). Leurs dépêches reprises nommément restent acceptées.
