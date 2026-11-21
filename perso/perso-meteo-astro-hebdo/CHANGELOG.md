@@ -1,7 +1,11 @@
-# Changelog — loisir-meteo-astro-hebdo
+# Changelog — perso-meteo-astro-hebdo
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 Chaque version publiée est marquée par un tag Git `loisir-meteo-astro-hebdo-vX.Y.Z`.
+
+## [Non publié]
+### Modifié
+- Renommage : le préfixe `loisir-` devient `perso-` (dossier, champ `name`, commande slash). Le dossier `loisir/` du dépôt devient `perso/`. Changement incompatible pour les commandes existantes.
 
 ## [Non publié]
 ### Renommé

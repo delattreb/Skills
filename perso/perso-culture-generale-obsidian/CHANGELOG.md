@@ -1,7 +1,11 @@
-# Changelog — loisir-culture-generale-obsidian
+# Changelog — perso-culture-generale-obsidian
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 Chaque version publiée est marquée par un tag Git `loisir-culture-generale-obsidian-vX.Y.Z`.
+
+## [Non publié]
+### Modifié
+- Renommage : le préfixe `loisir-` devient `perso-` (dossier, champ `name`, commande slash). Le dossier `loisir/` du dépôt devient `perso/`. Changement incompatible pour les commandes existantes.
 
 ## [Non publié]
 ### Renommé

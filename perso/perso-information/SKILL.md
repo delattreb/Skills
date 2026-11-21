@@ -1,6 +1,6 @@
 ---
-name: "loisir-information"
-description: "Rédige en français un point d'information quotidien (dernières 48 h, 72 h le lundi) sur deux volets : l'actualité internationale importante et l'actualité française importante. S'appuie uniquement sur des recherches web, ne retient que des informations confirmées par au moins deux médias reconnus ou par une source officielle, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier information, un fichier horodaté par jour). À utiliser quand l'utilisateur demande « actualités », « infos du jour », « qu'est-ce qui s'est passé », « point info », « /loisir-information », « actu internationale », « actu France », « résumé de l'actu » ou lance le point d'information planifié."
+name: "perso-information"
+description: "Rédige en français un point d'information quotidien (dernières 48 h, 72 h le lundi) sur deux volets : l'actualité internationale importante et l'actualité française importante. S'appuie uniquement sur des recherches web, ne retient que des informations confirmées par au moins deux médias reconnus ou par une source officielle, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier information, un fichier horodaté par jour). À utiliser quand l'utilisateur demande « actualités », « infos du jour », « qu'est-ce qui s'est passé », « point info », « /perso-information », « actu internationale », « actu France », « résumé de l'actu » ou lance le point d'information planifié."
 metadata:
   version: "0.5.0"
 ---

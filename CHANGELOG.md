@@ -3,6 +3,11 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 La version du plugin (`.claude-plugin/plugin.json`) sert de version unique de release. Le détail par skill reste dans le `CHANGELOG.md` de chaque skill.
 
+## [2.0.0] — 2026-11-21
+### Modifié
+- Renommage (changement incompatible) : le dossier `loisir/` devient `perso/`, et chaque skill `loisir-*` devient `perso-*`. Les commandes slash changent en conséquence (par exemple `/loisir-information` devient `/perso-information`).
+- Manifeste `plugin.json` : chemins `./pro/` et `./perso/`, description et version 2.0.0.
+
 ## [1.7.0] — 2026-11-21
 ### Ajouté
 - Skill `loisir-information` 0.5.0 : point d'information quotidien en deux volets (international et France), avec faits confirmés par deux médias reconnus, une source officielle ou une dépêche d'agence reprise nommément ; faits à source unique marqués ; rubriques « En cours » et « Agenda officiel ».

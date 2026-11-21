@@ -1,6 +1,10 @@
-# Changelog — loisir-information
+# Changelog — perso-information
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
+
+## [Non publié]
+### Modifié
+- Renommage : le préfixe `loisir-` devient `perso-` (dossier, champ `name`, commande slash). Le dossier `loisir/` du dépôt devient `perso/`. Changement incompatible pour les commandes existantes.
 
 ## [0.5.0] — 2026-11-21
 ### Ajouté
