@@ -1,6 +1,6 @@
 ---
 name: "pro-point-avancement"
-description: "Rédige en français un court point d'avancement hebdomadaire couvrant les 7 derniers jours, à partir des e-mails envoyés et reçus, du calendrier Outlook et des messages Teams (connecteur Microsoft 365, lecture seule), et l'enregistre dans Obsidian (coffre Neoma Vault, Agenda/point avancement.md). À utiliser quand l'utilisateur demande « point d'avancement », « point hebdo », « /pro-point-avancement », « résumé de ma semaine », « sur quoi j'ai travaillé cette semaine », « weekly status » ou « rapport hebdomadaire »."
+description: "Rédige en français un court point d'avancement hebdomadaire couvrant les 7 derniers jours, à partir des e-mails envoyés et reçus, du calendrier Outlook et des messages Teams (connecteur Microsoft 365, lecture seule), et l'enregistre dans Obsidian (coffre NeomaVault, Agenda/point avancement.md). À utiliser quand l'utilisateur demande « point d'avancement », « point hebdo », « /pro-point-avancement », « résumé de ma semaine », « sur quoi j'ai travaillé cette semaine », « weekly status » ou « rapport hebdomadaire »."
 metadata:
   version: "0.2.0"
 ---
@@ -66,10 +66,10 @@ Style : concis, professionnel, sans remplissage ni formule d'introduction. Une r
 
 ## Étape 5 — Enregistrer dans Obsidian
 
-Cible : **`Mon Drive/ObsidianVault/Neoma Vault/Agenda/point avancement.md`** (chemin local : `G:\Mon Drive\ObsidianVault\Neoma Vault\Agenda\point avancement.md`). Le nom du fichier contient une espace et le coffre s'écrit « Neoma Vault » (avec espace) : ne pas les confondre avec `NeomaVault` ni `point-avancement.md`.
+Cible : **`Mon Drive/ObsidianVault/NeomaVault/Agenda/point avancement.md`** (chemin local : `G:\Mon Drive\ObsidianVault\NeomaVault\Agenda\point avancement.md`). Le nom du fichier contient une espace : ne pas le confondre avec `point-avancement.md`.
 
-1. Si les outils du dossier connecté de l'ordinateur sont disponibles et que `G:\Mon Drive\ObsidianVault\Neoma Vault\Agenda` y est accessible, écrire le fichier directement à cet emplacement. Sinon, passer par Google Drive.
-2. Via Google Drive : retrouver le dossier `Agenda` et **vérifier la chaîne complète des parents** : `Agenda → Neoma Vault → ObsidianVault → Mon Drive`. Un dossier nommé `Agenda` ne suffit pas : ne jamais écrire dans un autre coffre ni dans une copie homonyme. Si la chaîne est introuvable ou ambiguë, s'arrêter et demander le lien du dossier.
+1. Si les outils du dossier connecté de l'ordinateur sont disponibles et que `G:\Mon Drive\ObsidianVault\NeomaVault\Agenda` y est accessible, écrire le fichier directement à cet emplacement. Sinon, passer par Google Drive.
+2. Via Google Drive : retrouver le dossier `Agenda` et **vérifier la chaîne complète des parents** : `Agenda → NeomaVault → ObsidianVault → Mon Drive`. Un dossier nommé `Agenda` ne suffit pas : ne jamais écrire dans un autre coffre ni dans une copie homonyme. Si la chaîne est introuvable ou ambiguë, s'arrêter et demander le lien du dossier.
 3. Si `point avancement.md` existe déjà dans ce dossier, **remplacer son contenu** (`update_file`) ; sinon le **créer** (`create_file`) avec le dossier `Agenda` vérifié comme parent explicite. Ne jamais créer de doublon (`point avancement (1).md`, etc.).
 4. Enregistrer un vrai fichier texte UTF-8 `.md` (type `text/markdown`), **sans conversion en Google Doc**, pour qu'il reste lisible dans Obsidian. Le contenu est exactement le rapport de l'étape 4.
 5. Relire le fichier enregistré : nom, parent, début du contenu. Ne pas affirmer que la synchronisation locale Obsidian est terminée.
