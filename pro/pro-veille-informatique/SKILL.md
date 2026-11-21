@@ -1,6 +1,6 @@
 ---
 name: "pro-veille-informatique"
-description: "Rédige en français une veille informatique hebdomadaire couvrant les 7 derniers jours sur huit catégories : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud, cybersécurité, réglementation et données, infrastructure réseau et poste de travail, marché et éditeurs, geekerie (digital painting, Raspberry Pi, Arduino, Blender, impression 3D, électronique DIY). S'appuie uniquement sur des recherches web, ne retient que des informations confirmées, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier veille, un fichier horodaté par lancement : AAAA-MM-JJ veille informatique.md). À utiliser quand l'utilisateur demande « veille informatique », « veille IT », « veille techno », « /pro-veille-informatique », « quoi de neuf en IT cette semaine », « actus IA / cyber / Microsoft 365 / enseignement supérieur / Raspberry / Blender » ou lance la veille hebdomadaire planifiée."
+description: "Rédige en français une veille informatique quotidienne (dernières 24 h, 72 h le lundi) sur huit catégories : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud, cybersécurité, réglementation et données, infrastructure réseau et poste de travail, marché et éditeurs, geekerie (digital painting, Raspberry Pi, Arduino, Blender, impression 3D, électronique DIY). S'appuie uniquement sur des recherches web, ne retient que des informations confirmées, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier veille, un fichier horodaté par jour : AAAA-MM-JJ veille informatique.md). À utiliser quand l'utilisateur demande « veille informatique », « veille du jour », « fais ma veille », « veille IT », « veille techno », « /pro-veille-informatique », « quoi de neuf en IT », « actus IA / cyber / Microsoft 365 / enseignement supérieur / Raspberry / Blender » ou lance la veille quotidienne planifiée."
 metadata:
   version: "0.1.0"
 ---
@@ -14,14 +14,14 @@ metadata:
 - No emojis or em-dashes.
 - Do not guess APIs, versions, flags, commit SHAs, or package names. Verify by reading code or docs before asserting.
 
-# Veille informatique hebdomadaire
+# Veille informatique quotidienne
 
-Produire une veille factuelle, en français, sur les 7 jours précédant le jour de lancement, utile à un responsable informatique d'une école de commerce (NEOMA) : ce qui a changé, ce que cela implique, ce qu'il faut surveiller. La catégorie « Geekerie » couvre en plus ses centres d'intérêt personnels (création numérique, makers).
+Produire chaque jour une veille factuelle, en français, sur l'actualité publiée depuis la veille précédente (fenêtre de l'étape 1), utile à un responsable informatique d'une école de commerce (NEOMA) : ce qui a changé, ce que cela implique, ce qu'il faut surveiller. La catégorie « Geekerie » couvre en plus ses centres d'intérêt personnels (création numérique, makers).
 
 ## Règles impératives
 
 - **Sources web uniquement.** Ne consulter ni la messagerie, ni l'agenda, ni Teams. Utiliser l'outil de recherche web disponible (WebSearch ou équivalent) et, si besoin, la lecture de page pour vérifier un article.
-- **Une seule écriture par lancement : le fichier horodaté** `AAAA-MM-JJ veille informatique.md` (date du jour de lancement) dans `MonVault/veille` (voir l'étape 5). Les veilles des semaines précédentes ne sont jamais modifiées.
+- **Une seule écriture par lancement : le fichier horodaté** `AAAA-MM-JJ veille informatique.md` (date du jour de lancement) dans `MonVault/veille` (voir l'étape 5). Les veilles des jours précédents ne sont jamais modifiées.
 - **Informations confirmées uniquement.** Un élément n'entre dans la veille que s'il est confirmé par une **source primaire** (éditeur, organisme officiel, établissement concerné) ou par un **média reconnu** (voir `references/sources-et-requetes.md`). Un élément connu seulement par des agrégateurs, des blogs anonymes, des pages générées automatiquement ou des réseaux sociaux est **exclu**, même s'il paraît important. Il n'y a pas de rubrique « à confirmer ».
 - **Ne rien inventer.** Chaque élément a au moins un lien et une date de publication. Pas de lien reconstruit de mémoire : uniquement des URL renvoyées par la recherche ou ouvertes.
 - **Période stricte.** Ne retenir que des informations publiées entre début et fin de période (étape 1). Une annonce plus ancienne n'entre que si un fait nouveau est publié dans la période (déploiement effectif, date de fin de support qui approche), et ce fait nouveau est alors daté.
@@ -32,8 +32,13 @@ Produire une veille factuelle, en français, sur les 7 jours précédant le jour
 ## Étape 1 : Préparer
 
 1. Charger l'outil de recherche web via ToolSearch si nécessaire (par exemple `select:WebSearch`).
-2. Calculer les bornes : **début = jour de lancement − 7 jours**, **fin = jour de lancement** (fuseau Europe/Paris). Noter la date du jour au format `AAAA-MM-JJ` pour le nom du fichier.
-3. Lire `references/sources-et-requetes.md` : sources fiables, requêtes de départ par catégorie et indices de pertinence.
+2. Calculer la fenêtre (fuseau Europe/Paris), **fin = moment du lancement** :
+   - mardi à vendredi : les 24 dernières heures ;
+   - lundi : depuis vendredi matin (72 h), pour couvrir le week-end ;
+   - lancement manuel : depuis la date de la dernière veille présente dans `MonVault/veille` (7 jours au maximum) ; sans veille précédente, 24 h.
+   Noter la date du jour au format `AAAA-MM-JJ` pour le nom du fichier.
+3. Lire la veille précédente (le fichier `AAAA-MM-JJ veille informatique.md` le plus récent de `MonVault/veille`, s'il existe) pour ne pas reprendre un sujet déjà traité, sauf fait nouveau, signalé alors par « (suite) ».
+4. Lire `references/sources-et-requetes.md` : sources fiables, requêtes de départ par catégorie et indices de pertinence.
 
 ## Étape 2 : Collecter (lancer les recherches indépendantes en parallèle)
 
@@ -53,7 +58,7 @@ Ouvrir les articles les plus prometteurs pour vérifier la date, le fond et le s
 ## Étape 3 : Trier
 
 - Écarter les éléments non confirmés (voir les règles impératives), les doublons (garder une entrée, source primaire en premier), le contenu promotionnel, les tribunes sans fait nouveau, les tutoriels et les articles hors période.
-- Pour chaque élément retenu, évaluer la **pertinence pour NEOMA** : impact sur les utilisateurs, les licences, la sécurité, la conformité, les projets SI, la pédagogie. Pour la Geekerie, évaluer plutôt l'intérêt pratique : nouvelle version ou nouveau matériel utilisable, fonctionnalité qui change la façon de travailler, prix. Garder 2 à 5 éléments par catégorie, classés du plus au moins important.
+- Pour chaque élément retenu, évaluer la **pertinence pour NEOMA** : impact sur les utilisateurs, les licences, la sécurité, la conformité, les projets SI, la pédagogie. Pour la Geekerie, évaluer plutôt l'intérêt pratique : nouvelle version ou nouveau matériel utilisable, fonctionnalité qui change la façon de travailler, prix. Garder au plus 3 éléments par catégorie, classés du plus au moins important. Un jour calme donne une veille courte : ne pas combler avec des éléments faibles.
 - Repérer les **échéances** (fins de support, changements de prix, entrées en application de textes, dates de déploiement) dans les semaines ou mois à venir.
 
 ## Étape 4 : Rédiger
@@ -61,10 +66,10 @@ Ouvrir les articles les plus prometteurs pour vérifier la date, le fond et le s
 Respecter exactement ce format :
 
 ```
-# Veille informatique : semaine du [JJ mois] au [JJ mois AAAA]
+# Veille informatique du [jour JJ mois AAAA]
 
 ## À retenir
-- [3 points maximum, une ligne chacun : le plus important de la semaine, catégories professionnelles uniquement (hors Geekerie)]
+- [3 points maximum, une ligne chacun : le plus important du jour, catégories professionnelles uniquement (hors Geekerie)]
 
 ## IA et outils IA
 ### [Titre court et factuel]
@@ -100,7 +105,7 @@ Source : [Nom du site, JJ/MM/AAAA](URL)
 - [JJ/MM/AAAA] : [échéance] ([source](URL))
 ```
 
-Style : concis, professionnel, sans remplissage ni formule d'introduction. Une catégorie sans actualité confirmée affiche « Rien de notable sur la période. » plutôt que d'être complétée avec des éléments faibles, non confirmés ou hors période. La rubrique « Échéances à surveiller » est omise si aucune échéance n'a été trouvée.
+Style : concis, professionnel, sans remplissage ni formule d'introduction. Une catégorie sans actualité confirmée affiche « Rien de notable dans la fenêtre. » plutôt que d'être complétée avec des éléments faibles, non confirmés ou hors période. La rubrique « Échéances à surveiller » est omise si aucune échéance n'a été trouvée.
 
 ## Étape 5 : Enregistrer dans Obsidian
 
@@ -118,3 +123,7 @@ Si l'écriture est impossible, livrer la veille complète dans le chat et expliq
 ## Étape 6 : Réponse finale
 
 Livrer dans le chat un court bilan : le nom et l'emplacement du fichier (lien Drive si disponible) et les points de la rubrique « À retenir », une ligne chacun. Ne pas recopier toute la veille sauf si l'écriture a échoué. Si l'outil SendUserMessage est disponible (notamment en exécution planifiée sans personne présente), y envoyer ce même bilan. Ne pas l'envoyer par e-mail ni sur Teams.
+
+## Exécution planifiée
+
+La veille est lancée chaque jour par une tâche planifiée. Personne ne répond aux questions dans ce mode : ne rien demander, appliquer les règles, et signaler dans le bilan tout ce qui a bloqué (source inaccessible, dossier introuvable, écriture impossible).

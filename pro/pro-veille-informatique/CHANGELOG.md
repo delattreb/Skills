@@ -3,6 +3,13 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 Chaque version publiée est marquée par un tag Git `pro-veille-informatique-vX.Y.Z`.
 
+## [0.2.0] — 2026-11-21
+### Modifié
+- Veille quotidienne au lieu d'hebdomadaire : fenêtre des dernières 24 h (72 h le lundi, depuis la dernière veille pour un lancement manuel), 3 éléments au plus par catégorie, un fichier daté par jour.
+- Lecture de la veille précédente pour ne pas reprendre un sujet déjà traité, sauf fait nouveau signalé « (suite) ».
+- Section « Exécution planifiée » : aucune question en mode planifié, blocages signalés dans le bilan.
+- Reprise de la PR concurrente (veille quotidienne dans NeomaVault) : sa fréquence et sa fenêtre sont intégrées ; son fichier `references/sources.md` est retiré, ses sources utiles rejoignent `references/sources-et-requetes.md`.
+
 ## [0.1.0] — 2026-11-21
 ### Ajouté
 - Première version : veille informatique hebdomadaire en français (7 derniers jours) sur huit catégories : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud, cybersécurité, réglementation et données, infra réseau et poste de travail, marché et éditeurs, geekerie (digital painting, Raspberry Pi, Arduino, Blender, impression 3D, électronique DIY), cette dernière avec une ligne « Pourquoi c'est intéressant » et hors rubrique « À retenir ».

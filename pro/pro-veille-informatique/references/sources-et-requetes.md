@@ -5,7 +5,7 @@ Ces listes orientent la recherche ; elles ne sont pas exhaustives. Vérifier cha
 ## Sources acceptées et exclues
 
 - **Sources primaires (acceptées)** : sites, blogs officiels et communiqués des éditeurs ; organismes publics (ministères, CNIL, ANSSI, CERT-FR, Commission européenne, Journal officiel) ; communiqués de l'établissement concerné.
-- **Médias reconnus (acceptés)** : LeMagIT, Le Monde Informatique, ZDNet.fr, 01net, Next, L'Informé, Les Échos, Le Monde, EducPros (L'Étudiant), Campus Matin, News Tank, The Verge, Ars Technica, TechCrunch, The Register, BleepingComputer, SecurityWeek, Reuters, AFP ; pour la Geekerie : Hackaday, Tom's Hardware, CNX Software, BlenderNation, 80.lv, Creative Bloq.
+- **Médias reconnus (acceptés)** : LeMagIT, Le Monde Informatique, CIO Online, Silicon.fr, ZDNet.fr, 01net, Next, L'Informé, Les Échos, Le Monde, EducPros (L'Étudiant), Campus Matin, News Tank, The Verge, Ars Technica, TechCrunch, The Register, BleepingComputer, SecurityWeek, Reuters, AFP ; pour la Geekerie : Hackaday, Tom's Hardware, CNX Software, BlenderNation, 80.lv, Creative Bloq.
 - **Exclues comme seule source** : agrégateurs et « trackers » de sorties d'IA, sites de digests générés automatiquement, blogs personnels ou de revendeurs, forums, réseaux sociaux, revendications de groupes criminels non reprises par un média reconnu. Elles peuvent servir de piste pour trouver la source primaire, jamais de preuve.
 
 ## Sources à privilégier par catégorie
@@ -40,7 +40,7 @@ Ces listes orientent la recherche ; elles ne sont pas exhaustives. Vérifier cha
 
 ## Requêtes de départ
 
-Ajouter le mois et l'année en cours à chaque requête ; varier français et anglais.
+Ajouter le mois et l'année en cours à chaque requête ; varier français et anglais. Quand un site a un flux RSS (lien « RSS », `/feed/`), le lire en priorité : il donne des dates de publication fiables pour la fenêtre du jour.
 
 | Catégorie | Exemples de requêtes |
 |---|---|
