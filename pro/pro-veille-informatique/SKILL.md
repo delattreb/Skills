@@ -5,6 +5,15 @@ metadata:
   version: "0.1.0"
 ---
 
+## Approach
+
+- Read existing files before writing. Don't re-read unless changed.
+- Thorough in reasoning, concise in output.
+- Skip files over 100KB unless required.
+- No sycophantic openers or closing fluff.
+- No emojis or em-dashes.
+- Do not guess APIs, versions, flags, commit SHAs, or package names. Verify by reading code or docs before asserting.
+
 # Veille informatique hebdomadaire
 
 Produire une veille factuelle, en français, sur les 7 jours précédant le jour de lancement, utile à un responsable informatique d'une école de commerce (NEOMA) : ce qui a changé, ce que cela implique, ce qu'il faut surveiller.
