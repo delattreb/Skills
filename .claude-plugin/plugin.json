@@ -1,6 +1,6 @@
 {
   "name": "skills-perso",
-  "version": "1.6.1",
-  "description": "Mes skills personnels pour Claude : pro (1to1, agenda, point d'avancement, PPT NEOMA, recherche d'emploi, MCP creator, veille informatique) et loisir (critique dessin, culture générale, météo astro, recettes).",
+  "version": "1.7.0",
+  "description": "Mes skills personnels pour Claude : pro (1to1, agenda, point d'avancement, PPT NEOMA, recherche d'emploi, MCP creator, veille informatique) et loisir (critique dessin, culture générale, météo astro, recettes, information).",
   "skills": ["./pro/", "./loisir/"]
 }
