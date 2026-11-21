@@ -70,6 +70,8 @@ Ouvrir les articles les plus prometteurs pour vérifier la date, le fond et le s
 
 ## Étape 4 : Rédiger
 
+Le frontmatter YAML sert aux propriétés et aux tags Obsidian. Le champ `tags` contient toujours `veille` et `informatique`, puis un tag par catégorie qui a au moins un élément retenu, dans l'ordre du format ci-dessous : `ia`, `enseignement-superieur`, `microsoft-365`, `cybersecurite`, `reglementation`, `infrastructure`, `marche-editeurs`, `geekerie`. Les tags sont en minuscules, sans espace ni accent, et une catégorie sans actualité n'apparaît pas. Exemple : `tags: [veille, informatique, cybersecurite]` pour une veille qui ne contient que de la cybersécurité.
+
 Respecter exactement ce format, frontmatter compris :
 
 ```
@@ -80,7 +82,7 @@ fenetre_debut: AAAA-MM-JJ HH:MM
 fenetre_fin: AAAA-MM-JJ HH:MM
 categories_avec_actualite: N
 elements: N
-tags: [veille, informatique]
+tags: [veille, informatique, ...]
 ---
 
 # Veille informatique du [jour JJ mois AAAA]
