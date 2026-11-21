@@ -85,14 +85,24 @@ Style : concis, factuel, sans remplissage ni formule d'introduction, sans adject
 
 ## Étape 5 : Enregistrer dans Obsidian
 
-Cible : **`Mon Drive/ObsidianVault/MonVault/information/AAAA-MM-JJ information.md`**, où `AAAA-MM-JJ` est la date du jour de lancement (exemple : `2026-11-21 information.md` ; chemin local : `G:\Mon Drive\ObsidianVault\MonVault\information\2026-11-21 information.md`). Le dossier `information` est à la racine du coffre MonVault et s'écrit en minuscules. Ne jamais écrire dans les autres dossiers du coffre (`veille`, `Dessin`, etc.) ni dans un autre coffre.
+Coffre cible : **MonVault** (`Mon Drive/ObsidianVault/MonVault`, chemin local indicatif : `G:/Mon Drive/ObsidianVault/MonVault`). Dossier cible : **`information`**, à la racine du coffre, en minuscules. Fichier : **`AAAA-MM-JJ information.md`**, où la date est celle du jour de lancement (exemple : `2026-11-21 information.md`). Ne jamais écrire dans un autre dossier du coffre (`veille`, `Dessin`, `Cuisine`, etc.) ni dans une copie homonyme de MonVault (par exemple `Mon Drive/Dessin/MonVault`).
 
-1. Si les outils du dossier connecté de l'ordinateur sont disponibles et que `G:\Mon Drive\ObsidianVault\MonVault` y est accessible, écrire le fichier directement dans `MonVault\information` (créer ce dossier s'il n'existe pas). Sinon, passer par Google Drive.
-2. Via Google Drive : retrouver le dossier `MonVault` et **vérifier la chaîne complète des parents** : `MonVault → ObsidianVault → Mon Drive`. Si la chaîne est introuvable ou ambiguë, s'arrêter et demander le lien du dossier.
-3. Dans ce `MonVault` vérifié, chercher le sous-dossier `information` à la racine du coffre. S'il n'existe pas, le créer (`create_file`, type `application/vnd.google-apps.folder`) avec `MonVault` comme parent explicite. Ne jamais créer un second dossier homonyme.
-4. Créer le fichier du jour (`create_file`) avec `information` comme parent explicite. Si un fichier portant **la même date** existe déjà (point relancé le même jour), le mettre à la corbeille (`trash_file`) avant de créer le nouveau, et le signaler dans la réponse finale. Ne jamais créer de doublon et ne jamais toucher aux fichiers d'autres dates.
-5. Enregistrer un vrai fichier texte UTF-8 `.md` (`contentMimeType` `text/markdown`, `disableConversionToGoogleType` à vrai), **sans conversion en Google Doc**, pour qu'il reste lisible dans Obsidian. Le contenu est exactement le point de l'étape 4.
-6. Relire les métadonnées du fichier enregistré : nom, parent, type. Ne pas affirmer que la synchronisation locale Obsidian est terminée.
+Repères Drive, à revalider par lecture des métadonnées et des parents avant chaque écriture :
+
+| Dossier | Identifiant Drive |
+|---|---|
+| ObsidianVault | `1Q3dr6rASJAsU_wtcZHiKROWukoyLr5Mf` |
+| MonVault | `1zZRUuQVhlIg_Vvnt0m0BqOq2Q5nnCsQV` |
+| information | à retrouver ou créer sous MonVault (pas encore connu) |
+
+Chaîne à vérifier : `information → MonVault → ObsidianVault → Mon Drive`.
+
+1. **Accès local d'abord.** Si l'ordinateur connecté est disponible et que le chemin réel `G:/Mon Drive/ObsidianVault/MonVault` est accessible, écrire directement dans `MonVault/information` (le créer s'il n'existe pas). Vérifier le chemin absolu réel avant écriture.
+2. **Sinon, connecteur Google Drive.** Vérifier la chaîne complète des parents à partir de l'identifiant MonVault ci-dessus. Si la chaîne est introuvable ou ambiguë, s'arrêter et demander le lien du dossier MonVault.
+3. Chercher le sous-dossier `information` directement sous MonVault. S'il n'existe pas, le créer (`create_file`, type `application/vnd.google-apps.folder`) avec MonVault comme parent explicite. Ne jamais créer un second dossier homonyme.
+4. Vérifier qu'aucun fichier de la même date n'existe déjà dans `information`. Si un point du même jour existe (point relancé), le mettre à la corbeille (`trash_file`) avant de créer le nouveau, et le signaler dans la réponse finale. Ne jamais créer de doublon (`… (1).md`) et ne jamais toucher aux fichiers d'autres dates.
+5. Créer le fichier avec `information` comme parent explicite : vrai fichier texte UTF-8 `.md` (`contentMimeType` `text/markdown`, `disableConversionToGoogleType` à vrai), **sans conversion en Google Doc**, pour qu'il reste lisible dans Obsidian. Le contenu est exactement le point de l'étape 4.
+6. Relire le fichier enregistré : contenu, nom, parent, type. Ne pas affirmer que la synchronisation locale Obsidian est terminée sans l'avoir observée.
 
 Si l'écriture est impossible, livrer le point complet dans le chat et expliquer ce qui a bloqué.
 
