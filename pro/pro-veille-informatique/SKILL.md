@@ -1,6 +1,6 @@
 ---
 name: "pro-veille-informatique"
-description: "Rédige en français une veille informatique hebdomadaire couvrant les 7 derniers jours sur trois thèmes : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud. S'appuie uniquement sur des recherches web, chaque élément étant daté et sourcé par un lien, et l'enregistre dans Obsidian (coffre NeomaVault, veille/veille informatique.md, remplacé à chaque lancement). À utiliser quand l'utilisateur demande « veille informatique », « veille IT », « veille techno », « /pro-veille-informatique », « quoi de neuf en IT cette semaine », « actus IA / Microsoft 365 / enseignement supérieur » ou lance la veille hebdomadaire planifiée."
+description: "Rédige en français une veille informatique hebdomadaire couvrant les 7 derniers jours sur trois thèmes : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud. S'appuie uniquement sur des recherches web, chaque élément étant daté et sourcé par un lien, et l'enregistre dans Obsidian (coffre MonVault, veille/veille informatique.md, remplacé à chaque lancement). À utiliser quand l'utilisateur demande « veille informatique », « veille IT », « veille techno », « /pro-veille-informatique », « quoi de neuf en IT cette semaine », « actus IA / Microsoft 365 / enseignement supérieur » ou lance la veille hebdomadaire planifiée."
 metadata:
   version: "0.1.0"
 ---
@@ -80,11 +80,11 @@ Style : concis, professionnel, sans remplissage ni formule d'introduction. Un th
 
 ## Étape 5 : Enregistrer dans Obsidian
 
-Cible : **`Mon Drive/ObsidianVault/NeomaVault/veille/veille informatique.md`** (chemin local : `G:\Mon Drive\ObsidianVault\NeomaVault\veille\veille informatique.md`). Le dossier `veille` est à la racine du coffre et s'écrit en minuscules. Le nom du fichier contient une espace : ne pas le confondre avec `veille-informatique.md`.
+Cible : **`Mon Drive/ObsidianVault/MonVault/veille/veille informatique.md`** (chemin local : `G:\Mon Drive\ObsidianVault\MonVault\veille\veille informatique.md`). Le dossier `veille` est à la racine du coffre MonVault et s'écrit en minuscules. Ne jamais écrire dans le coffre de `pro-agenda`, `pro-1to1` ou `pro-point-avancement`. Le nom du fichier contient une espace : ne pas le confondre avec `veille-informatique.md`.
 
-1. Si les outils du dossier connecté de l'ordinateur sont disponibles et que `G:\Mon Drive\ObsidianVault\NeomaVault` y est accessible, écrire le fichier directement dans `NeomaVault\veille`. Sinon, passer par Google Drive.
-2. Via Google Drive : retrouver le dossier `NeomaVault` et **vérifier la chaîne complète des parents** : `NeomaVault → ObsidianVault → Mon Drive`. Ne jamais écrire dans `MonVault` ni dans une copie homonyme. Si la chaîne est introuvable ou ambiguë, s'arrêter et demander le lien du dossier.
-3. Dans ce `NeomaVault` vérifié, prendre le sous-dossier `veille` situé directement à la racine du coffre. Ne jamais créer un autre dossier `veille` ou `Veille` : s'il est introuvable, s'arrêter et demander le lien du dossier.
+1. Si les outils du dossier connecté de l'ordinateur sont disponibles et que `G:\Mon Drive\ObsidianVault\MonVault` y est accessible, écrire le fichier directement dans `MonVault\veille` (créer ce dossier s'il n'existe pas). Sinon, passer par Google Drive.
+2. Via Google Drive : retrouver le dossier `MonVault` et **vérifier la chaîne complète des parents** : `MonVault → ObsidianVault → Mon Drive`. Ne jamais écrire dans un autre coffre ni dans une copie homonyme. Si la chaîne est introuvable ou ambiguë, s'arrêter et demander le lien du dossier.
+3. Dans ce `MonVault` vérifié, chercher le sous-dossier `veille` directement à la racine du coffre. S'il n'existe pas, le créer (`create_file`, type `application/vnd.google-apps.folder`) avec `MonVault` comme parent explicite. Ne jamais créer un second dossier `veille` ou `Veille`.
 4. Si `veille informatique.md` existe déjà dans `veille`, **remplacer son contenu** (`update_file`) ; sinon le **créer** (`create_file`) avec `veille` comme parent explicite. Ne jamais créer de doublon (`veille informatique (1).md`, etc.).
 5. Enregistrer un vrai fichier texte UTF-8 `.md` (type `text/markdown`), **sans conversion en Google Doc**, pour qu'il reste lisible dans Obsidian. Le contenu est exactement la veille de l'étape 4.
 6. Relire le fichier enregistré : nom, parent, début du contenu. Ne pas affirmer que la synchronisation locale Obsidian est terminée.

@@ -10,7 +10,7 @@ Mes skills personnels pour Claude.
 | [pro-mcp-creator](pro/pro-mcp-creator/SKILL.md) | Créer un squelette de serveur MCP (Python FastMCP ou TypeScript) avec outils, tests et configuration client. |
 | [pro-ppt-neoma](pro/pro-ppt-neoma/SKILL.md) | Créer un PowerPoint modifiable au format NEOMA. |
 | [pro-recherche-emploi-informatique](pro/pro-recherche-emploi-informatique/SKILL.md) | Rechercher et classer des offres de responsable informatique à Rouen, et trier ma boîte Gmail « Emploi ». |
-| [pro-veille-informatique](pro/pro-veille-informatique/SKILL.md) | Veille informatique hebdomadaire (IA, SI de l'enseignement supérieur, Microsoft 365 et cloud) à partir du web, dans Obsidian (NeomaVault). |
+| [pro-veille-informatique](pro/pro-veille-informatique/SKILL.md) | Veille informatique hebdomadaire (IA, SI de l'enseignement supérieur, Microsoft 365 et cloud) à partir du web, dans Obsidian (MonVault). |
 | [loisir-critique-dessin](loisir/loisir-critique-dessin/SKILL.md) | Critiquer mes dessins, les intégrer dans mes fiches Obsidian et suivre ma progression. |
 | [loisir-culture-generale-obsidian](loisir/loisir-culture-generale-obsidian/SKILL.md) | Créer et gérer les fiches illustrées de culture générale du parcours CGI dans Obsidian. |
 | [loisir-meteo-astro-hebdo](loisir/loisir-meteo-astro-hebdo/SKILL.md) | Fiche météo astro des 7 prochaines nuits pour mon C8, avec graphisme des phases de Lune. |

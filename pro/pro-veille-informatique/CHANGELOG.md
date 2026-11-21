@@ -7,6 +7,6 @@ Chaque version publiée est marquée par un tag Git `pro-veille-informatique-vX.
 ### Ajouté
 - Première version : veille informatique hebdomadaire en français (7 derniers jours) sur trois thèmes : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud.
 - Sources web uniquement, chaque élément daté et sourcé par un lien ; impact pour NEOMA et échéances à surveiller.
-- Fiche unique `veille/veille informatique.md` dans Obsidian NeomaVault (Google Drive), dossier `veille` à la racine du coffre, fiche remplacée à chaque lancement.
+- Fiche unique `veille/veille informatique.md` dans Obsidian MonVault (Google Drive), dossier `veille` à la racine du coffre créé s'il n'existe pas, fiche remplacée à chaque lancement. Aucun impact sur les autres skills ni sur leur coffre.
 - En-tête « Approach » (consignes de concision) pour limiter la consommation de tokens.
 - Référence `references/sources-et-requetes.md` : sources prioritaires, requêtes de départ et indices de pertinence.
