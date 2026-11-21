@@ -4,6 +4,7 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [Sem
 
 ## [0.2.1] — 2026-11-21
 ### Modifié
+- Dossier de destination renommé `Information` (majuscule initiale), selon le nom réel dans le coffre.
 - Rien de notable : un volet sans fait confirmé affiche « Rien de notable dans la fenêtre. » ; aucun résumé d'agrégateur ni piste non vérifiée n'est ajouté. Si les deux volets sont vides, le point le signale en une phrase.
 
 ## [0.2.0] — 2026-11-21
@@ -19,5 +20,5 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [Sem
 - Fenêtre de 24 h (72 h le lundi, depuis le dernier point pour un lancement manuel), 5 éléments au plus par volet, un fichier daté par jour.
 - Règle de confirmation : deux médias reconnus indépendants, ou une source officielle. Ni agrégateur, ni réseau social comme preuve.
 - Neutralité : faits attribués, sujets disputés sans conclusion, statut « en cours d'établissement » signalé.
-- Enregistrement dans Obsidian MonVault, dossier `information` à la racine du coffre.
+- Enregistrement dans Obsidian MonVault, dossier `Information` à la racine du coffre.
 - Référence `references/sources.md` : médias reconnus, sources officielles, requêtes de départ et indices d'importance.

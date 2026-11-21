@@ -21,7 +21,7 @@ Produire chaque jour un point factuel, en français, sur l'actualité publiée d
 ## Règles impératives
 
 - **Sources web uniquement.** Utiliser l'outil de recherche web disponible (WebSearch ou équivalent) et, si besoin, la lecture de page pour vérifier un article. Ne consulter ni la messagerie, ni l'agenda, ni Teams.
-- **Une seule écriture par lancement : le fichier horodaté** `AAAA-MM-JJ information.md` (date du jour de lancement) dans `MonVault/information` (étape 5). Les points des jours précédents ne sont jamais modifiés.
+- **Une seule écriture par lancement : le fichier horodaté** `AAAA-MM-JJ information.md` (date du jour de lancement) dans `MonVault/Information` (étape 5). Les points des jours précédents ne sont jamais modifiés.
 - **Informations confirmées uniquement.** Un fait entre dans le point s'il est confirmé soit par **deux médias reconnus indépendants** (sources actives de `config/sources.json`), soit par **une source officielle** (gouvernement, Journal officiel, institution internationale, organisme public, communiqué de l'entité concernée). Une dépêche d'agence (AFP, Reuters, Associated Press) reprise sur un autre site compte pour l'agence, à condition que le texte la cite nommément ; une dépêche d'agence ne compte pas pour deux médias à elle seule : il faut un second média reconnu indépendant, ou la reprise de l'agence sur deux sites distincts, qui la citent nommément (voir `confirmation.agences_reprises` dans le fichier de configuration). Un fait repris seulement par un agrégateur, un blog anonyme, une page générée automatiquement ou un réseau social est **exclu**, même s'il paraît important. Il n'y a pas de rubrique « à confirmer ».
 - **Ne rien inventer.** Chaque élément a au moins un lien et une date de publication. Uniquement des URL renvoyées par la recherche ou ouvertes ; jamais de lien reconstruit de mémoire.
 - **Neutralité.** Pour les sujets disputés (politique, conflits, élections, débats de société), présenter les positions des acteurs concernés en les attribuant, sans adjectif évaluatif ni conclusion. Indiquer quand un fait est encore en cours d'établissement (« selon les premières informations », « non confirmé par les autorités à cette heure »).
@@ -35,9 +35,9 @@ Produire chaque jour un point factuel, en français, sur l'actualité publiée d
 2. Calculer la fenêtre (fuseau Europe/Paris), **fin = moment du lancement** :
    - mardi à vendredi : les 48 dernières heures ;
    - lundi : depuis vendredi matin (72 h), pour couvrir le week-end ;
-   - lancement manuel : depuis la date du dernier point présent dans `MonVault/information` (7 jours au maximum) ; sans point précédent, 48 h.
+   - lancement manuel : depuis la date du dernier point présent dans `MonVault/Information` (7 jours au maximum) ; sans point précédent, 48 h.
    Noter la date du jour au format `AAAA-MM-JJ`.
-3. Lire le point précédent (le fichier `AAAA-MM-JJ information.md` le plus récent de `MonVault/information`, s'il existe) pour ne pas reprendre un sujet déjà traité, sauf fait nouveau, signalé alors par « (suite) ».
+3. Lire le point précédent (le fichier `AAAA-MM-JJ information.md` le plus récent de `MonVault/Information`, s'il existe) pour ne pas reprendre un sujet déjà traité, sauf fait nouveau, signalé alors par « (suite) ».
 4. Lire `config/sources.json` : sources actives (médias et officielles), seuil de confirmation et volet de chaque source. Ne jamais utiliser une source `actif: false`. Lire `references/sources.md` pour les requêtes de départ et les critères d'importance.
 
 ## Étape 2 : Collecter (lancer les recherches indépendantes en parallèle)
@@ -86,7 +86,7 @@ Style : concis, factuel, sans remplissage ni formule d'introduction, sans adject
 
 ## Étape 5 : Enregistrer dans Obsidian
 
-Coffre cible : **MonVault** (`Mon Drive/ObsidianVault/MonVault`, chemin local indicatif : `G:/Mon Drive/ObsidianVault/MonVault`). Dossier cible : **`information`**, à la racine du coffre, en minuscules. Fichier : **`AAAA-MM-JJ information.md`**, où la date est celle du jour de lancement (exemple : `2026-11-21 information.md`). Ne jamais écrire dans un autre dossier du coffre (`veille`, `Dessin`, `Cuisine`, etc.) ni dans une copie homonyme de MonVault (par exemple `Mon Drive/Dessin/MonVault`).
+Coffre cible : **MonVault** (`Mon Drive/ObsidianVault/MonVault`, chemin local indicatif : `G:/Mon Drive/ObsidianVault/MonVault`). Dossier cible : **`Information`**, à la racine du coffre, avec une majuscule initiale. Fichier : **`AAAA-MM-JJ information.md`**, où la date est celle du jour de lancement (exemple : `2026-11-21 information.md`). Ne jamais écrire dans un autre dossier du coffre (`veille`, `Dessin`, `Cuisine`, etc.) ni dans une copie homonyme de MonVault (par exemple `Mon Drive/Dessin/MonVault`).
 
 Repères Drive, à revalider par lecture des métadonnées et des parents avant chaque écriture :
 
@@ -94,15 +94,15 @@ Repères Drive, à revalider par lecture des métadonnées et des parents avant 
 |---|---|
 | ObsidianVault | `1Q3dr6rASJAsU_wtcZHiKROWukoyLr5Mf` |
 | MonVault | `1zZRUuQVhlIg_Vvnt0m0BqOq2Q5nnCsQV` |
-| information | à retrouver ou créer sous MonVault (pas encore connu) |
+| Information | à retrouver ou créer sous MonVault (pas encore connu) |
 
 Chaîne à vérifier : `information → MonVault → ObsidianVault → Mon Drive`.
 
-1. **Accès local d'abord.** Si l'ordinateur connecté est disponible et que le chemin réel `G:/Mon Drive/ObsidianVault/MonVault` est accessible, écrire directement dans `MonVault/information` (le créer s'il n'existe pas). Vérifier le chemin absolu réel avant écriture.
+1. **Accès local d'abord.** Si l'ordinateur connecté est disponible et que le chemin réel `G:/Mon Drive/ObsidianVault/MonVault` est accessible, écrire directement dans `MonVault/Information` (le créer s'il n'existe pas). Vérifier le chemin absolu réel avant écriture.
 2. **Sinon, connecteur Google Drive.** Vérifier la chaîne complète des parents à partir de l'identifiant MonVault ci-dessus. Si la chaîne est introuvable ou ambiguë, s'arrêter et demander le lien du dossier MonVault.
-3. Chercher le sous-dossier `information` directement sous MonVault. S'il n'existe pas, le créer (`create_file`, type `application/vnd.google-apps.folder`) avec MonVault comme parent explicite. Ne jamais créer un second dossier homonyme.
-4. Vérifier qu'aucun fichier de la même date n'existe déjà dans `information`. Si un point du même jour existe (point relancé), le mettre à la corbeille (`trash_file`) avant de créer le nouveau, et le signaler dans la réponse finale. Ne jamais créer de doublon (`… (1).md`) et ne jamais toucher aux fichiers d'autres dates.
-5. Créer le fichier avec `information` comme parent explicite : vrai fichier texte UTF-8 `.md` (`contentMimeType` `text/markdown`, `disableConversionToGoogleType` à vrai), **sans conversion en Google Doc**, pour qu'il reste lisible dans Obsidian. Le contenu est exactement le point de l'étape 4.
+3. Chercher le sous-dossier `Information` directement sous MonVault. S'il n'existe pas, le créer (`create_file`, type `application/vnd.google-apps.folder`) avec MonVault comme parent explicite. Ne jamais créer un second dossier homonyme.
+4. Vérifier qu'aucun fichier de la même date n'existe déjà dans `Information`. Si un point du même jour existe (point relancé), le mettre à la corbeille (`trash_file`) avant de créer le nouveau, et le signaler dans la réponse finale. Ne jamais créer de doublon (`… (1).md`) et ne jamais toucher aux fichiers d'autres dates.
+5. Créer le fichier avec `Information` comme parent explicite : vrai fichier texte UTF-8 `.md` (`contentMimeType` `text/markdown`, `disableConversionToGoogleType` à vrai), **sans conversion en Google Doc**, pour qu'il reste lisible dans Obsidian. Le contenu est exactement le point de l'étape 4.
 6. Relire le fichier enregistré : contenu, nom, parent, type. Ne pas affirmer que la synchronisation locale Obsidian est terminée sans l'avoir observée.
 
 Si l'écriture est impossible, livrer le point complet dans le chat et expliquer ce qui a bloqué.
