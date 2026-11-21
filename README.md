@@ -13,6 +13,7 @@ Mes skills personnels pour Claude.
 | [pro-veille-informatique](pro/pro-veille-informatique/SKILL.md) | Veille informatique quotidienne (IA, enseignement supérieur, Microsoft 365 et cloud, cyber, réglementation, infra, marché, geekerie) à partir du web, un fichier daté par jour dans Obsidian (MonVault). |
 | [loisir-critique-dessin](loisir/loisir-critique-dessin/SKILL.md) | Critiquer mes dessins, les intégrer dans mes fiches Obsidian et suivre ma progression. |
 | [loisir-culture-generale-obsidian](loisir/loisir-culture-generale-obsidian/SKILL.md) | Créer et gérer les fiches illustrées de culture générale du parcours CGI dans Obsidian. |
+| [loisir-information](loisir/loisir-information/SKILL.md) | Point d'information quotidien : actualité internationale et française importante, uniquement des faits confirmés, dans Obsidian (MonVault). |
 | [loisir-meteo-astro-hebdo](loisir/loisir-meteo-astro-hebdo/SKILL.md) | Fiche météo astro des 7 prochaines nuits pour mon C8, avec graphisme des phases de Lune. |
 | [loisir-recettes-obsidian](loisir/loisir-recettes-obsidian/SKILL.md) | Créer, illustrer et modifier des recettes Markdown dans Obsidian. |
 

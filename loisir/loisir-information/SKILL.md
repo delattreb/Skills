@@ -1,0 +1,105 @@
+---
+name: "loisir-information"
+description: "Rédige en français un point d'information quotidien (dernières 24 h, 72 h le lundi) sur deux volets : l'actualité internationale importante et l'actualité française importante. S'appuie uniquement sur des recherches web, ne retient que des informations confirmées par au moins deux médias reconnus ou par une source officielle, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier information, un fichier horodaté par jour). À utiliser quand l'utilisateur demande « actualités », « infos du jour », « qu'est-ce qui s'est passé », « point info », « /loisir-information », « actu internationale », « actu France », « résumé de l'actu » ou lance le point d'information planifié."
+metadata:
+  version: "0.1.0"
+---
+
+## Approach
+
+- Read existing files before writing. Don't re-read unless changed.
+- Thorough in reasoning, concise in output.
+- Skip files over 100KB unless required.
+- No sycophantic openers or closing fluff.
+- No emojis or em-dashes.
+- Do not guess APIs, versions, flags, commit SHAs, or package names. Verify by reading code or docs before asserting.
+
+# Point d'information quotidien
+
+Produire chaque jour un point factuel, en français, sur l'actualité publiée depuis la fenêtre de l'étape 1, en deux volets : **international** et **France**. Le point ne donne ni avis ni commentaire politique : il décrit ce qui s'est passé, qui l'a dit, quelle est la portée, et ce qui reste incertain.
+
+## Règles impératives
+
+- **Sources web uniquement.** Utiliser l'outil de recherche web disponible (WebSearch ou équivalent) et, si besoin, la lecture de page pour vérifier un article. Ne consulter ni la messagerie, ni l'agenda, ni Teams.
+- **Une seule écriture par lancement : le fichier horodaté** `AAAA-MM-JJ information.md` (date du jour de lancement) dans `MonVault/information` (étape 5). Les points des jours précédents ne sont jamais modifiés.
+- **Informations confirmées uniquement.** Un fait entre dans le point s'il est confirmé soit par **deux médias reconnus indépendants** (voir `references/sources.md`), soit par **une source officielle** (gouvernement, Journal officiel, institution internationale, organisme public, communiqué de l'entité concernée). Un fait repris seulement par un agrégateur, un blog anonyme, une page générée automatiquement ou un réseau social est **exclu**, même s'il paraît important. Il n'y a pas de rubrique « à confirmer ».
+- **Ne rien inventer.** Chaque élément a au moins un lien et une date de publication. Uniquement des URL renvoyées par la recherche ou ouvertes ; jamais de lien reconstruit de mémoire.
+- **Neutralité.** Pour les sujets disputés (politique, conflits, élections, débats de société), présenter les positions des acteurs concernés en les attribuant, sans adjectif évaluatif ni conclusion. Indiquer quand un fait est encore en cours d'établissement (« selon les premières informations », « non confirmé par les autorités à cette heure »).
+- **Période stricte.** Ne retenir que des informations publiées entre début et fin de période (étape 1). Un événement plus ancien n'entre que si un fait nouveau est publié dans la période, et ce fait nouveau est alors daté.
+- **Une seule rubrique par élément.** Un même fait n'apparaît qu'une fois.
+- **Recherche web indisponible.** Si aucun outil de recherche web n'est disponible ou qu'il échoue, s'arrêter et l'indiquer en une ligne. Ne pas produire de point de mémoire.
+
+## Étape 1 : Préparer
+
+1. Charger l'outil de recherche web via ToolSearch si nécessaire (par exemple `select:WebSearch`).
+2. Calculer la fenêtre (fuseau Europe/Paris), **fin = moment du lancement** :
+   - mardi à vendredi : les 24 dernières heures ;
+   - lundi : depuis vendredi matin (72 h), pour couvrir le week-end ;
+   - lancement manuel : depuis la date du dernier point présent dans `MonVault/information` (7 jours au maximum) ; sans point précédent, 24 h.
+   Noter la date du jour au format `AAAA-MM-JJ`.
+3. Lire le point précédent (le fichier `AAAA-MM-JJ information.md` le plus récent de `MonVault/information`, s'il existe) pour ne pas reprendre un sujet déjà traité, sauf fait nouveau, signalé alors par « (suite) ».
+4. Lire `references/sources.md` : médias reconnus, sources officielles et requêtes de départ.
+
+## Étape 2 : Collecter (lancer les recherches indépendantes en parallèle)
+
+Lancer plusieurs requêtes par volet, en français et en anglais, avec le mois et l'année en cours :
+
+1. **International** : événements politiques et diplomatiques majeurs, conflits, économie et marchés, décisions des grandes institutions (ONU, UE, G7, G20, banques centrales), catastrophes naturelles, sciences et santé publique à portée mondiale.
+2. **France** : décisions du gouvernement et du Parlement (textes publiés au Journal officiel), actualité politique et sociale majeure, économie et emploi, justice, grands événements, sécurité et santé publique, décisions de la Banque de France et des grandes autorités de régulation.
+
+Ouvrir les articles les plus importants pour vérifier la date, le fond et la confirmation. Pour chaque fait retenu, vérifier la règle de double confirmation ou de source officielle ; sinon l'écarter.
+
+## Étape 3 : Trier
+
+- Écarter les faits non confirmés selon la règle impérative, les doublons (garder une entrée, source officielle en premier), les éditoriaux et analyses sans fait nouveau, les contenus promotionnels, les faits hors période.
+- Évaluer l'**importance** : nombre de personnes touchées, portée juridique ou économique, effet durable, caractère inédit. Garder au plus **5 éléments par volet**, du plus au moins important. Un jour calme donne un point court : ne pas combler avec des éléments faibles.
+- Repérer les **échéances** (entrée en vigueur d'un texte, élection, sommet, date limite, publication attendue) dans les semaines à venir, si elles sont officielles.
+
+## Étape 4 : Rédiger
+
+Respecter exactement ce format :
+
+```
+# Point d'information du [jour JJ mois AAAA]
+
+## À retenir
+- [3 points maximum, une ligne chacun : le plus important du jour, tous volets confondus]
+
+## International
+### [Titre court et factuel]
+[2 à 3 phrases : ce qui s'est passé, qui est concerné, date, statut si incertain.]
+Sources : [Nom du média, JJ/MM/AAAA](URL), [Nom du média, JJ/MM/AAAA](URL)
+
+## France
+### [Titre court et factuel]
+[2 à 3 phrases : ce qui s'est passé, qui est concerné, date, statut si incertain.]
+Sources : [Nom du média, JJ/MM/AAAA](URL), [Nom du média, JJ/MM/AAAA](URL)
+
+## À surveiller
+- [JJ/MM/AAAA] : [échéance officielle] ([source](URL))
+```
+
+Pour une information officielle seule, écrire « Source officielle : [Nom, JJ/MM/AAAA](URL) » à la place de la double source. Une rubrique sans fait confirmé affiche « Rien de notable dans la fenêtre. ». La rubrique « À surveiller » est omise si aucune échéance officielle n'a été trouvée.
+
+Style : concis, factuel, sans remplissage ni formule d'introduction, sans adjectif évaluatif.
+
+## Étape 5 : Enregistrer dans Obsidian
+
+Cible : **`Mon Drive/ObsidianVault/MonVault/information/AAAA-MM-JJ information.md`**, où `AAAA-MM-JJ` est la date du jour de lancement (exemple : `2026-11-21 information.md` ; chemin local : `G:\Mon Drive\ObsidianVault\MonVault\information\2026-11-21 information.md`). Le dossier `information` est à la racine du coffre MonVault et s'écrit en minuscules. Ne jamais écrire dans les autres dossiers du coffre (`veille`, `Dessin`, etc.) ni dans un autre coffre.
+
+1. Si les outils du dossier connecté de l'ordinateur sont disponibles et que `G:\Mon Drive\ObsidianVault\MonVault` y est accessible, écrire le fichier directement dans `MonVault\information` (créer ce dossier s'il n'existe pas). Sinon, passer par Google Drive.
+2. Via Google Drive : retrouver le dossier `MonVault` et **vérifier la chaîne complète des parents** : `MonVault → ObsidianVault → Mon Drive`. Si la chaîne est introuvable ou ambiguë, s'arrêter et demander le lien du dossier.
+3. Dans ce `MonVault` vérifié, chercher le sous-dossier `information` à la racine du coffre. S'il n'existe pas, le créer (`create_file`, type `application/vnd.google-apps.folder`) avec `MonVault` comme parent explicite. Ne jamais créer un second dossier homonyme.
+4. Créer le fichier du jour (`create_file`) avec `information` comme parent explicite. Si un fichier portant **la même date** existe déjà (point relancé le même jour), le mettre à la corbeille (`trash_file`) avant de créer le nouveau, et le signaler dans la réponse finale. Ne jamais créer de doublon et ne jamais toucher aux fichiers d'autres dates.
+5. Enregistrer un vrai fichier texte UTF-8 `.md` (`contentMimeType` `text/markdown`, `disableConversionToGoogleType` à vrai), **sans conversion en Google Doc**, pour qu'il reste lisible dans Obsidian. Le contenu est exactement le point de l'étape 4.
+6. Relire les métadonnées du fichier enregistré : nom, parent, type. Ne pas affirmer que la synchronisation locale Obsidian est terminée.
+
+Si l'écriture est impossible, livrer le point complet dans le chat et expliquer ce qui a bloqué.
+
+## Étape 6 : Réponse finale
+
+Livrer dans le chat un court bilan : le nom et l'emplacement du fichier (lien Drive si disponible) et les points de la rubrique « À retenir », une ligne chacun. Ne pas recopier tout le point sauf si l'écriture a échoué. Si l'outil SendUserMessage est disponible (notamment en exécution planifiée), y envoyer ce même bilan.
+
+## Exécution planifiée
+
+Le point peut être lancé chaque jour par une tâche planifiée. Personne ne répond aux questions dans ce mode : ne rien demander, appliquer les règles, et signaler dans le bilan tout ce qui a bloqué (source inaccessible, dossier introuvable, écriture impossible).
