@@ -18,6 +18,11 @@ Un fait confirmé par **deux médias reconnus indépendants** entre dans le poin
 
 Agrégateurs de nouvelles, sites de digest générés automatiquement, blogs personnels, forums, réseaux sociaux, comptes anonymes, sites de désinformation connus. Ils peuvent servir de piste pour trouver la source primaire, jamais de preuve.
 
+## Limites de l'outil de recherche
+
+- Le filtre `allowed_domains` est refusé pour Reuters, AP, BBC, Le Monde, AFP, The Guardian et RFI : ne pas l'utiliser pour ces médias. Recherche sans filtre, puis lecture des URL renvoyées.
+- Les dépêches d'agence sont souvent reprises sur des sites régionaux ou nationaux : la reprise nommée de l'agence fait foi (voir `config/sources.json`).
+
 ## Requêtes de départ
 
 Ajouter le mois et l'année en cours ; varier français et anglais.

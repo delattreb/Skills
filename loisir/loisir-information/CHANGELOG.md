@@ -2,6 +2,12 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 
+## [0.2.0] — 2026-11-21
+### Modifié
+- Fenêtre portée à 48 h (72 h le lundi), après test : une actualité de la veille, comme la CIJ le 19 novembre 2026, était exclue.
+- Confirmation par dépêche d'agence reprise nommément (AFP, Reuters, AP), sur un autre site.
+- Limites de l'outil de recherche documentées (`allowed_domains` refusé pour les grands médias).
+
 ## [0.1.0] — 2026-11-21
 ### Ajouté
 - Fichier de configuration `config/sources.json` : médias et sources officielles activables, volet de chaque source, seuil de confirmation.

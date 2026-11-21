@@ -1,9 +1,17 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "commentaire": "Sources du point d'information. Ajouter, retirer ou désactiver une source ici, sans modifier SKILL.md. Les domaines sont des repères : chaque URL retenue doit avoir été renvoyée par la recherche ou ouverte. Une source désactivée (actif: false) n'est pas utilisée.",
   "confirmation": {
     "min_medias_independants": 2,
-    "source_officielle_suffisante": true
+    "source_officielle_suffisante": true,
+    "agences_reprises": {
+      "agences": ["AFP", "Reuters", "Associated Press"],
+      "reprise_nommee_requise": true
+    }
+  },
+  "fenetre": {
+    "heures": 48,
+    "lundi_heures": 72
   },
   "medias": [
     { "nom": "Reuters", "domaine": "reuters.com", "volet": "international", "actif": true },
