@@ -3,6 +3,15 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 Chaque version publiée est marquée par un tag Git `pro-veille-informatique-vX.Y.Z`.
 
+## [0.4.0] — 2026-11-21
+### Modifié
+- Collecte en trois passes : flux primaires lus par script, recherche web restreinte aux domaines fiables (`allowed_domains`), puis recherche libre en complément.
+- Nouveau script `scripts/flux_veille.py` : feuille de route Microsoft 365 (RSS officiel) et catalogue CISA KEV, filtrés sur la fenêtre de la veille ; ces deux sources sont accessibles depuis l'environnement cloud.
+- `references/sources-et-requetes.md` réécrit : listes de domaines testées par catégorie, ajout de sources accessibles et pertinentes (Next, JDN, Usine Digitale, IT for Business, Channelnews, Inside Higher Ed, EDUCAUSE, Times Higher Education, EdTech Magazine, VentureBeat, 9to5Google, The Hacker News, Help Net Security, Dark Reading, Neowin, Windows Central, Office 365 for IT Pros, CISA).
+- Domaines refusés par le moteur de recherche (01net, ZDNet, Frandroid, Les Numériques, Numerama, Ars Technica, Reuters, The Verge, Le Monde, Les Échos) retirés des listes de recherche restreinte.
+- Quand une page ne peut pas être ouverte, un résultat de recherche daté provenant d'un domaine accepté vaut confirmation.
+- Fenêtre de 24 h étendue au samedi.
+
 ## [0.3.0] — 2026-11-21
 ### Corrigé
 - Le fichier Obsidian ne doit plus contenir toute la veille sur une seule ligne : contenu multiligne exigé (vrais sauts de ligne, ligne vide entre les blocs, aucun `\n` littéral).

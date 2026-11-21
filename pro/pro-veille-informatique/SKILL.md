@@ -2,7 +2,7 @@
 name: "pro-veille-informatique"
 description: "Rédige en français une veille informatique quotidienne (dernières 24 h, 72 h le lundi) sur huit catégories : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud, cybersécurité, réglementation et données, infrastructure réseau et poste de travail, marché et éditeurs, geekerie (digital painting, Raspberry Pi, Arduino, Blender, impression 3D, électronique DIY). S'appuie uniquement sur des recherches web, ne retient que des informations confirmées, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier veille, un fichier horodaté par jour : AAAA-MM-JJ veille informatique.md). À utiliser quand l'utilisateur demande « veille informatique », « veille du jour », « fais ma veille », « veille IT », « veille techno », « /pro-veille-informatique », « quoi de neuf en IT », « actus IA / cyber / Microsoft 365 / enseignement supérieur / Raspberry / Blender » ou lance la veille quotidienne planifiée."
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 ## Approach
@@ -20,9 +20,9 @@ Produire chaque jour une veille factuelle, en français, sur l'actualité publi�
 
 ## Règles impératives
 
-- **Sources web uniquement.** Ne consulter ni la messagerie, ni l'agenda, ni Teams. Utiliser l'outil de recherche web disponible (WebSearch ou équivalent) et, si besoin, la lecture de page pour vérifier un article.
+- **Sources web uniquement.** Ne consulter ni la messagerie, ni l'agenda, ni Teams. Utiliser le script de flux (`scripts/flux_veille.py`), l'outil de recherche web (WebSearch ou équivalent) et, quand elle fonctionne, la lecture de page pour vérifier un article.
 - **Une seule écriture par lancement : le fichier horodaté** `AAAA-MM-JJ veille informatique.md` (date du jour de lancement) dans `MonVault/veille` (voir l'étape 5). Les veilles des jours précédents ne sont jamais modifiées.
-- **Informations confirmées uniquement.** Un élément n'entre dans la veille que s'il est confirmé par une **source primaire** (éditeur, organisme officiel, établissement concerné) ou par un **média reconnu** (voir `references/sources-et-requetes.md`). Un élément connu seulement par des agrégateurs, des blogs anonymes, des pages générées automatiquement ou des réseaux sociaux est **exclu**, même s'il paraît important. Il n'y a pas de rubrique « à confirmer ».
+- **Informations confirmées uniquement.** Un élément n'entre dans la veille que s'il est confirmé par une **source primaire** (éditeur, organisme officiel, établissement concerné) ou par un **média reconnu** (voir `references/sources-et-requetes.md`). Quand la page ne peut pas être ouverte (réseau limité), un résultat de recherche vaut confirmation s'il provient d'un domaine accepté, porte une date explicite dans la fenêtre et donne l'URL de l'article ; s'en tenir alors aux faits présents dans le résultat. Un élément connu seulement par des agrégateurs, des blogs anonymes, des pages générées automatiquement ou des réseaux sociaux est **exclu**, même s'il paraît important. Il n'y a pas de rubrique « à confirmer ».
 - **Ne rien inventer.** Chaque élément a au moins un lien et une date de publication. Pas de lien reconstruit de mémoire : uniquement des URL renvoyées par la recherche ou ouvertes.
 - **Période stricte.** Ne retenir que des informations publiées entre début et fin de période (étape 1). Une annonce plus ancienne n'entre que si un fait nouveau est publié dans la période (déploiement effectif, date de fin de support qui approche), et ce fait nouveau est alors daté.
 - **Statut explicite.** Indiquer « (annonce) », « (préversion) » ou « (déployé) » quand le statut n'est pas évident.
@@ -33,16 +33,23 @@ Produire chaque jour une veille factuelle, en français, sur l'actualité publi�
 
 1. Charger l'outil de recherche web via ToolSearch si nécessaire (par exemple `select:WebSearch`).
 2. Calculer la fenêtre (fuseau Europe/Paris), **fin = moment du lancement** :
-   - mardi à vendredi : les 24 dernières heures ;
+   - mardi à samedi : les 24 dernières heures ;
    - lundi : depuis vendredi matin (72 h), pour couvrir le week-end ;
+   - dimanche : pas de veille planifiée ; en lancement manuel, appliquer la règle ci-dessous ;
    - lancement manuel : depuis la date de la dernière veille présente dans `MonVault/veille` (7 jours au maximum) ; sans veille précédente, 24 h.
    Noter la date du jour au format `AAAA-MM-JJ` pour le nom du fichier.
 3. Lire la veille précédente (le fichier `AAAA-MM-JJ veille informatique.md` le plus récent de `MonVault/veille`, s'il existe) pour ne pas reprendre un sujet déjà traité, sauf fait nouveau, signalé alors par « (suite) ».
-4. Lire `references/sources-et-requetes.md` : sources fiables, requêtes de départ par catégorie et indices de pertinence.
+4. Lire `references/sources-et-requetes.md` : flux lus directement, listes de domaines pour la recherche restreinte, domaines refusés, sources acceptées, requêtes de départ et indices de pertinence.
 
 ## Étape 2 : Collecter (lancer les recherches indépendantes en parallèle)
 
-Pour chaque catégorie, lancer plusieurs requêtes (françaises et anglaises) en y ajoutant le mois et l'année en cours :
+Collecter en trois passes, dans cet ordre :
+
+1. **Flux primaires** : lancer `python3 -I scripts/flux_veille.py --debut <début ISO avec fuseau> --fin <fin ISO avec fuseau>` depuis le dossier du skill. Il liste les nouveautés de la feuille de route Microsoft 365 et les vulnérabilités ajoutées au catalogue CISA KEV dans la fenêtre. Si une source est en erreur, continuer et le signaler dans le bilan.
+2. **Recherche restreinte** : pour chaque catégorie, au moins une recherche avec `allowed_domains` réglé sur la liste de la catégorie (section 2 de la référence), avec la date dans la requête. Lancer ces recherches en parallèle. Ne jamais inclure un domaine de la liste « refusés par le moteur ».
+3. **Recherche libre** : pour les catégories encore vides ou maigres, des requêtes libres (françaises et anglaises) avec le mois et l'année.
+
+Thèmes à couvrir par catégorie :
 
 1. **IA et outils IA** : nouveaux modèles et fonctionnalités des principaux éditeurs, Copilot et assistants, agents, usages en entreprise et dans l'enseignement.
 2. **SI de l'enseignement supérieur** : écoles de commerce et universités, éditeurs du secteur (scolarité, LMS, ENT, admissions, examens), RENATER, ministère, projets marquants dans le secteur.
@@ -53,7 +60,7 @@ Pour chaque catégorie, lancer plusieurs requêtes (françaises et anglaises) en
 7. **Marché et éditeurs** : rachats, changements de prix et de licences, évolutions de contrats, éditeurs utilisés par NEOMA.
 8. **Geekerie** : digital painting (Krita, Procreate, Clip Studio Paint, Photoshop, Rebelle, tablettes graphiques), Raspberry Pi, Arduino et microcontrôleurs (ESP32, RP2040), Blender et 3D, impression 3D, électronique DIY : nouvelles versions, nouveau matériel, fonctionnalités marquantes, projets remarquables.
 
-Ouvrir les articles les plus prometteurs pour vérifier la date, le fond et le statut. Remonter à la source primaire quand une information vient d'une reprise ; si aucune source primaire ni média reconnu ne la confirme, l'écarter.
+Ouvrir les articles les plus prometteurs pour vérifier la date, le fond et le statut quand c'est possible ; si l'ouverture échoue pour cause de réseau, ne pas réessayer sur le même site et appliquer la règle de confirmation par résultat de recherche. Remonter à la source primaire quand une information vient d'une reprise ; si aucune source primaire ni média reconnu ne la confirme, l'écarter.
 
 ## Étape 3 : Trier
 
