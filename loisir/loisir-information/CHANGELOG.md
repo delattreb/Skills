@@ -2,6 +2,10 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 
+## [0.5.0] — 2026-11-21
+### Ajouté
+- Fait à source unique : un fait confirmé par une seule source listée figure dans les volets, marqué « source unique », jamais dans « À retenir ».
+
 ## [0.4.0] — 2026-11-21
 ### Ajouté
 - Rubrique « En cours » : sujets suivis sur plusieurs jours, avec le dernier fait confirmé.
