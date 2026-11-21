@@ -1,6 +1,6 @@
 ---
 name: "pro-veille-informatique"
-description: "Rédige en français une veille informatique hebdomadaire couvrant les 7 derniers jours sur sept catégories : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud, cybersécurité, réglementation et données, infrastructure réseau et poste de travail, marché et éditeurs. S'appuie uniquement sur des recherches web, ne retient que des informations confirmées, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier veille, un fichier horodaté par lancement : AAAA-MM-JJ veille informatique.md). À utiliser quand l'utilisateur demande « veille informatique », « veille IT », « veille techno », « /pro-veille-informatique », « quoi de neuf en IT cette semaine », « actus IA / cyber / Microsoft 365 / enseignement supérieur » ou lance la veille hebdomadaire planifiée."
+description: "Rédige en français une veille informatique hebdomadaire couvrant les 7 derniers jours sur huit catégories : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud, cybersécurité, réglementation et données, infrastructure réseau et poste de travail, marché et éditeurs, geekerie (digital painting, Raspberry Pi, Arduino, Blender, impression 3D, électronique DIY). S'appuie uniquement sur des recherches web, ne retient que des informations confirmées, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier veille, un fichier horodaté par lancement : AAAA-MM-JJ veille informatique.md). À utiliser quand l'utilisateur demande « veille informatique », « veille IT », « veille techno », « /pro-veille-informatique », « quoi de neuf en IT cette semaine », « actus IA / cyber / Microsoft 365 / enseignement supérieur / Raspberry / Blender » ou lance la veille hebdomadaire planifiée."
 metadata:
   version: "0.1.0"
 ---
@@ -16,7 +16,7 @@ metadata:
 
 # Veille informatique hebdomadaire
 
-Produire une veille factuelle, en français, sur les 7 jours précédant le jour de lancement, utile à un responsable informatique d'une école de commerce (NEOMA) : ce qui a changé, ce que cela implique, ce qu'il faut surveiller.
+Produire une veille factuelle, en français, sur les 7 jours précédant le jour de lancement, utile à un responsable informatique d'une école de commerce (NEOMA) : ce qui a changé, ce que cela implique, ce qu'il faut surveiller. La catégorie « Geekerie » couvre en plus ses centres d'intérêt personnels (création numérique, makers).
 
 ## Règles impératives
 
@@ -46,13 +46,14 @@ Pour chaque catégorie, lancer plusieurs requêtes (françaises et anglaises) en
 5. **Réglementation et données** : RGPD et décisions CNIL, AI Act, NIS2, accessibilité numérique (RGAA), obligations nouvelles pour les établissements.
 6. **Infra, réseau et poste de travail** : Windows et Windows Server, Intune, réseau et Wi-Fi, matériel, pannes de services majeures, fins de support.
 7. **Marché et éditeurs** : rachats, changements de prix et de licences, évolutions de contrats, éditeurs utilisés par NEOMA.
+8. **Geekerie** : digital painting (Krita, Procreate, Clip Studio Paint, Photoshop, Rebelle, tablettes graphiques), Raspberry Pi, Arduino et microcontrôleurs (ESP32, RP2040), Blender et 3D, impression 3D, électronique DIY : nouvelles versions, nouveau matériel, fonctionnalités marquantes, projets remarquables.
 
 Ouvrir les articles les plus prometteurs pour vérifier la date, le fond et le statut. Remonter à la source primaire quand une information vient d'une reprise ; si aucune source primaire ni média reconnu ne la confirme, l'écarter.
 
 ## Étape 3 : Trier
 
 - Écarter les éléments non confirmés (voir les règles impératives), les doublons (garder une entrée, source primaire en premier), le contenu promotionnel, les tribunes sans fait nouveau, les tutoriels et les articles hors période.
-- Pour chaque élément retenu, évaluer la **pertinence pour NEOMA** : impact sur les utilisateurs, les licences, la sécurité, la conformité, les projets SI, la pédagogie. Garder 2 à 5 éléments par catégorie, classés du plus au moins important.
+- Pour chaque élément retenu, évaluer la **pertinence pour NEOMA** : impact sur les utilisateurs, les licences, la sécurité, la conformité, les projets SI, la pédagogie. Pour la Geekerie, évaluer plutôt l'intérêt pratique : nouvelle version ou nouveau matériel utilisable, fonctionnalité qui change la façon de travailler, prix. Garder 2 à 5 éléments par catégorie, classés du plus au moins important.
 - Repérer les **échéances** (fins de support, changements de prix, entrées en application de textes, dates de déploiement) dans les semaines ou mois à venir.
 
 ## Étape 4 : Rédiger
@@ -63,7 +64,7 @@ Respecter exactement ce format :
 # Veille informatique : semaine du [JJ mois] au [JJ mois AAAA]
 
 ## À retenir
-- [3 points maximum, une ligne chacun : le plus important de la semaine toutes catégories confondues]
+- [3 points maximum, une ligne chacun : le plus important de la semaine, catégories professionnelles uniquement (hors Geekerie)]
 
 ## IA et outils IA
 ### [Titre court et factuel]
@@ -88,6 +89,12 @@ Source : [Nom du site, JJ/MM/AAAA](URL)
 
 ## Marché et éditeurs
 …
+
+## Geekerie
+### [Titre court et factuel]
+[2 à 3 phrases : ce qui est sorti ou annoncé, statut, date, prix si connu.]
+**Pourquoi c'est intéressant :** [ce que ça change ou permet, une phrase.]
+Source : [Nom du site, JJ/MM/AAAA](URL)
 
 ## Échéances à surveiller
 - [JJ/MM/AAAA] : [échéance] ([source](URL))

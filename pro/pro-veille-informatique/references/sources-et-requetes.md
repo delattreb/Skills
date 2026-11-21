@@ -5,7 +5,7 @@ Ces listes orientent la recherche ; elles ne sont pas exhaustives. Vérifier cha
 ## Sources acceptées et exclues
 
 - **Sources primaires (acceptées)** : sites, blogs officiels et communiqués des éditeurs ; organismes publics (ministères, CNIL, ANSSI, CERT-FR, Commission européenne, Journal officiel) ; communiqués de l'établissement concerné.
-- **Médias reconnus (acceptés)** : LeMagIT, Le Monde Informatique, ZDNet.fr, 01net, Next, L'Informé, Les Échos, Le Monde, EducPros (L'Étudiant), Campus Matin, News Tank, The Verge, Ars Technica, TechCrunch, The Register, BleepingComputer, SecurityWeek, Reuters, AFP.
+- **Médias reconnus (acceptés)** : LeMagIT, Le Monde Informatique, ZDNet.fr, 01net, Next, L'Informé, Les Échos, Le Monde, EducPros (L'Étudiant), Campus Matin, News Tank, The Verge, Ars Technica, TechCrunch, The Register, BleepingComputer, SecurityWeek, Reuters, AFP ; pour la Geekerie : Hackaday, Tom's Hardware, CNX Software, BlenderNation, 80.lv, Creative Bloq.
 - **Exclues comme seule source** : agrégateurs et « trackers » de sorties d'IA, sites de digests générés automatiquement, blogs personnels ou de revendeurs, forums, réseaux sociaux, revendications de groupes criminels non reprises par un média reconnu. Elles peuvent servir de piste pour trouver la source primaire, jamais de preuve.
 
 ## Sources à privilégier par catégorie
@@ -34,6 +34,10 @@ Ces listes orientent la recherche ; elles ne sont pas exhaustives. Vérifier cha
 ### Marché et éditeurs
 - Pages licences et prix des éditeurs, communiqués de rachat ; LeMagIT, Le Monde Informatique, Les Échos, Reuters.
 
+### Geekerie
+- Raspberry Pi (raspberrypi.com/news), blog Arduino, Espressif (ESP32), Blender (blender.org, notes de version), Krita (krita.org), Procreate, Clip Studio Paint, Adobe (Photoshop, Fresco), constructeurs de tablettes graphiques (Wacom, Huion, XP-Pen), constructeurs d'imprimantes 3D (Prusa, Bambu Lab).
+- Hackaday, Tom's Hardware, CNX Software, BlenderNation, 80.lv, Creative Bloq.
+
 ## Requêtes de départ
 
 Ajouter le mois et l'année en cours à chaque requête ; varier français et anglais.
@@ -47,6 +51,7 @@ Ajouter le mois et l'année en cours à chaque requête ; varier français et an
 | Réglementation | « CNIL sanction », « AI Act application », « NIS2 transposition », « RGAA accessibilité obligation » |
 | Infra / poste | « Windows update known issue », « end of support Microsoft », « Intune new features », « panne Microsoft 365 » |
 | Marché / éditeurs | « Microsoft 365 licensing price change », « rachat éditeur logiciel », « hausse prix licences » |
+| Geekerie | « Raspberry Pi news », « Arduino new board », « ESP32 announcement », « Blender release », « Krita release », « Procreate update », « digital painting software update », « tablette graphique nouvelle » |
 
 ## Indices de pertinence pour NEOMA
 
@@ -58,3 +63,13 @@ Ajouter le mois et l'année en cours à chaque requête ; varier français et an
 | Concerne une école de commerce, une université ou un éditeur utilisé dans le secteur | Haute |
 | Nouvelle capacité IA utilisable à court terme (pédagogie, productivité, support) | Moyenne à haute |
 | Annonce lointaine, préversion limitée aux États-Unis, levée de fonds sans produit | Basse : ne retenir que si rien de plus important |
+
+## Indices d'intérêt pour la Geekerie
+
+| Indice | Intérêt |
+|---|---|
+| Nouvelle version majeure d'un logiciel (Blender, Krita, Procreate…) ou nouvelle carte (Raspberry Pi, Arduino, ESP32) | Haut |
+| Fonctionnalité qui change la façon de peindre, modéliser ou prototyper | Haut |
+| Baisse ou hausse de prix notable, rupture de stock, fin de vie d'un produit | Moyen |
+| Projet communautaire remarquable publié par un média reconnu | Moyen |
+| Bêta mineure, correctif sans nouveauté, contenu sponsorisé | Bas : écarter |
