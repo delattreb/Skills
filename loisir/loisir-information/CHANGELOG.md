@@ -2,6 +2,10 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 
+## [0.2.1] — 2026-11-21
+### Modifié
+- Rien de notable : un volet sans fait confirmé affiche « Rien de notable dans la fenêtre. » ; aucun résumé d'agrégateur ni piste non vérifiée n'est ajouté. Si les deux volets sont vides, le point le signale en une phrase.
+
 ## [0.2.0] — 2026-11-21
 ### Modifié
 - Fenêtre portée à 48 h (72 h le lundi), après test : une actualité de la veille, comme la CIJ le 19 novembre 2026, était exclue.
