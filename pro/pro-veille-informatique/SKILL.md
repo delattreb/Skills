@@ -73,7 +73,7 @@ Ouvrir les articles les plus prometteurs pour vérifier la date, le fond et le s
 
 Le frontmatter YAML sert aux propriétés et aux tags Obsidian. Le champ `tags` contient toujours `veille` et `informatique`, puis un tag par catégorie qui a au moins un élément retenu, dans l'ordre du format ci-dessous : `ia`, `enseignement-superieur`, `microsoft-365`, `cybersecurite`, `reglementation`, `infrastructure`, `marche-editeurs`, `geekerie`. Les tags sont en minuscules, sans espace ni accent, et une catégorie sans actualité n'apparaît pas. Exemple : `tags: [veille, informatique, cybersecurite]` pour une veille qui ne contient que de la cybersécurité.
 
-Respecter exactement ce format, frontmatter compris :
+Respecter exactement ce format, frontmatter compris. Les huit catégories suivent toujours le même ordre : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud, Cybersécurité, Réglementation et données, Infra réseau et poste de travail, Marché et éditeurs, Geekerie.
 
 ```
 ---
@@ -88,46 +88,50 @@ tags: [veille, informatique, ...]
 
 # Veille informatique du [jour JJ mois AAAA]
 
-## À retenir
-- [3 points maximum, une ligne chacun : le plus important du jour, catégories professionnelles uniquement (hors Geekerie)]
+> [!summary] À retenir
+> - [3 points maximum, une ligne chacun : le plus important du jour, catégories professionnelles uniquement (hors Geekerie)]
 
-## IA et outils IA
-### [Titre court et factuel]
-[2 à 3 phrases : ce qui s'est passé, statut, date.]
-**Pour NEOMA :** [impact concret ou action possible, une phrase.]
-Source : [Nom du site, JJ/MM/AAAA](URL)
+## Vue d'ensemble
 
-## SI de l'enseignement supérieur
-…
+| Catégorie | Éléments | Pertinence max |
+|---|---|---|
+| IA et outils IA | N | [Haute, Moyenne, Basse ou vide] |
+| SI de l'enseignement supérieur | N | |
+| Microsoft 365 et cloud | N | |
+| Cybersécurité | N | |
+| Réglementation et données | N | |
+| Infra réseau et poste de travail | N | |
+| Marché et éditeurs | N | |
+| Geekerie | N | |
 
-## Microsoft 365 et cloud
-…
+---
 
-## Cybersécurité
-…
+## [Catégorie (N) : seulement celles ayant au moins un élément, dans l'ordre fixe ci-dessus]
 
-## Réglementation et données
-…
+> [!warning] [Titre court et factuel]
+> [2 à 3 phrases : ce qui s'est passé, statut, date.]
+>
+> **Pour NEOMA :** [impact concret ou action possible, une phrase.]
+>
+> Source : [Nom du site, JJ/MM/AAAA](URL)
 
-## Infra, réseau et poste de travail
-…
-
-## Marché et éditeurs
-…
-
-## Geekerie
-### [Titre court et factuel]
-[2 à 3 phrases : ce qui est sorti ou annoncé, statut, date, prix si connu.]
-**Pourquoi c'est intéressant :** [ce que ça change ou permet, une phrase.]
-Source : [Nom du site, JJ/MM/AAAA](URL)
+---
 
 ## Échéances à surveiller
 - [JJ/MM/AAAA] : [échéance] ([source](URL))
 ```
 
+Règles de présentation :
+- Le tableau « Vue d'ensemble » liste les huit catégories, y compris celles sans élément (0, pertinence vide). Une catégorie sans élément n'a aucune section dans le corps de la note.
+- Type de callout selon la pertinence : `[!warning]` pour Haute, `[!info]` pour Moyenne, `[!note]` pour Basse et pour la Geekerie. Pour un élément de Geekerie, la ligne « Pour NEOMA » devient « **Pourquoi c'est intéressant :** ».
+- Le titre de section reprend le nom de la catégorie et son nombre d'éléments, par exemple « ## Cybersécurité (1) ».
+- Le statut (annonce, préversion, déployé) figure entre parenthèses dans la première phrase du callout, quand il n'est pas évident.
+- La section « Échéances à surveiller » est omise si aucune échéance n'a été trouvée.
+- Si aucun élément n'est retenu, le corps se réduit à la ligne « Rien de notable dans la fenêtre. » sous « À retenir ».
+
 Frontmatter : remplir `fenetre_debut` et `fenetre_fin` en Europe/Paris, `elements` avec le nombre d'éléments retenus, et `categories_avec_actualite` avec le nombre de rubriques autres que « Rien de notable ». Ne pas ajouter d'autres champs.
 
-Style : concis, professionnel, sans remplissage ni formule d'introduction. Une catégorie sans actualité confirmée affiche « Rien de notable dans la fenêtre. » plutôt que d'être complétée avec des éléments faibles, non confirmés ou hors période. La rubrique « Échéances à surveiller » est omise si aucune échéance n'a été trouvée.
+Style : concis, professionnel, sans remplissage ni formule d'introduction. Une catégorie sans actualité confirmée n'a pas de section dans le corps (elle reste visible à 0 dans le tableau), plutôt que d'être complétée avec des éléments faibles, non confirmés ou hors période. La rubrique « Échéances à surveiller » est omise si aucune échéance n'a été trouvée.
 
 ## Étape 5 : Enregistrer dans Obsidian
 

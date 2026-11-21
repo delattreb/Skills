@@ -5,6 +5,8 @@ Chaque version publiée est marquée par un tag Git `pro-veille-informatique-vX.
 
 ## [Non publié]
 ### Modifié
+- Format de la note : tableau « Vue d'ensemble » des huit catégories, ordre fixe, callouts Obsidian colorés selon la pertinence, catégories sans élément absentes du corps.
+- Frontmatter du skill : champ `tags` ajouté.
 - Frontmatter YAML de la veille : le champ `tags` porte `veille`, `informatique` et un tag par catégorie qui a au moins un élément retenu (`ia`, `enseignement-superieur`, `microsoft-365`, `cybersecurite`, `reglementation`, `infrastructure`, `marche-editeurs`, `geekerie`), au lieu de la liste fixe `[veille, informatique]`.
 
 ## [0.6.0] — 2026-11-21
