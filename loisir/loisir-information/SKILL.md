@@ -22,7 +22,7 @@ Produire chaque jour un point factuel, en français, sur l'actualité publiée d
 
 - **Sources web uniquement.** Utiliser l'outil de recherche web disponible (WebSearch ou équivalent) et, si besoin, la lecture de page pour vérifier un article. Ne consulter ni la messagerie, ni l'agenda, ni Teams.
 - **Une seule écriture par lancement : le fichier horodaté** `AAAA-MM-JJ information.md` (date du jour de lancement) dans `MonVault/information` (étape 5). Les points des jours précédents ne sont jamais modifiés.
-- **Informations confirmées uniquement.** Un fait entre dans le point s'il est confirmé soit par **deux médias reconnus indépendants** (voir `references/sources.md`), soit par **une source officielle** (gouvernement, Journal officiel, institution internationale, organisme public, communiqué de l'entité concernée). Un fait repris seulement par un agrégateur, un blog anonyme, une page générée automatiquement ou un réseau social est **exclu**, même s'il paraît important. Il n'y a pas de rubrique « à confirmer ».
+- **Informations confirmées uniquement.** Un fait entre dans le point s'il est confirmé soit par **deux médias reconnus indépendants** (sources actives de `config/sources.json`), soit par **une source officielle** (même fichier) (gouvernement, Journal officiel, institution internationale, organisme public, communiqué de l'entité concernée). Un fait repris seulement par un agrégateur, un blog anonyme, une page générée automatiquement ou un réseau social est **exclu**, même s'il paraît important. Il n'y a pas de rubrique « à confirmer ».
 - **Ne rien inventer.** Chaque élément a au moins un lien et une date de publication. Uniquement des URL renvoyées par la recherche ou ouvertes ; jamais de lien reconstruit de mémoire.
 - **Neutralité.** Pour les sujets disputés (politique, conflits, élections, débats de société), présenter les positions des acteurs concernés en les attribuant, sans adjectif évaluatif ni conclusion. Indiquer quand un fait est encore en cours d'établissement (« selon les premières informations », « non confirmé par les autorités à cette heure »).
 - **Période stricte.** Ne retenir que des informations publiées entre début et fin de période (étape 1). Un événement plus ancien n'entre que si un fait nouveau est publié dans la période, et ce fait nouveau est alors daté.
@@ -38,7 +38,7 @@ Produire chaque jour un point factuel, en français, sur l'actualité publiée d
    - lancement manuel : depuis la date du dernier point présent dans `MonVault/information` (7 jours au maximum) ; sans point précédent, 24 h.
    Noter la date du jour au format `AAAA-MM-JJ`.
 3. Lire le point précédent (le fichier `AAAA-MM-JJ information.md` le plus récent de `MonVault/information`, s'il existe) pour ne pas reprendre un sujet déjà traité, sauf fait nouveau, signalé alors par « (suite) ».
-4. Lire `references/sources.md` : médias reconnus, sources officielles et requêtes de départ.
+4. Lire `config/sources.json` : sources actives (médias et officielles), seuil de confirmation et volet de chaque source. Ne jamais utiliser une source `actif: false`. Lire `references/sources.md` pour les requêtes de départ et les critères d'importance.
 
 ## Étape 2 : Collecter (lancer les recherches indépendantes en parallèle)
 
@@ -47,7 +47,7 @@ Lancer plusieurs requêtes par volet, en français et en anglais, avec le mois e
 1. **International** : événements politiques et diplomatiques majeurs, conflits, économie et marchés, décisions des grandes institutions (ONU, UE, G7, G20, banques centrales), catastrophes naturelles, sciences et santé publique à portée mondiale.
 2. **France** : décisions du gouvernement et du Parlement (textes publiés au Journal officiel), actualité politique et sociale majeure, économie et emploi, justice, grands événements, sécurité et santé publique, décisions de la Banque de France et des grandes autorités de régulation.
 
-Ouvrir les articles les plus importants pour vérifier la date, le fond et la confirmation. Pour chaque fait retenu, vérifier la règle de double confirmation ou de source officielle ; sinon l'écarter.
+Ouvrir les articles les plus importants pour vérifier la date, le fond et la confirmation. Pour chaque fait retenu, vérifier la règle de double confirmation (`confirmation.min_medias_independants`) ou de source officielle ; sinon l'écarter. Un média dont le `volet` est `both` peut servir aux deux volets.
 
 ## Étape 3 : Trier
 

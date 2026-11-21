@@ -1,6 +1,6 @@
 # Sources et requêtes de départ
 
-Ces listes orientent la recherche ; elles ne sont pas exhaustives. Vérifier chaque fois que l'URL citée a bien été renvoyée par la recherche ou ouverte.
+La liste active des sources (médias, sources officielles, activation, volet) est dans `config/sources.json`, qui fait foi. Les listes ci-dessous sont des repères ; elles ne sont pas exhaustives. Vérifier chaque fois que l'URL citée a bien été renvoyée par la recherche ou ouverte.
 
 ## Médias reconnus
 
