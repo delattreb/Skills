@@ -3,6 +3,32 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 Chaque version publiée est marquée par un tag Git `pro-veille-informatique-vX.Y.Z`.
 
+## [0.6.0] — 2026-11-21
+### Ajouté
+- Sources testées avec le moteur de recherche (`allowed_domains`) et renvoyant des résultats datés : `cafepedagogique.net`, `cybermalveillance.gouv.fr`, `enisa.europa.eu`, `zataz.com`, `eur-lex.europa.eu`, `huggingface.co`, `forum.obsidian.md`, `blog.adafruit.com`, `skyandtelescope.org`. Ajoutées aux listes de domaines de leur catégorie ; `zataz.com`, `cafepedagogique.net` et `skyandtelescope.org` ajoutés aux médias reconnus.
+
+### Modifié
+- Version des métadonnées : 0.6.0.
+- `obsidian.md` confirmé par le test et retiré des domaines non testés.
+
+### Retiré
+- Domaines non testés ou sans résultat : `supnumerique.gouv.fr`, `decision-atelier.com`, `blog.prusa3d.com`, `makezine.com`, `stellarium.org`, `siril.org`, `celestron.com`, `cieletespace.fr` (ces deux derniers restent cités comme sources de la sous-rubrique astronomie, mais ne sont pas dans les listes de recherche).
+
+## [0.5.0] — 2026-11-21
+### Ajouté
+- Référence `references/contexte-neoma.md` : outils réellement utilisés à NEOMA, à compléter ; les sections « À compléter » ne sont pas utilisées. La ligne « Pour NEOMA » cite l'outil concerné quand il est renseigné.
+- Geekerie : sous-rubrique astronomie amateur (instruments, Stellarium, Siril, KStars), domaines de recherche et indice de pertinence associés.
+- IA et outils IA : suivi d'Obsidian (versions majeures, licence, synchronisation), domaine `obsidian.md`.
+- Frontmatter YAML dans chaque veille : `date`, `type`, `fenetre_debut`, `fenetre_fin`, `categories_avec_actualite`, `elements`, `tags`.
+
+### Modifié
+- Dossier cible : `MonVault/Veille` (majuscule initiale), au lieu de `veille`.
+- Deux requêtes web au maximum par catégorie, passes restreinte et libre comprises (une requête libre au plus pour une catégorie vide ou maigre).
+- Domaines ajoutés sans test préalable (`obsidian.md`, `stellarium.org`, `siril.org`, `celestron.com`, `cieletespace.fr`) : signalés dans la référence, à vérifier au premier lancement.
+
+### Supprimé
+- Section « Exécution planifiée », mentions de planification dans la description, l'étape 1 (dimanche) et l'étape 6.
+
 ## [0.4.0] — 2026-11-21
 ### Modifié
 - Collecte en trois passes : flux primaires lus par script, recherche web restreinte aux domaines fiables (`allowed_domains`), puis recherche libre en complément.
