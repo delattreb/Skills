@@ -3,6 +3,12 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 La version du plugin (`.claude-plugin/plugin.json`) sert de version unique de release. Le détail par skill reste dans le `CHANGELOG.md` de chaque skill.
 
+## [1.7.0] — 2026-11-21
+### Ajouté
+- Skill `loisir-information` 0.5.0 : point d'information quotidien en deux volets (international et France), avec faits confirmés par deux médias reconnus, une source officielle ou une dépêche d'agence reprise nommément ; faits à source unique marqués ; rubriques « En cours » et « Agenda officiel ».
+- Enregistrement dans Obsidian MonVault, dossier `Information`, un fichier daté par jour.
+- Configuration des sources dans `loisir/loisir-information/config/sources.json`.
+
 ## [1.6.2] — 2026-11-21
 ### Modifié
 - Règle de release : la version de `.claude-plugin/plugin.json` est mise à jour dans le même commit que le CHANGELOG et vérifiée avant le tag (`CLAUDE.md`, `RELEASE.md`).
