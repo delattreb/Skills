@@ -47,8 +47,12 @@ En plus du web, lis la boîte Gmail de la personne (connecteur Gmail), libellé 
    **Volume** : un mail d'alerte Indeed pèse environ 25 000 jetons et liste jusqu'à 30 offres, pour la plupart hors profil. Quand une réponse est trop grosse, l'outil l'enregistre dans un fichier : extrais-en le texte avec un script Python (corps `plaintextBody`, URL retirées) au lieu de la relire en entier. N'ouvre en entier que les messages dont l'offre en tête d'objet est pertinente pour le profil ; pour les autres, l'objet suffit. Dis dans le rapport quels messages ont été lus en entier et lesquels l'ont été par leur objet seulement.
 2. **Détecter les doublons** : dans un mail d'alerte Indeed, l'objet donne l'offre en tête (« Intitulé à Entreprise. N offres supplémentaires »). Compare ces objets entre eux : deux messages avec la même offre en tête sont en doublon, car l'alerte se répète chaque jour. Pour LinkedIn, compare l'intitulé et l'entreprise de l'objet. Deux offres sont en doublon si elles ont le même intitulé, la même entreprise et le même lieu, même reçues par des alertes ou des plateformes différentes, ou à des dates différentes. En cas de doute (entreprise absente, intitulé proche mais pas identique), ne considère pas que c'est un doublon.
 3. **Supprimer les messages en doublon** : conserve un seul message par offre, le plus complet (lien direct vers l'offre, salaire, description), à défaut le plus récent, et mets les autres à la corbeille (trash_message). Quand deux messages du même jour sont équivalents, garde-en un au choix et dis-le. Un message supprimé peut contenir, dans ses offres secondaires, une offre absente des autres mails : signale-le dans le rapport. Ne supprime jamais définitivement. Ne supprime jamais un message sans offre identifiable, ni un message d'un recruteur ou d'une réponse à une candidature : laisse-les en l'état et signale-les.
-4. **Passer en lu les messages exploités** : un message est exploité quand son offre a été lue et prise en compte dans l'analyse, qu'elle soit classée, à vérifier ou écartée. Retire-lui le libellé UNREAD (unlabel_message avec `UNREAD`). Une notification LinkedIn qui n'est pas une offre (invitation, message, contenu publié) n'est pas une offre exploitée : laisse-la non lue. Un message non lu ou illisible (lien mort, contenu vide) reste non lu et est signalé.
-5. **Intégrer ces offres** aux critères de fraîcheur, de salaire et de classement ci-dessus, avec « Gmail » comme source. La date du message n'est pas la date de publication : applique les règles sur les dates.
+4. **Repérer les messages qui appellent une action** : parmi les messages du libellé reçus de personnes (recruteurs, cabinets, contacts, entreprises), sans compter les alertes automatiques, distingue deux catégories.
+   - **Réponse due** : un message où la personne se voit poser une question ou une demande explicite (disponibilité, informations, pièce à fournir, avis), sans réponse envoyée depuis dans le même fil. Vérifie le fil complet (get_thread) avant de classer.
+   - **Demande de contact** : un message où quelqu'un demande à être contacté, à échanger ou à fixer un appel ou un rendez-vous (« pouvons-nous échanger », « merci de me rappeler », proposition de créneau). Note le moyen de contact indiqué (téléphone, e-mail, lien de prise de rendez-vous) et la date limite éventuelle. Un message peut relever des deux catégories.
+   Pour chacun, relève : expéditeur, entreprise, objet, date de réception, ce qui est demandé en une phrase, ancienneté en jours. N'invente pas d'intention : en cas de doute, classe-le « à vérifier ». Ne réponds jamais et ne crée aucun brouillon sans demande. Ces messages ne sont jamais mis à la corbeille.
+5. **Passer en lu tous les messages passés en revue** : tout message du libellé dont le contenu ou l'objet a été examiné pendant l'exécution (offre classée, à vérifier ou écartée, doublon, alerte sans offre pertinente, notification LinkedIn, message de recruteur ou nécessitant une réponse) est marqué lu : retire-lui le libellé UNREAD (unlabel_message avec `UNREAD`). Cette règle remplace l'ancienne exception sur les notifications. Les messages à réponse due ou à demande de contact sont aussi marqués lus, car le rapport les signale. Seuls restent non lus les messages que tu n'as pas pu lire (lien mort, contenu vide, erreur de l'outil), signalés dans le rapport, et les archives anciennes que tu n'as pas examinées. Les doublons mis à la corbeille sont marqués lus avant.
+6. **Intégrer ces offres** aux critères de fraîcheur, de salaire et de classement ci-dessus, avec « Gmail » comme source. La date du message n'est pas la date de publication : applique les règles sur les dates.
 
 Si le connecteur Gmail ou le libellé « Emploi » est inaccessible, écris-le en tête de réponse et poursuis sans cette étape.
 
@@ -66,16 +70,20 @@ Une note de 5 correspond à un poste qui serait une suite naturelle du parcours.
 Réponds en français, avec cette structure :
 
 1. **Critères appliqués** : une ligne rappelant la fenêtre de 14 jours, la zone et le seuil de salaire.
-2. **Synthèse** : trois lignes au plus (nombre d'offres retenues, meilleure note, offre à regarder en premier avec la raison en un fait).
-3. **Tableau classé** par note décroissante, une offre par ligne, texte court (une phrase par cellule) :
+2. **À traiter dans Gmail** :
+   - Tableau « Réponses dues » : | Ancienneté | Expéditeur | Entreprise | Objet | Question posée | Lien du message |
+   - Tableau « Demandes de contact » : | Ancienneté | Expéditeur | Entreprise | Demande | Moyen de contact | Échéance | Lien du message |
+   Si aucun message n'appelle d'action, écris-le en une ligne.
+3. **Synthèse** : trois lignes au plus (nombre d'offres retenues, meilleure note, offre à regarder en premier avec la raison en un fait).
+4. **Tableau classé** par note décroissante, une offre par ligne, texte court (une phrase par cellule) :
 
 | Note | Poste | Entreprise | Lieu | Salaire | Date de publication | Source | Pourquoi ça colle | Points de vigilance | Lien |
 
-4. **Date à vérifier** : offres pertinentes sans date absolue, avec le lien pour que la personne vérifie.
-5. **Écartées** : une ligne par offre écartée et la raison (date, salaire, zone, niveau).
-6. **Tendances** : un court paragraphe.
-7. **Sources consultées** avec leurs liens, et les sources non accessibles.
-8. **Tri de la boîte Gmail « Emploi »** : nombre de messages parcourus, nombre d'offres uniques, nombre de messages mis à la corbeille pour doublon (avec l'offre concernée), nombre de messages passés en lu, et les messages laissés en l'état avec la raison.
+5. **Date à vérifier** : offres pertinentes sans date absolue, avec le lien pour que la personne vérifie.
+6. **Écartées** : une ligne par offre écartée et la raison (date, salaire, zone, niveau).
+7. **Tendances** : un court paragraphe.
+8. **Sources consultées** avec leurs liens, et les sources non accessibles.
+9. **Tri de la boîte Gmail « Emploi »** : nombre de messages parcourus, nombre d'offres uniques, nombre de messages mis à la corbeille pour doublon (avec l'offre concernée), nombre de messages passés en lu, et les messages laissés en l'état avec la raison. Ajoute le nombre de messages passés en lu et la liste de ceux restés non lus avec la raison.
 
 Ne rédige pas de lettre de motivation sauf demande. Ne recommande pas un poste : donne les faits et les points d'attention, la décision revient à la personne.
 
