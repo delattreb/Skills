@@ -2,7 +2,7 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 
-## [Non publié]
+## [0.5.1] — 2026-11-23
 ### Ajouté
 - `config/sources.json` 0.3.1 : médias BBC News, The Guardian, Le Monde, RFI, Reuters, Associated Press et AFP, pour élargir les sources éligibles à la double confirmation (recherche sans `allowed_domains`).
 ### Modifié
