@@ -9,19 +9,7 @@ Ce skill cherche des offres de management SI récentes et les classe selon leur 
 
 ## Profil de référence
 
-Source : CV de Bruno Delattre (version « New CV »). Utilise-le tel quel pour le classement, sans le redemander.
-
-- **Titre** : Responsable SI / Head of IT, responsable de pôle SI. Environ 20 ans d'expérience.
-- **Spécialité** : transformation SI, pilotage d'équipes et de roadmap, refonte applicative.
-- **Recherche** : un rôle à forte responsabilité, structurant, sur la transformation SI ou la gouvernance.
-- **Poste actuel** : responsable du pôle Build et ERP depuis juillet 2022 (4 chefs de projet, 2 Business Analysts, budget de 650 K€, marchés, PCA/PRA de l'ERP).
-- **Expériences marquantes** : manager SI de 11 collaborateurs et d'un portefeuille de 11 projets (2018-2022, mise en place de Scrum, CI/CD, outillage interne) ; chef de projet puis responsable Delivery/Tests chez Econocom (2013-2018) pour des grands comptes (AMF, EDF, Total, Veolia, Crédit Agricole).
-- **Niveaux déclarés** : management expert, agilité expert, développement expert, architecture avancé, ERP avancé (Sage X3, Aurion), anglais technique lu et écrit.
-- **Méthodes** : Scrum, ITIL (incidents, problèmes, changements), PRINCE2 Fondations (2026), ITIL4 Fondations (2025).
-- **Diplôme** : Master 2 Manager en systèmes d'information (CESI, VAE, 2022).
-- **Zone** : Rouen et alentours, dans un rayon de 30 km. Les offres au-delà sont hors zone.
-
-Les coordonnées personnelles ne figurent pas dans ce skill et ne doivent jamais être recopiées dans une réponse ou une requête.
+Le profil de Bruno Delattre est dans `references/profil.md` : lis-le avant de classer, sans le redemander. Un CV plus récent fourni par la personne le remplace, et tu le signales. Les coordonnées personnelles ne figurent pas dans ce skill et ne doivent jamais être recopiées dans une réponse ou une requête.
 
 ## Critères de recherche
 
@@ -47,7 +35,9 @@ Ces filtres existent parce que la personne cherche un rôle de responsabilité, 
 
 Lance les recherches en parallèle, une par source : **APEC (apec.fr)**, LinkedIn, Indeed, France Travail, Hellowork, sites carrières des entreprises et collectivités de la zone (Rouen et alentours, 30 km), Choisir le service public pour les postes territoriaux et d'État. L'APEC est prioritaire pour les postes cadres : fais-y une recherche dans la zone Rouen et 30 km autour, puis sur les intitulés clés. Si une source n'est pas accessible, dis-le dans la réponse plutôt que de la remplacer sans le signaler. Varie les intitulés et les mots-clés (« responsable SI Rouen », « responsable transformation SI Normandie », « head of IT Rouen », « DSI Rouen », « responsable transformation numérique Normandie »). Ne répète pas des requêtes presque identiques. Privilégie les pages d'offre aux agrégateurs.
 
-LinkedIn et Indeed : interroge leurs pages de recherche d'offres avec les mêmes intitulés et la zone Rouen et 30 km autour, en plus de la recherche générale. Si ces pages ne renvoient aucune offre (liste vide, CVthèque, pages de salaires), écris « aucune offre renvoyée » dans Sources consultées au lieu de les compter comme consultées. Ne cite jamais une offre LinkedIn ou Indeed que tu n'as pas lue sur sa page.
+**Indeed** : utilise en priorité le connecteur Indeed (`search_jobs` avec `country_code` FR et `location` Rouen, puis `get_job_details` sur chaque offre pertinente) pour lire salaire, description et lien direct. Intègre le lien d'application renvoyé par l'outil sans retirer ses paramètres. `get_company_data` sert à vérifier un employeur inconnu quand une offre est notée 4 ou plus, sans alourdir le rapport.
+
+**LinkedIn** : interroge sa page de recherche d'offres avec les mêmes intitulés et la zone Rouen et 30 km autour, en plus de la recherche générale. Si ces pages ne renvoient aucune offre (liste vide, CVthèque, pages de salaires), écris « aucune offre renvoyée » dans Sources consultées au lieu de les compter comme consultées. Ne cite jamais une offre LinkedIn ou Indeed que tu n'as pas lue (page ou `get_job_details`).
 
 ## Boîte Gmail, libellé « Emploi »
 
@@ -76,15 +66,16 @@ Une note de 5 correspond à un poste qui serait une suite naturelle du parcours.
 Réponds en français, avec cette structure :
 
 1. **Critères appliqués** : une ligne rappelant la fenêtre de 14 jours, la zone et le seuil de salaire.
-2. **Tableau classé** par note décroissante :
+2. **Synthèse** : trois lignes au plus (nombre d'offres retenues, meilleure note, offre à regarder en premier avec la raison en un fait).
+3. **Tableau classé** par note décroissante, une offre par ligne, texte court (une phrase par cellule) :
 
 | Note | Poste | Entreprise | Lieu | Salaire | Date de publication | Source | Pourquoi ça colle | Points de vigilance | Lien |
 
-3. **Date à vérifier** : offres pertinentes sans date absolue, avec le lien pour que la personne vérifie.
-4. **Écartées** : une ligne par offre écartée et la raison (date, salaire, zone, niveau).
-5. **Tendances** : un court paragraphe.
-6. **Sources consultées** avec leurs liens, et les sources non accessibles.
-7. **Tri de la boîte Gmail « Emploi »** : nombre de messages parcourus, nombre d'offres uniques, nombre de messages mis à la corbeille pour doublon (avec l'offre concernée), nombre de messages passés en lu, et les messages laissés en l'état avec la raison.
+4. **Date à vérifier** : offres pertinentes sans date absolue, avec le lien pour que la personne vérifie.
+5. **Écartées** : une ligne par offre écartée et la raison (date, salaire, zone, niveau).
+6. **Tendances** : un court paragraphe.
+7. **Sources consultées** avec leurs liens, et les sources non accessibles.
+8. **Tri de la boîte Gmail « Emploi »** : nombre de messages parcourus, nombre d'offres uniques, nombre de messages mis à la corbeille pour doublon (avec l'offre concernée), nombre de messages passés en lu, et les messages laissés en l'état avec la raison.
 
 Ne rédige pas de lettre de motivation sauf demande. Ne recommande pas un poste : donne les faits et les points d'attention, la décision revient à la personne.
 

@@ -4,6 +4,10 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [Sem
 Chaque version publiée est marquée par un tag Git `pro-recherche-emploi-informatique-vX.Y.Z`.
 
 ## [Non publié]
+### Modifié
+- Profil de référence déplacé dans `references/profil.md` ; SKILL.md allégé.
+- Indeed : usage du connecteur (`search_jobs`, `get_job_details`, `get_company_data`) plutôt que des pages web.
+- Rapport : ajout d'une synthèse de trois lignes en tête, cellules du tableau en une phrase.
 ### Renommé
 - Skill renommé : `recherche-emploi-informatique` devient `pro-recherche-emploi-informatique` (dossier, champ `name`, commande `/pro-recherche-emploi-informatique`, tags Git `pro-recherche-emploi-informatique-vX.Y.Z`).
 
