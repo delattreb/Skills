@@ -1,7 +1,7 @@
 {
   "name": "skills-perso",
   "description": "Marketplace de mes skills personnels pour Claude.",
-  "owner": { "name": "delattreb" },
+  "owner": { "name": "Bruno DELATTRE" },
   "plugins": [
     {
       "name": "skills-perso",
