@@ -4,6 +4,8 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [Sem
 Chaque version publiée est marquée par un tag Git `pro-recherche-emploi-informatique-vX.Y.Z`.
 
 ## [Non publié]
+### Ajouté
+- Lecture d'une page d'offre : repli sur `curl` quand l'outil de lecture échoue, extraction de `datePosted` et `validThrough` dans le JSON-LD, page 404 traitée comme offre retirée.
 
 ## [0.4.0] — 2026-11-23
 ### Ajouté
