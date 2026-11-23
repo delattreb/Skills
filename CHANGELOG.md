@@ -3,6 +3,12 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 La version du plugin (`.claude-plugin/plugin.json`) sert de version unique de release. Le détail par skill reste dans le `CHANGELOG.md` de chaque skill.
 
+## [2.3.0] — 2026-11-23
+### Ajouté
+- Marketplace Claude Code : `.claude-plugin/marketplace.json` expose le plugin `skills-perso`. Installation par `/plugin marketplace add delattreb/Skills` puis `/plugin install skills-perso@skills-perso` (voir `README.md`).
+### Modifié
+- Manifeste `plugin.json` : ajout du champ `author`.
+
 ## [2.2.0] — 2026-11-23
 ### Ajouté
 - `pro-recherche-emploi-informatique` 0.5.0 : repli sur `curl` quand l'outil de lecture de pages échoue, lecture de `datePosted` et `validThrough` dans les données JSON-LD des offres, page 404 traitée comme offre retirée.
