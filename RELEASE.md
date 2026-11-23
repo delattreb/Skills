@@ -12,6 +12,7 @@ Une release = une version du plugin, un tag Git et une GitHub Release.
 ## Étapes
 
 1. Sur `dev`, mettre à jour `.claude-plugin/plugin.json` (`version`) dans le même commit que le CHANGELOG. Cette étape est obligatoire : sans elle, l'import du zip affiche l'ancienne version (règle détaillée dans `CLAUDE.md`).
+   Vérifier aussi que la `description` du plugin dans `.claude-plugin/marketplace.json` est identique à celle de `plugin.json` (la marketplace ne porte pas de `version`).
 2. Ajouter la section `## [X.Y.Z] — AAAA-MM-JJ` dans `CHANGELOG.md` racine (Ajouté, Modifié, Corrigé, Supprimé).
 3. Committer (`release X.Y.Z`) et pousser `dev`.
 4. Créer le tag `X.Y.Z` sur le commit de `dev`, puis le pousser : `git tag X.Y.Z && git push origin X.Y.Z`.
