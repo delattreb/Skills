@@ -1,6 +1,6 @@
 {
-  "version": "0.3.0",
-  "commentaire": "Sources du point d'information. Ajouter, retirer ou désactiver une source ici, sans modifier SKILL.md. Les domaines sont des repères : chaque URL retenue doit avoir été renvoyée par la recherche ou ouverte. Une source désactivée (actif: false) n'est pas utilisée. Les domaines refusés par l'outil de recherche (allowed_domains) ont été retirés en 0.2.2 ; les reprises nommées de leurs dépêches restent acceptées (confirmation.agences_reprises).",
+  "version": "0.3.1",
+  "commentaire": "Sources du point d'information. Ajouter, retirer ou désactiver une source ici, sans modifier SKILL.md. Les domaines sont des repères : chaque URL retenue doit avoir été renvoyée par la recherche ou ouverte. Une source désactivée (actif: false) n'est pas utilisée. Les domaines refusés par l'outil de recherche (allowed_domains) ont été retirés en 0.2.2 ; les reprises nommées de leurs dépêches restent acceptées (confirmation.agences_reprises). Ajoutés en 0.3.1 : BBC, Guardian, Le Monde, RFI, Reuters, AP, AFP. Le filtre allowed_domains est refusé pour eux : les chercher sans filtre.",
   "confirmation": {
     "min_medias_independants": 2,
     "source_officielle_suffisante": true,
@@ -143,6 +143,48 @@
       "domaine": "democracynow.org",
       "volet": "international",
       "actif": false
+    },
+    {
+      "nom": "BBC News",
+      "domaine": "bbc.com",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "The Guardian",
+      "domaine": "theguardian.com",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Le Monde",
+      "domaine": "lemonde.fr",
+      "volet": "both",
+      "actif": true
+    },
+    {
+      "nom": "RFI",
+      "domaine": "rfi.fr",
+      "volet": "both",
+      "actif": true
+    },
+    {
+      "nom": "Reuters",
+      "domaine": "reuters.com",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "Associated Press",
+      "domaine": "apnews.com",
+      "volet": "international",
+      "actif": true
+    },
+    {
+      "nom": "AFP",
+      "domaine": "afp.com",
+      "volet": "both",
+      "actif": true
     }
   ],
   "officielles": [
