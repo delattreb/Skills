@@ -4,6 +4,8 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [Sem
 Chaque version publiée est marquée par un tag Git `pro-recherche-emploi-informatique-vX.Y.Z`.
 
 ## [Non publié]
+
+## [0.4.0] — 2026-11-23
 ### Ajouté
 - Gmail : repérage des messages qui appellent une réponse et des demandes de contact, avec section « À traiter dans Gmail » en tête du rapport.
 ### Modifié
