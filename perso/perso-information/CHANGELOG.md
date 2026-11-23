@@ -3,6 +3,8 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 
 ## [Non publié]
+### Ajouté
+- `config/sources.json` 0.3.1 : médias BBC News, The Guardian, Le Monde, RFI, Reuters, Associated Press et AFP, pour élargir les sources éligibles à la double confirmation (recherche sans `allowed_domains`).
 ### Modifié
 - Renommage : le préfixe `loisir-` devient `perso-` (dossier, champ `name`, commande slash). Le dossier `loisir/` du dépôt devient `perso/`. Changement incompatible pour les commandes existantes.
 
