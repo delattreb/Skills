@@ -4,7 +4,10 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [Sem
 Chaque version publiée est marquée par un tag Git `pro-recherche-emploi-informatique-vX.Y.Z`.
 
 ## [Non publié]
+### Ajouté
+- Gmail : repérage des messages qui appellent une réponse et des demandes de contact, avec section « À traiter dans Gmail » en tête du rapport.
 ### Modifié
+- Gmail : tous les messages passés en revue sont marqués lus (la notification LinkedIn n'est plus une exception).
 - Profil de référence déplacé dans `references/profil.md` ; SKILL.md allégé.
 - Indeed : usage du connecteur (`search_jobs`, `get_job_details`, `get_company_data`) plutôt que des pages web.
 - Rapport : ajout d'une synthèse de trois lignes en tête, cellules du tableau en une phrase.
