@@ -21,5 +21,12 @@ Mes skills personnels pour Claude.
 
 Le dépôt est un plugin Claude (`.claude-plugin/plugin.json`) qui regroupe tous les skills de `pro/` et `perso/`.
 
+- **Marketplace Claude Code** :
+
+  ```
+  /plugin marketplace add delattreb/Skills
+  /plugin install skills-perso@skills-perso
+  ```
+
 - **Tout d'un coup** : importer dans Claude (Paramètres → Capacités) une archive .zip du dépôt dont la racine contient `.claude-plugin/`.
 - **Un seul skill** : importer une archive .zip qui ne contient que le dossier de ce skill (par exemple `pro-agenda/` avec son `SKILL.md`).
