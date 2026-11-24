@@ -3,6 +3,14 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 La version du plugin (`.claude-plugin/plugin.json`) sert de version unique de release. Le détail par skill reste dans le `CHANGELOG.md` de chaque skill.
 
+## [3.0.0] — 2026-11-24
+### Modifié
+- Refonte complète de la veille : les skills `pro-veille-informatique` et `perso-information` sont fusionnés en `pro-veille` 1.0.0 (commande `/pro-veille`). Six catégories (politique, économie, IA, informatique, développement, 3D), collecte par flux RSS (`config/flux.json`) puis recherche web, une note par jour `Veille/AAAA-MM-JJ veille.md`.
+### Ajouté
+- `scripts/flux.py` : lecteur RSS/Atom avec test d'accessibilité des flux (`--tester --ecrire` désactive les flux inaccessibles). 87 flux testés, 77 actifs.
+### Supprimé
+- `pro-veille-informatique` et `perso-information` (et la commande `/pro-veille-informatique`, `/perso-information`). Le dossier `Information` du coffre n'est plus alimenté.
+
 ## [2.5.0] — 2026-11-24
 ### Ajouté
 - `pro-veille-informatique` 0.7.0 : passe 4 « Lecture renforcée (Apify) » (skill `apify:apify-ultimate-scraper`, Actor `apify/rag-web-browser`) pour lire les articles que la lecture directe n'ouvre pas ; pages publiques seulement, 5 pages au plus par lancement. Le skill invoque aussi `caveman:caveman` pour le style des messages de travail et du bilan.
