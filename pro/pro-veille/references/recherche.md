@@ -2,7 +2,7 @@
 
 Les flux RSS sont dans `config/flux.json`. Ce fichier sert aux recherches de complément et à la confirmation. Vérifier que chaque URL citée a été renvoyée par le script, la recherche ou ouverte.
 
-## Sources officielles (suffisent seules pour politique et économie)
+## Sources officielles (suffisent seules)
 
 France : `gouvernement.fr`, `elysee.fr`, `legifrance.gouv.fr`, `journal-officiel.gouv.fr`, `assemblee-nationale.fr`, `senat.fr`, `service-public.fr`, `vie-publique.fr`, `banque-france.fr`, `insee.fr`, `conseil-constitutionnel.fr`, `conseil-etat.fr`, `interieur.gouv.fr`, `cnil.fr`, `cyber.gouv.fr`, `cert.ssi.gouv.fr`.
 International : `un.org`, `europa.eu` (dont `ecb.europa.eu`), `imf.org`, `worldbank.org`, `who.int`, `usgs.gov`, `icj-cij.org`, `cisa.gov`.

@@ -24,10 +24,7 @@ Produire chaque jour une veille factuelle, en français, sur l'actualité publi�
 - **Sources web uniquement.** Ne consulter ni la messagerie, ni l'agenda, ni Teams. Ordre de collecte : flux RSS (script), puis recherche web sur des sites d'information accessibles, puis lecture d'une page pour vérifier un article.
 - **Sites accessibles uniquement.** Ne jamais contourner un paywall, une connexion obligatoire, un CAPTCHA ni une interdiction d'accès. Une page illisible n'est pas lue ; un flux inaccessible est désactivé (étape 0). Un titre et un résumé de flux, ou un résultat de recherche daté avec son URL, valent lecture de l'élément.
 - **Une seule écriture par lancement : le fichier horodaté** `AAAA-MM-JJ veille.md` (date du jour de lancement) dans `MonVault/Veille`. Les veilles des jours précédents ne sont jamais modifiées.
-- **Confirmation selon la catégorie.**
-  - *Politique et Économie* : fait confirmé par **deux médias reconnus indépendants** ou par **une source officielle** (gouvernement, Journal officiel, institution internationale, BCE, banque centrale, organisme public, communiqué de l'entité concernée). Une dépêche d'agence (AFP, Reuters, AP) reprise ailleurs compte pour l'agence, à condition que le texte la cite ; une agence ne vaut pas deux médias à elle seule. Un fait à **source unique** (un seul média reconnu) peut figurer dans sa catégorie, jamais dans « À retenir », et il est marqué « source unique » avec attribution (« selon Euronews »).
-  - *IA, Informatique, Développement, 3D* : une **source primaire** (éditeur, projet, organisme officiel) ou **un média reconnu** suffit.
-  - Agrégateurs, digests automatiques, blogs anonymes, forums et réseaux sociaux sont **exclus** comme preuve ; ils servent seulement de piste pour trouver la source primaire. Pas de rubrique « à confirmer ».
+- **Confirmation par une source.** Un fait entre dans la veille s'il est publié par une **source primaire ou officielle** (gouvernement, Journal officiel, institution, banque centrale, organisme public, éditeur, projet, entité concernée) ou par **un média reconnu** (voir `references/recherche.md`). Une seule source suffit : aucune double confirmation n'est exigée. Agrégateurs, digests automatiques, blogs anonymes, forums et réseaux sociaux sont **exclus** comme preuve ; ils servent seulement de piste pour trouver la source. Pas de rubrique « à confirmer ».
 - **Ne rien inventer.** Chaque élément a au moins un lien et une date. Uniquement des URL issues du script, de la recherche ou d'une page ouverte, jamais reconstruites de mémoire.
 - **Neutralité.** Sujets disputés (politique, conflits, élections, débats de société) : présenter les positions en les attribuant, sans adjectif évaluatif ni conclusion. Signaler un fait en cours d'établissement (« selon les premières informations »).
 - **Période stricte.** Ne retenir que des informations publiées entre début et fin de période. Un fait plus ancien n'entre que s'il y a un fait nouveau daté dans la période, signalé par « (suite) ».
@@ -52,12 +49,12 @@ Seulement si l'utilisateur demande de tester ou de mettre à jour les sources, o
 ## Étape 2 : Collecter
 
 1. **Flux RSS** : `python3 -I scripts/flux.py --debut <début ISO avec fuseau> --fin <fin ISO avec fuseau>` depuis le dossier du skill. Sortie groupée par catégorie, 3 entrées les plus récentes par flux (`--par-flux N` pour changer, `--resume` pour ajouter le résumé, `--categorie ia` pour une seule catégorie). Les erreurs de flux vont sur la sortie d'erreur : les signaler dans le bilan, continuer. Les flux généralistes (Le Monde, Le Figaro, etc.) mélangent sport, culture et faits divers : ne retenir que ce qui relève des six catégories.
-2. **Recherche web** pour les catégories vides ou maigres et pour la **double confirmation** des faits politiques et économiques retenus : une ou deux requêtes par catégorie, avec le mois et l'année, en français et en anglais (requêtes de départ dans `references/recherche.md`). Lancer les recherches indépendantes en parallèle. Un domaine refusé par l'outil de recherche (erreur 400 « not accessible to our user agent ») est retiré de la requête, la requête est relancée sans filtre, et le domaine est signalé dans le bilan.
+2. **Recherche web** pour les catégories vides ou maigres : une ou deux requêtes par catégorie, avec le mois et l'année, en français et en anglais (requêtes de départ dans `references/recherche.md`). Lancer les recherches indépendantes en parallèle. Un domaine refusé par l'outil de recherche (erreur 400 « not accessible to our user agent ») est retiré de la requête, la requête est relancée sans filtre, et le domaine est signalé dans le bilan.
 3. **Lecture d'un article** quand c'est nécessaire pour vérifier la date, le fond ou le statut. Si la lecture directe échoue (blocage anti-robot, rendu JavaScript), une page **publique** peut être lue avec le skill `apify:apify-ultimate-scraper` (Actor `apify/rag-web-browser`, schéma d'entrée récupéré avec `apify actors info "apify/rag-web-browser" --input --json` avant l'appel), 5 pages au plus par lancement. Page toujours illisible, CLI absente ou non authentifiée : ne pas insister, appliquer la règle « titre et résumé de flux ou résultat de recherche daté ».
 
 ## Étape 3 : Trier
 
-- Écarter : faits non confirmés selon la catégorie, doublons (garder une entrée, source officielle ou primaire en premier), éditoriaux sans fait nouveau, contenu promotionnel ou sponsorisé, tutoriels, fait divers et sport hors sujet, articles hors période.
+- Écarter : faits sans source primaire ni média reconnu, doublons (garder une entrée, source officielle ou primaire en premier), éditoriaux sans fait nouveau, contenu promotionnel ou sponsorisé, tutoriels, fait divers et sport hors sujet, articles hors période.
 - Évaluer l'**importance** : personnes touchées, portée juridique, économique ou technique, effet durable, caractère inédit. Garder au plus **5 éléments** pour Politique et Économie, **3** pour IA, Informatique, Développement et 3D, du plus au moins important. Un jour calme donne une note courte : ne pas combler avec des éléments faibles.
 - Indices tech : nouvelle version majeure ou nouveau modèle, vulnérabilité activement exploitée, changement de prix ou de licence, fin de support, projet remarquable publié par un média reconnu ; une bêta mineure ou un correctif sans nouveauté est écarté.
 - Repérer les **échéances** officielles ou datées dans les semaines à venir (entrée en vigueur d'un texte, élection, sommet, décision attendue, fin de support, date de sortie).
@@ -82,7 +79,7 @@ tags: [veille, ...]
 # Veille du [jour JJ mois AAAA]
 
 > [!summary] À retenir
-> - [3 points maximum, une ligne chacun, tous sujets confondus, jamais un fait à source unique]
+> - [3 points maximum, une ligne chacun, tous sujets confondus]
 
 ## Vue d'ensemble
 
@@ -102,7 +99,7 @@ tags: [veille, ...]
 > [!info] [Titre court et factuel]
 > [2 à 3 phrases : ce qui s'est passé, qui est concerné, date, statut ou incertitude.]
 >
-> Sources : [Nom du média, JJ/MM/AAAA](URL), [Nom du média, JJ/MM/AAAA](URL)
+> Source : [Nom du média, JJ/MM/AAAA](URL)
 
 ---
 
@@ -112,7 +109,7 @@ tags: [veille, ...]
 
 Règles de présentation :
 - Le tableau liste les six catégories, y compris celles à 0, qui n'ont alors aucune section dans le corps.
-- Pour une source officielle ou primaire seule : « Source officielle : [Nom, JJ/MM/AAAA](URL) ». Pour un fait à source unique : « Source unique : [Nom, JJ/MM/AAAA](URL) ».
+- Source officielle ou primaire seule : « Source officielle : [Nom, JJ/MM/AAAA](URL) ».
 - Callout `[!info]` par défaut, `[!warning]` pour un fait de portée majeure (vulnérabilité activement exploitée, décision de loi ou de budget, crise).
 - La section « Échéances à surveiller » est omise si rien n'a été trouvé.
 - Si aucun élément n'est retenu, le corps se réduit à « Rien de notable dans la fenêtre. » sous « À retenir ».

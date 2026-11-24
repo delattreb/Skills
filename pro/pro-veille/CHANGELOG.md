@@ -9,7 +9,7 @@ Ce skill remplace `pro-veille-informatique` (dernière version 0.7.0) et `perso-
 - `config/flux.json` (85 flux, 75 actifs après test du 24/11/2026) et `scripts/flux.py` : lecture des flux RSS/Atom en parallèle, filtre par fenêtre, 3 entrées par flux, test d'accessibilité avec désactivation des flux en échec.
 - `references/recherche.md` : sources officielles, médias reconnus, requêtes de complément.
 ### Modifié
-- Confirmation selon la catégorie : deux médias ou une source officielle pour politique et économie ; une source primaire ou un média reconnu pour la tech.
+- Confirmation : une seule source suffit (source primaire ou officielle, ou média reconnu), pour toutes les catégories. Plus de double confirmation ni de marque « source unique ».
 - Une note par jour : `Veille/AAAA-MM-JJ veille.md`.
 ### Supprimé
 - Catégories NEOMA (enseignement supérieur, Microsoft 365, réglementation, marché, geekerie), ligne « Pour NEOMA » et `references/contexte-neoma.md`.

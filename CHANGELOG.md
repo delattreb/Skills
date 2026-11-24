@@ -5,7 +5,7 @@ La version du plugin (`.claude-plugin/plugin.json`) sert de version unique de re
 
 ## [3.0.0] — 2026-11-24
 ### Modifié
-- Refonte complète de la veille : les skills `pro-veille-informatique` et `perso-information` sont fusionnés en `pro-veille` 1.0.0 (commande `/pro-veille`). Six catégories (politique, économie, IA, informatique, développement, 3D), collecte par flux RSS (`config/flux.json`) puis recherche web, une note par jour `Veille/AAAA-MM-JJ veille.md`.
+- Refonte complète de la veille : les skills `pro-veille-informatique` et `perso-information` sont fusionnés en `pro-veille` 1.0.0 (commande `/pro-veille`). Six catégories (politique, économie, IA, informatique, développement, 3D), confirmation par une seule source, collecte par flux RSS (`config/flux.json`) puis recherche web, une note par jour `Veille/AAAA-MM-JJ veille.md`.
 ### Ajouté
 - `scripts/flux.py` : lecteur RSS/Atom avec test d'accessibilité des flux (`--tester --ecrire` désactive les flux inaccessibles). 85 flux testés, 75 actifs.
 ### Supprimé
