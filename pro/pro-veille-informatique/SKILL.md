@@ -32,7 +32,7 @@ Produire chaque jour une veille factuelle, en français, sur l'actualité publi�
 
 ## Étape 1 : Préparer
 
-1. Charger l'outil de recherche web via ToolSearch si nécessaire (par exemple `select:WebSearch`).
+1. Charger l'outil de recherche web via ToolSearch si nécessaire (par exemple `select:WebSearch`). Invoquer ensuite le skill `caveman:caveman` (outil Skill) : il règle le style des messages de travail et du bilan final dans le chat. Il ne s'applique jamais au contenu de la note enregistrée, qui reste en français rédigé selon le format de l'étape 4.
 2. Calculer la fenêtre (fuseau Europe/Paris), **fin = moment du lancement** :
    - mardi à samedi : les 24 dernières heures ;
    - lundi : depuis vendredi matin (72 h), pour couvrir le week-end ;
@@ -61,7 +61,7 @@ Thèmes à couvrir par catégorie :
 7. **Marché et éditeurs** : rachats, changements de prix et de licences, évolutions de contrats, éditeurs utilisés par NEOMA.
 8. **Geekerie** : digital painting (Krita, Procreate, Clip Studio Paint, Photoshop, Rebelle, tablettes graphiques), Raspberry Pi, Arduino et microcontrôleurs (ESP32, RP2040), Blender et 3D, impression 3D, électronique DIY, astronomie amateur (télescopes et accessoires, caméras, logiciels comme Stellarium, Siril, KStars) : nouvelles versions, nouveau matériel, fonctionnalités marquantes, projets remarquables.
 
-4. **Lecture renforcée (Apify)** : pour les articles les plus importants que la lecture directe ne parvient pas à ouvrir (blocage anti-robot, rendu JavaScript, réseau limité), lire la page avec le skill `apify:apify-ultimate-scraper` (Apify CLI), de préférence l'Actor `apify/rag-web-browser` (une URL, texte propre en markdown). Récupérer le schéma d'entrée avec `apify actors info "apify/rag-web-browser" --input --json 2>/dev/null` avant l'appel, sans le deviner. Règles :
+4. **Lecture renforcée (Apify)** : pour les articles les plus importants que la lecture directe ne parvient pas à ouvrir (blocage anti-robot, rendu JavaScript, réseau limité), lire la page avec le skill `apify:apify-ultimate-scraper` (invoquer le skill avec l'outil Skill avant le premier appel ; Apify CLI), de préférence l'Actor `apify/rag-web-browser` (une URL, texte propre en markdown). Récupérer le schéma d'entrée avec `apify actors info "apify/rag-web-browser" --input --json 2>/dev/null` avant l'appel, sans le deviner. Règles :
    - Seulement des URL renvoyées par la recherche ou le script, sur des domaines acceptés (section 3 de la référence), et uniquement des pages publiques. Ne pas contourner un paywall, une connexion obligatoire, un CAPTCHA ni une interdiction explicite d'accès : une page qui reste illisible est traitée comme non ouverte.
    - Au plus 5 pages par lancement, un appel bloquant par page, pour limiter le coût. Ne pas lancer d'Actor de réseaux sociaux.
    - Le texte lu compte comme une ouverture de page : vérifier la date de publication, le fond et le statut dans le texte, puis appliquer les règles de confirmation habituelles. Le champ de date des métadonnées est souvent vide : lire la date dans le texte ou dans l'URL, sinon la prendre du résultat de recherche daté.
@@ -156,4 +156,4 @@ Si l'écriture est impossible, livrer la veille complète dans le chat et expliq
 
 ## Étape 6 : Réponse finale
 
-Livrer dans le chat un court bilan : le nom et l'emplacement du fichier (lien Drive si disponible) et les points de la rubrique « À retenir », une ligne chacun. Ne pas recopier toute la veille sauf si l'écriture a échoué. Si l'outil SendUserMessage est disponible, y envoyer ce même bilan. Ne pas l'envoyer par e-mail ni sur Teams.
+Livrer dans le chat un court bilan, dans le style `caveman:caveman` : le nom et l'emplacement du fichier (lien Drive si disponible) et les points de la rubrique « À retenir », une ligne chacun. Ne pas recopier toute la veille sauf si l'écriture a échoué. Si l'outil SendUserMessage est disponible, y envoyer ce même bilan. Ne pas l'envoyer par e-mail ni sur Teams.

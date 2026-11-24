@@ -5,6 +5,7 @@ Chaque version publiée est marquée par un tag Git `pro-veille-informatique-vX.
 
 ## [Non publié]
 ### Ajouté
+- Le skill invoque `caveman:caveman` à l'étape 1 pour le style des messages de travail et du bilan (jamais pour la note enregistrée) et `apify:apify-ultimate-scraper` avant la lecture renforcée.
 - Passe 4 de l'étape 2 « Lecture renforcée (Apify) » : lecture des articles importants que la lecture directe n'ouvre pas, via le skill `apify:apify-ultimate-scraper` et l'Actor `apify/rag-web-browser`. Pages publiques et domaines acceptés seulement, 5 pages au plus par lancement, repli sur la confirmation par résultat de recherche si Apify est indisponible.
 ### Modifié
 - Format de la note : tableau « Vue d'ensemble » des huit catégories, ordre fixe, callouts Obsidian colorés selon la pertinence, catégories sans élément absentes du corps.
