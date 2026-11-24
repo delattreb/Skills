@@ -11,6 +11,7 @@ Ce skill remplace `pro-veille-informatique` (dernière version 0.7.0) et `perso-
 ### Modifié
 - Confirmation : une seule source suffit (source primaire ou officielle, ou média reconnu), pour toutes les catégories. Plus de double confirmation ni de marque « source unique ».
 - Une note par jour : `Veille/AAAA-MM-JJ veille.md`.
+- Volume réduit : `caveman:caveman` invoqué avant toute action (messages courts) ; `flux.py` retire les paramètres de suivi des liens et coupe les titres à 150 caractères.
 ### Supprimé
 - Catégories NEOMA (enseignement supérieur, Microsoft 365, réglementation, marché, geekerie), ligne « Pour NEOMA » et `references/contexte-neoma.md`.
 - Script KEV et recherche restreinte par `allowed_domains`.

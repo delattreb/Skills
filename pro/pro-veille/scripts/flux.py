@@ -14,6 +14,7 @@ import json
 import pathlib
 import re
 import sys
+import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
@@ -39,6 +40,13 @@ def date(txt):
         except ValueError:
             return None
     return d if d.tzinfo else d.replace(tzinfo=UTC)
+
+
+def propre(url):
+    """Retire fragment et paramètres de suivi (utm_*, at_*, traffic_source, xtor) : moins de volume."""
+    u = urllib.parse.urlsplit(url)
+    q = [(k, v) for k, v in urllib.parse.parse_qsl(u.query) if not k.startswith(("utm_", "at_", "xtor")) and k != "traffic_source"]
+    return urllib.parse.urlunsplit((u.scheme, u.netloc, u.path, urllib.parse.urlencode(q), ""))
 
 
 def texte(el, *noms):
@@ -131,7 +139,7 @@ def main():
     for cat, lignes in par_cat.items():
         print(f"## {cat} ({len(lignes)})")
         for d, nom, titre, lien, resume in sorted(lignes, reverse=True):
-            print(f"- {d.astimezone():%d/%m %H:%M} | {nom} | {titre} | {lien}" + (f" | {resume}" if resume and a.resume else ""))
+            print(f"- {d.astimezone():%d/%m %H:%M} | {nom} | {titre[:150]} | {propre(lien)}" + (f" | {resume}" if resume and a.resume else ""))
         print()
 
 

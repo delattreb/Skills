@@ -38,7 +38,7 @@ Seulement si l'utilisateur demande de tester ou de mettre à jour les sources, o
 
 ## Étape 1 : Préparer
 
-1. Charger l'outil de recherche web via ToolSearch si nécessaire (par exemple `select:WebSearch`). Invoquer ensuite le skill `caveman:caveman` (outil Skill) : il règle le style des messages de travail et du bilan final dans le chat, jamais celui de la note enregistrée.
+1. Charger l'outil de recherche web via ToolSearch si nécessaire (par exemple `select:WebSearch`). Invoquer ensuite le skill `caveman:caveman` (outil Skill) **avant toute autre action** : il réduit le volume descendant (messages de travail, bilan final : une ligne par phase, aucun texte entre les appels d'outil routiniers). Il ne s'applique jamais au contenu de la note enregistrée, qui reste du français rédigé. Réduire aussi le volume montant : ne lire que la sortie du script (pas les flux bruts), ne pas relire un fichier déjà lu, ne pas ouvrir un article dont le titre et le résumé suffisent.
 2. Calculer la fenêtre (fuseau Europe/Paris), **fin = moment du lancement** :
    - mardi à samedi : les 24 dernières heures ;
    - lundi : depuis vendredi matin (72 h) ;
