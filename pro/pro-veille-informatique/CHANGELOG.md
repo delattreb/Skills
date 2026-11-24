@@ -3,7 +3,7 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 Chaque version publiée est marquée par un tag Git `pro-veille-informatique-vX.Y.Z`.
 
-## [Non publié]
+## [0.7.0] — 2026-11-24
 ### Ajouté
 - Le skill invoque `caveman:caveman` à l'étape 1 pour le style des messages de travail et du bilan (jamais pour la note enregistrée) et `apify:apify-ultimate-scraper` avant la lecture renforcée.
 - Passe 4 de l'étape 2 « Lecture renforcée (Apify) » : lecture des articles importants que la lecture directe n'ouvre pas, via le skill `apify:apify-ultimate-scraper` et l'Actor `apify/rag-web-browser`. Pages publiques et domaines acceptés seulement, 5 pages au plus par lancement, repli sur la confirmation par résultat de recherche si Apify est indisponible.

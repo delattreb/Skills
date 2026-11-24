@@ -3,7 +3,7 @@ name: "pro-veille-informatique"
 description: "Rédige en français une veille informatique quotidienne (dernières 24 h, 72 h le lundi) sur huit catégories : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud, cybersécurité, réglementation et données, infrastructure réseau et poste de travail, marché et éditeurs, geekerie (digital painting, Raspberry Pi, Arduino, Blender, impression 3D, électronique DIY, astronomie). S'appuie uniquement sur des recherches web, ne retient que des informations confirmées, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier Veille, un fichier horodaté par jour : AAAA-MM-JJ veille informatique.md). À utiliser quand l'utilisateur demande « veille informatique », « veille du jour », « fais ma veille », « veille IT », « veille techno », « /pro-veille-informatique », « quoi de neuf en IT », « actus IA / cyber / Microsoft 365 / enseignement supérieur / Raspberry / Blender / astronomie »."
 tags: [pro, veille, informatique, ia, cybersecurite, microsoft-365, enseignement-superieur, reglementation, infrastructure, marche-editeurs, geekerie]
 metadata:
-  version: "0.6.0"
+  version: "0.7.0"
 ---
 
 ## Approach
