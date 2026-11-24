@@ -21,7 +21,7 @@ Produire chaque jour une veille factuelle, en français, sur l'actualité publi�
 
 ## Règles impératives
 
-- **Sources web uniquement.** Ne consulter ni la messagerie, ni l'agenda, ni Teams. Utiliser le script de flux (`scripts/flux_veille.py`), l'outil de recherche web (WebSearch ou équivalent) et, quand elle fonctionne, la lecture de page pour vérifier un article.
+- **Sources web uniquement.** Ne consulter ni la messagerie, ni l'agenda, ni Teams. Utiliser le script de flux (`scripts/flux_veille.py`), l'outil de recherche web (WebSearch ou équivalent) et, quand elle fonctionne, la lecture de page pour vérifier un article. Quand la lecture directe échoue, la lecture renforcée par Apify (passe 4 de l'étape 2) peut la remplacer.
 - **Une seule écriture par lancement : le fichier horodaté** `AAAA-MM-JJ veille informatique.md` (date du jour de lancement) dans `MonVault/Veille` (voir l'étape 5). Les veilles des jours précédents ne sont jamais modifiées.
 - **Informations confirmées uniquement.** Un élément n'entre dans la veille que s'il est confirmé par une **source primaire** (éditeur, organisme officiel, établissement concerné) ou par un **média reconnu** (voir `references/sources-et-requetes.md`). Quand la page ne peut pas être ouverte (réseau limité), un résultat de recherche vaut confirmation s'il provient d'un domaine accepté, porte une date explicite dans la fenêtre et donne l'URL de l'article ; s'en tenir alors aux faits présents dans le résultat. Un élément connu seulement par des agrégateurs, des blogs anonymes, des pages générées automatiquement ou des réseaux sociaux est **exclu**, même s'il paraît important. Il n'y a pas de rubrique « à confirmer ».
 - **Ne rien inventer.** Chaque élément a au moins un lien et une date de publication. Pas de lien reconstruit de mémoire : uniquement des URL renvoyées par la recherche ou ouvertes.
@@ -44,7 +44,7 @@ Produire chaque jour une veille factuelle, en français, sur l'actualité publi�
 
 ## Étape 2 : Collecter (lancer les recherches indépendantes en parallèle)
 
-Collecter en trois passes, dans cet ordre. Deux requêtes web au maximum par catégorie, passes 2 et 3 comprises.
+Collecter en quatre passes, dans cet ordre. Deux requêtes web au maximum par catégorie, passes 2 et 3 comprises ; la passe 4 a son propre plafond.
 
 1. **Flux primaires** : lancer `python3 -I scripts/flux_veille.py --debut <début ISO avec fuseau> --fin <fin ISO avec fuseau>` depuis le dossier du skill. Il liste les nouveautés de la feuille de route Microsoft 365 et les vulnérabilités ajoutées au catalogue CISA KEV dans la fenêtre. Si une source est en erreur, continuer et le signaler dans le bilan.
 2. **Recherche restreinte** : pour chaque catégorie, une recherche avec `allowed_domains` réglé sur la liste de la catégorie (section 2 de la référence), avec la date dans la requête. Lancer ces recherches en parallèle. Ne jamais inclure un domaine de la liste « refusés par le moteur ».
@@ -61,7 +61,13 @@ Thèmes à couvrir par catégorie :
 7. **Marché et éditeurs** : rachats, changements de prix et de licences, évolutions de contrats, éditeurs utilisés par NEOMA.
 8. **Geekerie** : digital painting (Krita, Procreate, Clip Studio Paint, Photoshop, Rebelle, tablettes graphiques), Raspberry Pi, Arduino et microcontrôleurs (ESP32, RP2040), Blender et 3D, impression 3D, électronique DIY, astronomie amateur (télescopes et accessoires, caméras, logiciels comme Stellarium, Siril, KStars) : nouvelles versions, nouveau matériel, fonctionnalités marquantes, projets remarquables.
 
-Ouvrir les articles les plus prometteurs pour vérifier la date, le fond et le statut quand c'est possible ; si l'ouverture échoue pour cause de réseau, ne pas réessayer sur le même site et appliquer la règle de confirmation par résultat de recherche. Remonter à la source primaire quand une information vient d'une reprise ; si aucune source primaire ni média reconnu ne la confirme, l'écarter.
+4. **Lecture renforcée (Apify)** : pour les articles les plus importants que la lecture directe ne parvient pas à ouvrir (blocage anti-robot, rendu JavaScript, réseau limité), lire la page avec le skill `apify:apify-ultimate-scraper` (Apify CLI), de préférence l'Actor `apify/rag-web-browser` (une URL, texte propre en markdown). Récupérer le schéma d'entrée avec `apify actors info "apify/rag-web-browser" --input --json 2>/dev/null` avant l'appel, sans le deviner. Règles :
+   - Seulement des URL renvoyées par la recherche ou le script, sur des domaines acceptés (section 3 de la référence), et uniquement des pages publiques. Ne pas contourner un paywall, une connexion obligatoire, un CAPTCHA ni une interdiction explicite d'accès : une page qui reste illisible est traitée comme non ouverte.
+   - Au plus 5 pages par lancement, un appel bloquant par page, pour limiter le coût. Ne pas lancer d'Actor de réseaux sociaux.
+   - Le texte lu compte comme une ouverture de page : vérifier la date de publication, le fond et le statut dans le texte, puis appliquer les règles de confirmation habituelles.
+   - Si la CLI est absente, si `apify info 2>&1` montre une session non authentifiée (`APIFY_TOKEN` manquant) ou si le réseau refuse l'accès, ne pas insister : revenir à la confirmation par résultat de recherche et le signaler dans le bilan.
+
+Ouvrir les articles les plus prometteurs pour vérifier la date, le fond et le statut quand c'est possible (lecture directe d'abord, puis passe 4 si elle échoue) ; si l'ouverture échoue pour cause de réseau, ne pas réessayer sur le même site et appliquer la règle de confirmation par résultat de recherche. Remonter à la source primaire quand une information vient d'une reprise ; si aucune source primaire ni média reconnu ne la confirme, l'écarter.
 
 ## Étape 3 : Trier
 

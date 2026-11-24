@@ -4,6 +4,8 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [Sem
 Chaque version publiée est marquée par un tag Git `pro-veille-informatique-vX.Y.Z`.
 
 ## [Non publié]
+### Ajouté
+- Passe 4 de l'étape 2 « Lecture renforcée (Apify) » : lecture des articles importants que la lecture directe n'ouvre pas, via le skill `apify:apify-ultimate-scraper` et l'Actor `apify/rag-web-browser`. Pages publiques et domaines acceptés seulement, 5 pages au plus par lancement, repli sur la confirmation par résultat de recherche si Apify est indisponible.
 ### Modifié
 - Format de la note : tableau « Vue d'ensemble » des huit catégories, ordre fixe, callouts Obsidian colorés selon la pertinence, catégories sans élément absentes du corps.
 - Frontmatter du skill : champ `tags` ajouté.
