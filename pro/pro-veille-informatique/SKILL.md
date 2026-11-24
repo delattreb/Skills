@@ -3,7 +3,7 @@ name: "pro-veille-informatique"
 description: "Rédige en français une veille informatique quotidienne (dernières 24 h, 72 h le lundi) sur huit catégories : IA et outils IA, SI de l'enseignement supérieur, Microsoft 365 et cloud, cybersécurité, réglementation et données, infrastructure réseau et poste de travail, marché et éditeurs, geekerie (digital painting, Raspberry Pi, Arduino, Blender, impression 3D, électronique DIY, astronomie). S'appuie uniquement sur des recherches web, ne retient que des informations confirmées, chacune datée et sourcée par un lien, et l'enregistre dans Obsidian (coffre MonVault, dossier Veille, un fichier horodaté par jour : AAAA-MM-JJ veille informatique.md). À utiliser quand l'utilisateur demande « veille informatique », « veille du jour », « fais ma veille », « veille IT », « veille techno », « /pro-veille-informatique », « quoi de neuf en IT », « actus IA / cyber / Microsoft 365 / enseignement supérieur / Raspberry / Blender / astronomie »."
 tags: [pro, veille, informatique, ia, cybersecurite, microsoft-365, enseignement-superieur, reglementation, infrastructure, marche-editeurs, geekerie]
 metadata:
-  version: "0.6.0"
+  version: "0.7.0"
 ---
 
 ## Approach
@@ -21,7 +21,7 @@ Produire chaque jour une veille factuelle, en français, sur l'actualité publi�
 
 ## Règles impératives
 
-- **Sources web uniquement.** Ne consulter ni la messagerie, ni l'agenda, ni Teams. Utiliser le script de flux (`scripts/flux_veille.py`), l'outil de recherche web (WebSearch ou équivalent) et, quand elle fonctionne, la lecture de page pour vérifier un article.
+- **Sources web uniquement.** Ne consulter ni la messagerie, ni l'agenda, ni Teams. Utiliser le script de flux (`scripts/flux_veille.py`), l'outil de recherche web (WebSearch ou équivalent) et, quand elle fonctionne, la lecture de page pour vérifier un article. Quand la lecture directe échoue, la lecture renforcée par Apify (passe 4 de l'étape 2) peut la remplacer.
 - **Une seule écriture par lancement : le fichier horodaté** `AAAA-MM-JJ veille informatique.md` (date du jour de lancement) dans `MonVault/Veille` (voir l'étape 5). Les veilles des jours précédents ne sont jamais modifiées.
 - **Informations confirmées uniquement.** Un élément n'entre dans la veille que s'il est confirmé par une **source primaire** (éditeur, organisme officiel, établissement concerné) ou par un **média reconnu** (voir `references/sources-et-requetes.md`). Quand la page ne peut pas être ouverte (réseau limité), un résultat de recherche vaut confirmation s'il provient d'un domaine accepté, porte une date explicite dans la fenêtre et donne l'URL de l'article ; s'en tenir alors aux faits présents dans le résultat. Un élément connu seulement par des agrégateurs, des blogs anonymes, des pages générées automatiquement ou des réseaux sociaux est **exclu**, même s'il paraît important. Il n'y a pas de rubrique « à confirmer ».
 - **Ne rien inventer.** Chaque élément a au moins un lien et une date de publication. Pas de lien reconstruit de mémoire : uniquement des URL renvoyées par la recherche ou ouvertes.
@@ -32,7 +32,7 @@ Produire chaque jour une veille factuelle, en français, sur l'actualité publi�
 
 ## Étape 1 : Préparer
 
-1. Charger l'outil de recherche web via ToolSearch si nécessaire (par exemple `select:WebSearch`).
+1. Charger l'outil de recherche web via ToolSearch si nécessaire (par exemple `select:WebSearch`). Invoquer ensuite le skill `caveman:caveman` (outil Skill) : il règle le style des messages de travail et du bilan final dans le chat. Il ne s'applique jamais au contenu de la note enregistrée, qui reste en français rédigé selon le format de l'étape 4.
 2. Calculer la fenêtre (fuseau Europe/Paris), **fin = moment du lancement** :
    - mardi à samedi : les 24 dernières heures ;
    - lundi : depuis vendredi matin (72 h), pour couvrir le week-end ;
@@ -44,7 +44,7 @@ Produire chaque jour une veille factuelle, en français, sur l'actualité publi�
 
 ## Étape 2 : Collecter (lancer les recherches indépendantes en parallèle)
 
-Collecter en trois passes, dans cet ordre. Deux requêtes web au maximum par catégorie, passes 2 et 3 comprises.
+Collecter en quatre passes, dans cet ordre. Deux requêtes web au maximum par catégorie, passes 2 et 3 comprises ; la passe 4 a son propre plafond.
 
 1. **Flux primaires** : lancer `python3 -I scripts/flux_veille.py --debut <début ISO avec fuseau> --fin <fin ISO avec fuseau>` depuis le dossier du skill. Il liste les nouveautés de la feuille de route Microsoft 365 et les vulnérabilités ajoutées au catalogue CISA KEV dans la fenêtre. Si une source est en erreur, continuer et le signaler dans le bilan.
 2. **Recherche restreinte** : pour chaque catégorie, une recherche avec `allowed_domains` réglé sur la liste de la catégorie (section 2 de la référence), avec la date dans la requête. Lancer ces recherches en parallèle. Ne jamais inclure un domaine de la liste « refusés par le moteur ».
@@ -61,7 +61,13 @@ Thèmes à couvrir par catégorie :
 7. **Marché et éditeurs** : rachats, changements de prix et de licences, évolutions de contrats, éditeurs utilisés par NEOMA.
 8. **Geekerie** : digital painting (Krita, Procreate, Clip Studio Paint, Photoshop, Rebelle, tablettes graphiques), Raspberry Pi, Arduino et microcontrôleurs (ESP32, RP2040), Blender et 3D, impression 3D, électronique DIY, astronomie amateur (télescopes et accessoires, caméras, logiciels comme Stellarium, Siril, KStars) : nouvelles versions, nouveau matériel, fonctionnalités marquantes, projets remarquables.
 
-Ouvrir les articles les plus prometteurs pour vérifier la date, le fond et le statut quand c'est possible ; si l'ouverture échoue pour cause de réseau, ne pas réessayer sur le même site et appliquer la règle de confirmation par résultat de recherche. Remonter à la source primaire quand une information vient d'une reprise ; si aucune source primaire ni média reconnu ne la confirme, l'écarter.
+4. **Lecture renforcée (Apify)** : pour les articles les plus importants que la lecture directe ne parvient pas à ouvrir (blocage anti-robot, rendu JavaScript, réseau limité), lire la page avec le skill `apify:apify-ultimate-scraper` (invoquer le skill avec l'outil Skill avant le premier appel ; Apify CLI), de préférence l'Actor `apify/rag-web-browser` (une URL, texte propre en markdown). Récupérer le schéma d'entrée avec `apify actors info "apify/rag-web-browser" --input --json 2>/dev/null` avant l'appel, sans le deviner. Règles :
+   - Seulement des URL renvoyées par la recherche ou le script, sur des domaines acceptés (section 3 de la référence), et uniquement des pages publiques. Ne pas contourner un paywall, une connexion obligatoire, un CAPTCHA ni une interdiction explicite d'accès : une page qui reste illisible est traitée comme non ouverte.
+   - Au plus 5 pages par lancement, un appel bloquant par page, pour limiter le coût. Ne pas lancer d'Actor de réseaux sociaux.
+   - Le texte lu compte comme une ouverture de page : vérifier la date de publication, le fond et le statut dans le texte, puis appliquer les règles de confirmation habituelles. Le champ de date des métadonnées est souvent vide : lire la date dans le texte ou dans l'URL, sinon la prendre du résultat de recherche daté.
+   - Si la CLI est absente, si `apify info 2>&1` montre une session non authentifiée (`APIFY_TOKEN` manquant) ou si le réseau refuse l'accès, ne pas insister : revenir à la confirmation par résultat de recherche et le signaler dans le bilan.
+
+Ouvrir les articles les plus prometteurs pour vérifier la date, le fond et le statut quand c'est possible (lecture directe d'abord, puis passe 4 si elle échoue) ; si l'ouverture échoue pour cause de réseau, ne pas réessayer sur le même site et appliquer la règle de confirmation par résultat de recherche. Remonter à la source primaire quand une information vient d'une reprise ; si aucune source primaire ni média reconnu ne la confirme, l'écarter.
 
 ## Étape 3 : Trier
 
@@ -150,4 +156,4 @@ Si l'écriture est impossible, livrer la veille complète dans le chat et expliq
 
 ## Étape 6 : Réponse finale
 
-Livrer dans le chat un court bilan : le nom et l'emplacement du fichier (lien Drive si disponible) et les points de la rubrique « À retenir », une ligne chacun. Ne pas recopier toute la veille sauf si l'écriture a échoué. Si l'outil SendUserMessage est disponible, y envoyer ce même bilan. Ne pas l'envoyer par e-mail ni sur Teams.
+Livrer dans le chat un court bilan, dans le style `caveman:caveman` : le nom et l'emplacement du fichier (lien Drive si disponible) et les points de la rubrique « À retenir », une ligne chacun. Ne pas recopier toute la veille sauf si l'écriture a échoué. Si l'outil SendUserMessage est disponible, y envoyer ce même bilan. Ne pas l'envoyer par e-mail ni sur Teams.

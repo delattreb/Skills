@@ -3,6 +3,13 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 La version du plugin (`.claude-plugin/plugin.json`) sert de version unique de release. Le détail par skill reste dans le `CHANGELOG.md` de chaque skill.
 
+## [2.5.0] — 2026-11-24
+### Ajouté
+- `pro-veille-informatique` 0.7.0 : passe 4 « Lecture renforcée (Apify) » (skill `apify:apify-ultimate-scraper`, Actor `apify/rag-web-browser`) pour lire les articles que la lecture directe n'ouvre pas ; pages publiques seulement, 5 pages au plus par lancement. Le skill invoque aussi `caveman:caveman` pour le style des messages de travail et du bilan.
+### Modifié
+- `pro-veille-informatique` : format de la note (tableau « Vue d'ensemble », callouts Obsidian selon la pertinence) et tags YAML par catégorie.
+- Règle `marketplace.json` : pas de champ `version`, description alignée sur `plugin.json` (`CLAUDE.md`, `RELEASE.md`).
+
 ## [2.4.0] — 2026-11-23
 ### Ajouté
 - `perso-information` 0.5.1 : sept médias ajoutés dans `config/sources.json` (BBC News, The Guardian, Le Monde, RFI, Reuters, Associated Press, AFP), à chercher sans `allowed_domains`, pour élargir les sources éligibles à la double confirmation.
