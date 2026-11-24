@@ -12,7 +12,7 @@ International : `un.org`, `europa.eu` (dont `ecb.europa.eu`), `imf.org`, `worldb
 - Généralistes : Le Monde, Le Figaro, Libération, franceinfo, Ouest-France, La Croix, Le Parisien, Public Sénat, France 24, RFI, Euronews, Politico Europe, BBC, The Guardian, Al Jazeera, The New York Times, Financial Times, Les Échos, Reuters, Associated Press, AFP.
 - IA et informatique : LeMagIT, Le Monde Informatique, Next, Silicon.fr, Numerama, 01net, The Register, Ars Technica, The Verge, TechCrunch, VentureBeat, MIT Technology Review, BleepingComputer, The Hacker News, Krebs on Security, ZATAZ, Neowin, Windows Central.
 - Développement : GitHub Blog, Stack Overflow Blog, InfoQ, Developpez.com, blogs officiels des langages et outils (Rust, Go, .NET, TypeScript, Node.js, VS Code, JetBrains, Docker, Cloudflare).
-- 3D : Blender, BlenderNation, CG Channel, 80 Level, Creative Bloq, Prusa, Hackaday, Tom's Hardware, Godot.
+- 3D : Blender, BlenderNation, CG Channel, 80 Level, Prusa, Hackaday, Godot.
 
 Un site dont le flux est désactivé dans `config/flux.json` reste citable s'il apparaît dans une recherche et que sa page s'ouvre.
 

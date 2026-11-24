@@ -6,7 +6,7 @@ Ce skill remplace `pro-veille-informatique` (dernière version 0.7.0) et `perso-
 ## [1.0.0] — 2026-11-24
 ### Ajouté
 - Six catégories : politique, économie, IA, informatique, développement, 3D.
-- `config/flux.json` (87 flux, 77 actifs après test du 24/11/2026) et `scripts/flux.py` : lecture des flux RSS/Atom en parallèle, filtre par fenêtre, 3 entrées par flux, test d'accessibilité avec désactivation des flux en échec.
+- `config/flux.json` (85 flux, 75 actifs après test du 24/11/2026) et `scripts/flux.py` : lecture des flux RSS/Atom en parallèle, filtre par fenêtre, 3 entrées par flux, test d'accessibilité avec désactivation des flux en échec.
 - `references/recherche.md` : sources officielles, médias reconnus, requêtes de complément.
 ### Modifié
 - Confirmation selon la catégorie : deux médias ou une source officielle pour politique et économie ; une source primaire ou un média reconnu pour la tech.

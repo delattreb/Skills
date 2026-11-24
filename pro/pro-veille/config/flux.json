@@ -482,12 +482,6 @@
    "actif": true
   },
   {
-   "nom": "Creative Bloq",
-   "categorie": "3d",
-   "url": "https://www.creativebloq.com/feeds/all",
-   "actif": true
-  },
-  {
    "nom": "Prusa",
    "categorie": "3d",
    "url": "https://blog.prusa3d.com/feed/",
@@ -504,12 +498,6 @@
    "nom": "Hackaday",
    "categorie": "3d",
    "url": "https://hackaday.com/feed/",
-   "actif": true
-  },
-  {
-   "nom": "Tom's Hardware",
-   "categorie": "3d",
-   "url": "https://www.tomshardware.com/feeds/all",
    "actif": true
   },
   {
