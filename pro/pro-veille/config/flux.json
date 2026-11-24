@@ -1,0 +1,524 @@
+{
+ "flux": [
+  {
+   "nom": "franceinfo",
+   "categorie": "politique",
+   "url": "https://www.francetvinfo.fr/titres.rss",
+   "actif": true
+  },
+  {
+   "nom": "Le Monde - À la une",
+   "categorie": "politique",
+   "url": "https://www.lemonde.fr/rss/une.xml",
+   "actif": true
+  },
+  {
+   "nom": "Le Monde - International",
+   "categorie": "politique",
+   "url": "https://www.lemonde.fr/international/rss_full.xml",
+   "actif": true
+  },
+  {
+   "nom": "Le Monde - Politique",
+   "categorie": "politique",
+   "url": "https://www.lemonde.fr/politique/rss_full.xml",
+   "actif": true
+  },
+  {
+   "nom": "Le Figaro - À la une",
+   "categorie": "politique",
+   "url": "https://www.lefigaro.fr/rss/figaro_actualites-a-la-une.xml",
+   "actif": true
+  },
+  {
+   "nom": "Le Figaro - Politique",
+   "categorie": "politique",
+   "url": "https://www.lefigaro.fr/rss/figaro_politique.xml",
+   "actif": true
+  },
+  {
+   "nom": "Libération",
+   "categorie": "politique",
+   "url": "https://www.liberation.fr/arc/outboundfeeds/rss-all/collection/accueil-une/?outputType=xml",
+   "actif": true
+  },
+  {
+   "nom": "Ouest-France",
+   "categorie": "politique",
+   "url": "https://www.ouest-france.fr/rss/une",
+   "actif": true
+  },
+  {
+   "nom": "Le Parisien",
+   "categorie": "politique",
+   "url": "https://www.leparisien.fr/arc/outboundfeeds/rss/une.xml",
+   "actif": false,
+   "note": "inaccessible au test du 24/11/2026 : HTTPError: HTTP Error 404: Not Found"
+  },
+  {
+   "nom": "La Croix",
+   "categorie": "politique",
+   "url": "https://www.la-croix.com/RSS",
+   "actif": true
+  },
+  {
+   "nom": "Public Sénat",
+   "categorie": "politique",
+   "url": "https://www.publicsenat.fr/rss",
+   "actif": true
+  },
+  {
+   "nom": "Vie publique",
+   "categorie": "politique",
+   "url": "https://www.vie-publique.fr/rss",
+   "actif": false,
+   "note": "inaccessible au test du 24/11/2026 : aucune entrée"
+  },
+  {
+   "nom": "France 24",
+   "categorie": "politique",
+   "url": "https://www.france24.com/fr/rss",
+   "actif": true
+  },
+  {
+   "nom": "RFI",
+   "categorie": "politique",
+   "url": "https://www.rfi.fr/fr/rss",
+   "actif": true
+  },
+  {
+   "nom": "Euronews",
+   "categorie": "politique",
+   "url": "https://www.euronews.com/rss",
+   "actif": true
+  },
+  {
+   "nom": "Politico Europe",
+   "categorie": "politique",
+   "url": "https://www.politico.eu/feed/",
+   "actif": true
+  },
+  {
+   "nom": "BBC World",
+   "categorie": "politique",
+   "url": "http://feeds.bbci.co.uk/news/world/rss.xml",
+   "actif": true
+  },
+  {
+   "nom": "The Guardian - World",
+   "categorie": "politique",
+   "url": "https://www.theguardian.com/world/rss",
+   "actif": true
+  },
+  {
+   "nom": "Al Jazeera",
+   "categorie": "politique",
+   "url": "https://www.aljazeera.com/xml/rss/all.xml",
+   "actif": true
+  },
+  {
+   "nom": "NYT - World",
+   "categorie": "politique",
+   "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+   "actif": true
+  },
+  {
+   "nom": "ONU - Actualités",
+   "categorie": "politique",
+   "url": "https://news.un.org/feed/subscribe/fr/news/all/rss.xml",
+   "actif": true
+  },
+  {
+   "nom": "Les Échos",
+   "categorie": "economie",
+   "url": "https://services.lesechos.fr/rss/les-echos-une.xml",
+   "actif": false,
+   "note": "inaccessible au test du 24/11/2026 : HTTPError: HTTP Error 410: Gone"
+  },
+  {
+   "nom": "Le Monde - Économie",
+   "categorie": "economie",
+   "url": "https://www.lemonde.fr/economie/rss_full.xml",
+   "actif": true
+  },
+  {
+   "nom": "Le Figaro - Économie",
+   "categorie": "economie",
+   "url": "https://www.lefigaro.fr/rss/figaro_economie.xml",
+   "actif": true
+  },
+  {
+   "nom": "BBC Business",
+   "categorie": "economie",
+   "url": "http://feeds.bbci.co.uk/news/business/rss.xml",
+   "actif": true
+  },
+  {
+   "nom": "The Guardian - Business",
+   "categorie": "economie",
+   "url": "https://www.theguardian.com/uk/business/rss",
+   "actif": true
+  },
+  {
+   "nom": "Financial Times",
+   "categorie": "economie",
+   "url": "https://www.ft.com/rss/home",
+   "actif": true
+  },
+  {
+   "nom": "NYT - Business",
+   "categorie": "economie",
+   "url": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+   "actif": true
+  },
+  {
+   "nom": "CNBC",
+   "categorie": "economie",
+   "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147",
+   "actif": true
+  },
+  {
+   "nom": "BCE - Communiqués",
+   "categorie": "economie",
+   "url": "https://www.ecb.europa.eu/rss/press.html",
+   "actif": true
+  },
+  {
+   "nom": "Banque de France",
+   "categorie": "economie",
+   "url": "https://www.banque-france.fr/fr/rss.xml",
+   "actif": false,
+   "note": "inaccessible au test du 24/11/2026 : HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "nom": "Alternatives économiques",
+   "categorie": "economie",
+   "url": "https://www.alternatives-economiques.fr/rss.xml",
+   "actif": true
+  },
+  {
+   "nom": "OpenAI",
+   "categorie": "ia",
+   "url": "https://openai.com/news/rss.xml",
+   "actif": true
+  },
+  {
+   "nom": "Google - IA",
+   "categorie": "ia",
+   "url": "https://blog.google/technology/ai/rss/",
+   "actif": true
+  },
+  {
+   "nom": "Google DeepMind",
+   "categorie": "ia",
+   "url": "https://deepmind.google/blog/rss.xml",
+   "actif": true
+  },
+  {
+   "nom": "Hugging Face",
+   "categorie": "ia",
+   "url": "https://huggingface.co/blog/feed.xml",
+   "actif": true
+  },
+  {
+   "nom": "Microsoft - IA",
+   "categorie": "ia",
+   "url": "https://blogs.microsoft.com/ai/feed/",
+   "actif": false,
+   "note": "inaccessible au test du 24/11/2026 : HTTPError: HTTP Error 410: Gone"
+  },
+  {
+   "nom": "NVIDIA",
+   "categorie": "ia",
+   "url": "https://blogs.nvidia.com/feed/",
+   "actif": true
+  },
+  {
+   "nom": "MIT Technology Review - IA",
+   "categorie": "ia",
+   "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
+   "actif": true
+  },
+  {
+   "nom": "VentureBeat - IA",
+   "categorie": "ia",
+   "url": "https://venturebeat.com/category/ai/feed/",
+   "actif": true
+  },
+  {
+   "nom": "TechCrunch - IA",
+   "categorie": "ia",
+   "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+   "actif": true
+  },
+  {
+   "nom": "The Verge - IA",
+   "categorie": "ia",
+   "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+   "actif": true
+  },
+  {
+   "nom": "Ars Technica - IA",
+   "categorie": "ia",
+   "url": "https://arstechnica.com/ai/feed/",
+   "actif": true
+  },
+  {
+   "nom": "LeMagIT",
+   "categorie": "informatique",
+   "url": "https://www.lemagit.fr/rss/ALL.xml",
+   "actif": false,
+   "note": "inaccessible au test du 24/11/2026 : HTTPError: HTTP Error 404: Not Found"
+  },
+  {
+   "nom": "Le Monde Informatique",
+   "categorie": "informatique",
+   "url": "https://www.lemondeinformatique.fr/rss/rss.xml",
+   "actif": true
+  },
+  {
+   "nom": "Next",
+   "categorie": "informatique",
+   "url": "https://next.ink/feed/",
+   "actif": true
+  },
+  {
+   "nom": "Silicon.fr",
+   "categorie": "informatique",
+   "url": "https://www.silicon.fr/feed",
+   "actif": true
+  },
+  {
+   "nom": "Numerama",
+   "categorie": "informatique",
+   "url": "https://www.numerama.com/feed/",
+   "actif": true
+  },
+  {
+   "nom": "01net",
+   "categorie": "informatique",
+   "url": "https://www.01net.com/feed/",
+   "actif": true
+  },
+  {
+   "nom": "Korben",
+   "categorie": "informatique",
+   "url": "https://korben.info/feed",
+   "actif": true
+  },
+  {
+   "nom": "The Register",
+   "categorie": "informatique",
+   "url": "https://www.theregister.com/headlines.atom",
+   "actif": true
+  },
+  {
+   "nom": "Ars Technica",
+   "categorie": "informatique",
+   "url": "https://feeds.arstechnica.com/arstechnica/index",
+   "actif": true
+  },
+  {
+   "nom": "BleepingComputer",
+   "categorie": "informatique",
+   "url": "https://www.bleepingcomputer.com/feed/",
+   "actif": true
+  },
+  {
+   "nom": "The Hacker News",
+   "categorie": "informatique",
+   "url": "https://feeds.feedburner.com/TheHackersNews",
+   "actif": true
+  },
+  {
+   "nom": "Krebs on Security",
+   "categorie": "informatique",
+   "url": "https://krebsonsecurity.com/feed/",
+   "actif": true
+  },
+  {
+   "nom": "CERT-FR",
+   "categorie": "informatique",
+   "url": "https://www.cert.ssi.gouv.fr/feed/",
+   "actif": true
+  },
+  {
+   "nom": "Microsoft 365 - Feuille de route",
+   "categorie": "informatique",
+   "url": "https://www.microsoft.com/releasecommunications/api/v2/m365/rss",
+   "actif": true
+  },
+  {
+   "nom": "Windows Central",
+   "categorie": "informatique",
+   "url": "https://www.windowscentral.com/feeds.xml",
+   "actif": true
+  },
+  {
+   "nom": "Neowin",
+   "categorie": "informatique",
+   "url": "https://www.neowin.net/news/rss/",
+   "actif": true
+  },
+  {
+   "nom": "ZATAZ",
+   "categorie": "informatique",
+   "url": "https://www.zataz.com/feed/",
+   "actif": true
+  },
+  {
+   "nom": "GitHub Blog",
+   "categorie": "developpement",
+   "url": "https://github.blog/feed/",
+   "actif": true
+  },
+  {
+   "nom": "Stack Overflow Blog",
+   "categorie": "developpement",
+   "url": "https://stackoverflow.blog/feed/",
+   "actif": true
+  },
+  {
+   "nom": "InfoQ",
+   "categorie": "developpement",
+   "url": "https://feed.infoq.com/",
+   "actif": true
+  },
+  {
+   "nom": "Developpez.com",
+   "categorie": "developpement",
+   "url": "https://www.developpez.com/index/rss",
+   "actif": true
+  },
+  {
+   "nom": "JetBrains",
+   "categorie": "developpement",
+   "url": "https://blog.jetbrains.com/feed/",
+   "actif": true
+  },
+  {
+   "nom": "Blog Rust",
+   "categorie": "developpement",
+   "url": "https://blog.rust-lang.org/feed.xml",
+   "actif": true
+  },
+  {
+   "nom": "Blog Go",
+   "categorie": "developpement",
+   "url": "https://go.dev/blog/feed.atom",
+   "actif": true
+  },
+  {
+   "nom": "Blog .NET",
+   "categorie": "developpement",
+   "url": "https://devblogs.microsoft.com/dotnet/feed/",
+   "actif": true
+  },
+  {
+   "nom": "Blog TypeScript",
+   "categorie": "developpement",
+   "url": "https://devblogs.microsoft.com/typescript/feed/",
+   "actif": true
+  },
+  {
+   "nom": "Blog Node.js",
+   "categorie": "developpement",
+   "url": "https://nodejs.org/en/feed/blog.xml",
+   "actif": true
+  },
+  {
+   "nom": "Visual Studio Code",
+   "categorie": "developpement",
+   "url": "https://code.visualstudio.com/feed.xml",
+   "actif": true
+  },
+  {
+   "nom": "Docker",
+   "categorie": "developpement",
+   "url": "https://www.docker.com/blog/feed/",
+   "actif": true
+  },
+  {
+   "nom": "Cloudflare",
+   "categorie": "developpement",
+   "url": "https://blog.cloudflare.com/rss/",
+   "actif": true
+  },
+  {
+   "nom": "Martin Fowler",
+   "categorie": "developpement",
+   "url": "https://martinfowler.com/feed.atom",
+   "actif": true
+  },
+  {
+   "nom": "Python Insider",
+   "categorie": "developpement",
+   "url": "https://blog.python.org/feeds/posts/default",
+   "actif": true
+  },
+  {
+   "nom": "Blender",
+   "categorie": "3d",
+   "url": "https://www.blender.org/feed/",
+   "actif": true
+  },
+  {
+   "nom": "BlenderNation",
+   "categorie": "3d",
+   "url": "https://www.blendernation.com/feed/",
+   "actif": true
+  },
+  {
+   "nom": "80 Level",
+   "categorie": "3d",
+   "url": "https://80.lv/feed",
+   "actif": false,
+   "note": "inaccessible au test du 24/11/2026 : URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certific"
+  },
+  {
+   "nom": "CG Channel",
+   "categorie": "3d",
+   "url": "https://www.cgchannel.com/feed/",
+   "actif": true
+  },
+  {
+   "nom": "Prusa",
+   "categorie": "3d",
+   "url": "https://blog.prusa3d.com/feed/",
+   "actif": true
+  },
+  {
+   "nom": "All3DP",
+   "categorie": "3d",
+   "url": "https://all3dp.com/feed/",
+   "actif": false,
+   "note": "inaccessible au test du 24/11/2026 : HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "nom": "Hackaday",
+   "categorie": "3d",
+   "url": "https://hackaday.com/feed/",
+   "actif": true
+  },
+  {
+   "nom": "Godot",
+   "categorie": "3d",
+   "url": "https://godotengine.org/rss.xml",
+   "actif": true
+  },
+  {
+   "nom": "Unity",
+   "categorie": "3d",
+   "url": "https://unity.com/blog/rss.xml",
+   "actif": false,
+   "note": "inaccessible au test du 24/11/2026 : HTTPError: HTTP Error 404: Not Found"
+  },
+  {
+   "nom": "Unreal Engine",
+   "categorie": "3d",
+   "url": "https://www.unrealengine.com/en-US/rss",
+   "actif": false,
+   "note": "inaccessible au test du 24/11/2026 : ParseError: junk after document element: line 1, column 12924"
+  }
+ ]
+}
