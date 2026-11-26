@@ -1,0 +1,40 @@
+name: release
+
+# Crée le tag X.Y.Z et la GitHub Release quand main porte une version de plugin.json sans tag.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Créer le tag et la release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          v=$(jq -r .version .claude-plugin/plugin.json)
+          [[ "$v" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "version invalide : $v"; exit 1; }
+
+          if [ "$(jq -r '.plugins[0].description' .claude-plugin/marketplace.json)" != "$(jq -r .description .claude-plugin/plugin.json)" ]; then
+            echo "description différente entre plugin.json et marketplace.json"; exit 1
+          fi
+          if jq -e '.plugins[0] | has("version")' .claude-plugin/marketplace.json >/dev/null; then
+            echo "marketplace.json ne doit pas porter de champ version"; exit 1
+          fi
+
+          if gh release view "$v" >/dev/null 2>&1; then
+            echo "release $v déjà publiée"; exit 0
+          fi
+
+          awk -v v="$v" '/^## \[/{p=index($0,"["v"]")>0; next} p' CHANGELOG.md > notes.md
+          [ -s notes.md ] || { echo "section [$v] absente de CHANGELOG.md"; exit 1; }
+
+          gh release create "$v" --target "$GITHUB_SHA" --title "$v" --notes-file notes.md
