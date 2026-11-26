@@ -9,6 +9,7 @@ Mes skills personnels pour Claude.
 | [pro-point-avancement](pro/pro-point-avancement/SKILL.md) | Rédiger mon point d'avancement hebdomadaire à partir d'Outlook et Teams (lecture seule). |
 | [pro-mcp-creator](pro/pro-mcp-creator/SKILL.md) | Créer un squelette de serveur MCP (Python FastMCP ou TypeScript) avec outils, tests et configuration client. |
 | [pro-ppt-neoma](pro/pro-ppt-neoma/SKILL.md) | Créer un PowerPoint modifiable au format NEOMA. |
+| [pro-sauvegarde-contexte](pro/pro-sauvegarde-contexte/SKILL.md) | Sauvegarder la conversation en cours en fiche taguée dans Obsidian (NeomaVault, dossier Sauvegarde, classée par sujet). |
 | [pro-recherche-emploi-informatique](pro/pro-recherche-emploi-informatique/SKILL.md) | Rechercher et classer des offres de responsable informatique à Rouen, et trier ma boîte Gmail « Emploi ». |
 | [pro-veille](pro/pro-veille/SKILL.md) | Veille quotidienne classée en six catégories (politique, économie, IA, informatique, développement, 3D) à partir de flux RSS et de la recherche web, un fichier daté par jour dans Obsidian (MonVault). Remplace pro-veille-informatique et perso-information. |
 | [perso-critique-dessin](perso/perso-critique-dessin/SKILL.md) | Critiquer mes dessins, les intégrer dans mes fiches Obsidian et suivre ma progression. |

@@ -3,6 +3,10 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 La version du plugin (`.claude-plugin/plugin.json`) sert de version unique de release. Le détail par skill reste dans le `CHANGELOG.md` de chaque skill.
 
+## [3.1.0] — 2026-11-26
+### Ajouté
+- `pro-sauvegarde-contexte` 0.1.0 : sauvegarde de la conversation en cours en fiche Obsidian (NeomaVault, `Sauvegarde/<Sujet>/AAAA-MM-JJ titre.md`) avec idée générale, résumé, décisions, actions, ressources, tags réutilisés et YAML (type, contexte technique).
+
 ## [3.0.0] — 2026-11-24
 ### Modifié
 - Refonte complète de la veille : les skills `pro-veille-informatique` et `perso-information` sont fusionnés en `pro-veille` 1.0.0 (commande `/pro-veille`). Six catégories (politique, économie, IA, informatique, développement, 3D), confirmation par une seule source, collecte par flux RSS (`config/flux.json`) puis recherche web, une note par jour `Veille/AAAA-MM-JJ veille.md`.
