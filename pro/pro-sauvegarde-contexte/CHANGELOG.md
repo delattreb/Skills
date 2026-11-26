@@ -5,4 +5,8 @@ Chaque version publiée est marquée par un tag Git `pro-sauvegarde-contexte-vX.
 
 ## [Non publié]
 ### Ajouté
-- Première version : synthèse du contexte de la conversation (objectif, décisions, état, prochaines étapes) dans une note Obsidian NeomaVault, `Contexte/AAAA-MM-JJ titre.md`.
+- Première version : fiche de sauvegarde d'une conversation dans Obsidian NeomaVault, `Sauvegarde/<Sujet>/AAAA-MM-JJ titre.md`.
+- Contenu : idée générale, résumé, décisions, actions et suite, ressources et extraits. YAML : titre, date, tags, type, contexte technique.
+- Tags réutilisés depuis le dossier `Sauvegarde/`, un seul tag créé au besoin.
+- Fiche existante sur le même sujet : nouvelle fiche liée par `suite_de` et un wikilink.
+- Secrets omis, le reste conservé.
