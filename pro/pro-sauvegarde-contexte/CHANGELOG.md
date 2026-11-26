@@ -3,7 +3,7 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 Chaque version publiée est marquée par un tag Git `pro-sauvegarde-contexte-vX.Y.Z`.
 
-## [Non publié]
+## [0.1.0] — 2026-11-26
 ### Ajouté
 - Première version : fiche de sauvegarde d'une conversation dans Obsidian NeomaVault, `Sauvegarde/<Sujet>/AAAA-MM-JJ titre.md`.
 - Contenu : idée générale, résumé, décisions, actions et suite, ressources et extraits. YAML : titre, date, tags, type, contexte technique.
