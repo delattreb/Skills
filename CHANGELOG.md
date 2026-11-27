@@ -3,6 +3,12 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 La version du plugin (`.claude-plugin/plugin.json`) sert de version unique de release. Le détail par skill reste dans le `CHANGELOG.md` de chaque skill.
 
+## [4.0.0] — 2026-11-27
+### Modifié
+- `perso-decision-sortie-astro` 0.4.0 remplace `perso-meteo-astro-hebdo` : verdict pour chaque nuit (indicatif sans horaire), sources météo en cascade, Lune obligatoire (calcul local `scripts/lune.py`), objets calculés (`scripts/objets.py`, catalogue `references/objets.json`), seuil de rafales, seeing et transparence, écriture dans MonVault. Changement incompatible : la commande `/perso-meteo-astro-hebdo` disparaît.
+### Supprimé
+- `perso-meteo-astro-hebdo` (fiche artifact rouge et noir avec graphisme des phases de Lune).
+
 ## [3.2.0] — 2026-11-27
 ### Ajouté
 - `perso-decision-sortie-astro` 0.1.0 : décision de sortie du Celestron C8 sur monture Skysensor 2000 GoTo pour les 7 prochaines nuits à La Rue-Saint-Pierre (76690), verdict oui, peut-être ou non par nuit avec objets classés par heure de passage, en fiche Obsidian hebdomadaire (MonVault, `astronomie/météo/`).

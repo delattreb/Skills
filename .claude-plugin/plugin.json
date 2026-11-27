@@ -1,7 +1,7 @@
 {
   "name": "skills-perso",
-  "version": "3.2.0",
+  "version": "4.0.0",
   "author": { "name": "Bruno DELATTRE" },
-  "description": "Mes skills personnels pour Claude : pro (1to1, agenda, point d'avancement, PPT NEOMA, recherche d'emploi, MCP creator, veille, sauvegarde de conversation) et perso (critique dessin, culture générale, météo astro, recettes).",
+  "description": "Mes skills personnels pour Claude : pro (1to1, agenda, point d'avancement, PPT NEOMA, recherche d'emploi, MCP creator, veille, sauvegarde de conversation) et perso (critique dessin, culture générale, décision de sortie astro, recettes).",
   "skills": ["./pro/", "./perso/"]
 }
