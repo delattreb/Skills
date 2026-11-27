@@ -3,6 +3,12 @@
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions [SemVer](https://semver.org/lang/fr/).
 La version du plugin (`.claude-plugin/plugin.json`) sert de version unique de release. Le détail par skill reste dans le `CHANGELOG.md` de chaque skill.
 
+## [4.0.0] — 2026-11-27
+### Modifié
+- `perso-decision-sortie-astro` 0.4.0 remplace `perso-meteo-astro-hebdo` : verdict pour chaque nuit (indicatif sans horaire), sources météo en cascade, Lune obligatoire (calcul local `scripts/lune.py`), objets calculés (`scripts/objets.py`, catalogue `references/objets.json`), seuil de rafales, seeing et transparence, écriture dans MonVault. Changement incompatible : la commande `/perso-meteo-astro-hebdo` disparaît.
+### Supprimé
+- `perso-meteo-astro-hebdo` (fiche artifact rouge et noir avec graphisme des phases de Lune).
+
 ## [3.1.0] — 2026-11-26
 ### Ajouté
 - `pro-sauvegarde-contexte` 0.1.0 : sauvegarde de la conversation en cours en fiche Obsidian (NeomaVault, `Sauvegarde/<Sujet>/AAAA-MM-JJ titre.md`) avec idée générale, résumé, décisions, actions, ressources, tags réutilisés et YAML (type, contexte technique).

@@ -14,7 +14,7 @@ Mes skills personnels pour Claude.
 | [pro-veille](pro/pro-veille/SKILL.md) | Veille quotidienne classée en six catégories (politique, économie, IA, informatique, développement, 3D) à partir de flux RSS et de la recherche web, un fichier daté par jour dans Obsidian (MonVault). Remplace pro-veille-informatique et perso-information. |
 | [perso-critique-dessin](perso/perso-critique-dessin/SKILL.md) | Critiquer mes dessins, les intégrer dans mes fiches Obsidian et suivre ma progression. |
 | [perso-culture-generale-obsidian](perso/perso-culture-generale-obsidian/SKILL.md) | Créer et gérer les fiches illustrées de culture générale du parcours CGI dans Obsidian. |
-| [perso-meteo-astro-hebdo](perso/perso-meteo-astro-hebdo/SKILL.md) | Fiche météo astro des 7 prochaines nuits pour mon C8, avec graphisme des phases de Lune. |
+| [perso-decision-sortie-astro](perso/perso-decision-sortie-astro/SKILL.md) | Décider quelles nuits sortir mon C8 sur 7 jours (météo, Lune, seeing) et lister les objets à observer, fiche dans Obsidian (MonVault). Remplace perso-meteo-astro-hebdo. |
 | [perso-recettes-obsidian](perso/perso-recettes-obsidian/SKILL.md) | Créer, illustrer et modifier des recettes Markdown dans Obsidian. |
 
 ## Installation
