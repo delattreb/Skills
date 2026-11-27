@@ -9,6 +9,10 @@ La version du plugin (`.claude-plugin/plugin.json`) sert de version unique de re
 ### Supprimé
 - `perso-meteo-astro-hebdo` (fiche artifact rouge et noir avec graphisme des phases de Lune).
 
+## [3.2.0] — 2026-11-27
+### Ajouté
+- `perso-decision-sortie-astro` 0.1.0 : décision de sortie du Celestron C8 sur monture Skysensor 2000 GoTo pour les 7 prochaines nuits à La Rue-Saint-Pierre (76690), verdict oui, peut-être ou non par nuit avec objets classés par heure de passage, en fiche Obsidian hebdomadaire (MonVault, `astronomie/météo/`).
+
 ## [3.1.0] — 2026-11-26
 ### Ajouté
 - `pro-sauvegarde-contexte` 0.1.0 : sauvegarde de la conversation en cours en fiche Obsidian (NeomaVault, `Sauvegarde/<Sujet>/AAAA-MM-JJ titre.md`) avec idée générale, résumé, décisions, actions, ressources, tags réutilisés et YAML (type, contexte technique).
